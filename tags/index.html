@@ -268,6 +268,15 @@
           
             <li class="drawer-box-content_item" style="position: relative;">
               
+                <a href="/Message-board" class="drawer-menu-item-link">
+                  
+                  <span class="name">留言板</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
                 <a href="/About" class="drawer-menu-item-link">
                   
                   <span class="name">关于</span>
@@ -279,6 +288,8 @@
               
                 <a href="/links" class="drawer-menu-item-link">
                   
+                    <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                  
                   <span class="name">友人帐</span>
                 </a>
               
@@ -286,21 +297,28 @@
           
             <li class="drawer-box-content_item" style="position: relative;">
               
-                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(6)">
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(7)">
                   <span>
                     
                       <i class="fas fa-link"></i>
                     
                     <span class="name">更多</span>
                   </span>
-                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(6)}" aria-hidden="true"></i>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(7)}" aria-hidden="true"></i>
                 </a>
-                <ul class="drawer-sub-menu" v-if="isOpen(6)">
+                <ul class="drawer-sub-menu" v-if="isOpen(7)">
                   
                   <li>
-                    <a target="_blank" rel="noopener" href="https://www.dmoe.top">
+                    <a target="_blank" rel="noopener" href="https://h-nav.dmoe.top">
                       
-                      <span>个人主页</span>
+                      <span>萌禾社导航站</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a target="_blank" rel="noopener" href="https://t.me/fj_pic">
+                      
+                      <span>插画收藏(TG)</span>
                     </a>
                   </li>
                   
@@ -433,6 +451,15 @@
           
             <li class="menu-item" style="position: relative;">
               
+                <a href="/Message-board" class="menu-item-link" title="留言板">
+                  
+                  <span class="name">留言板</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
                 <a href="/About" class="menu-item-link" title="关于">
                   
                   <span class="name">关于</span>
@@ -443,6 +470,8 @@
             <li class="menu-item" style="position: relative;">
               
                 <a href="/links" class="menu-item-link" title="友人帐">
+                  
+                    <i class="fas fa-comment-dots" aria-hidden="true"></i>
                   
                   <span class="name">友人帐</span>
                 </a>
@@ -461,9 +490,16 @@
                 <ul class="sub-menu">
                   
                   <li>
-                    <a target="_blank" rel="noopener" href="https://www.dmoe.top">
+                    <a target="_blank" rel="noopener" href="https://h-nav.dmoe.top">
                       
-                      <span>个人主页</span>
+                      <span>萌禾社导航站</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a target="_blank" rel="noopener" href="https://t.me/fj_pic">
+                      
+                      <span>插画收藏(TG)</span>
                     </a>
                   </li>
                   
@@ -661,46 +697,6 @@
                 </a>
                 
                 
-                <a href="/tags/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" title="图床搭建: 1">
-                    <span class="tag-content"
-                        title="图床搭建" style="background-color: #85C1E9;">图床搭建
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" title="免费图床搭建: 1">
-                    <span class="tag-content"
-                        title="免费图床搭建" style="background-color: #F5EEF8;">免费图床搭建
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/jsdelivr/" title="jsdelivr: 1">
-                    <span class="tag-content"
-                        title="jsdelivr" style="background-color: #82E0AA;">jsdelivr
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/PicGo/" title="PicGo: 1">
-                    <span class="tag-content"
-                        title="PicGo" style="background-color: #F9EBEA;">PicGo
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/GitHub/" title="GitHub: 1">
-                    <span class="tag-content"
-                        title="GitHub" style="background-color: #F8C471;">GitHub
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/Hexo/" title="Hexo: 1">
                     <span class="tag-content"
                         title="Hexo" style="background-color: #E8F8F5;">Hexo
@@ -737,6 +733,46 @@
                     <span class="tag-content"
                         title="Windows" style="background-color: #F8F9F9;">Windows
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" title="图床搭建: 1">
+                    <span class="tag-content"
+                        title="图床搭建" style="background-color: #85C1E9;">图床搭建
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" title="免费图床搭建: 1">
+                    <span class="tag-content"
+                        title="免费图床搭建" style="background-color: #F5EEF8;">免费图床搭建
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/jsdelivr/" title="jsdelivr: 1">
+                    <span class="tag-content"
+                        title="jsdelivr" style="background-color: #82E0AA;">jsdelivr
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/PicGo/" title="PicGo: 1">
+                    <span class="tag-content"
+                        title="PicGo" style="background-color: #F9EBEA;">PicGo
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/GitHub/" title="GitHub: 1">
+                    <span class="tag-content"
+                        title="GitHub" style="background-color: #F8C471;">GitHub
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
