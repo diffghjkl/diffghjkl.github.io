@@ -1831,7 +1831,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   margin: 0 5px;
 }
 .footer .footer-main .link .social:hover {
-  color: #ff4500;
+  color: #00f;
   background: rgba(255,87,34,0.1);
 }
 .footer .footer-main .link i {
@@ -1845,13 +1845,13 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   text-decoration: underline;
 }
 .footer .footer-main .footer-copyright a:hover {
-  color: #ff4500;
+  color: #00f;
 }
 .footer .footer-main .footer-custom a {
   text-decoration: underline;
 }
 .footer .footer-main .footer-custom a:hover {
-  color: #ff4500;
+  color: #00f;
 }
 #j-fish-skip {
   margin-top: 15px;
