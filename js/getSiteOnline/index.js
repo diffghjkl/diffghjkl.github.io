@@ -92,7 +92,7 @@ const getSiteJson = {
         let description = urls[i].description || urls[i].desc;
         imgsHtml = imgsHtml + `
             <a class="site-card" href="${url}" target="_blank">
-                <div class="img"><img src="${screenshot}" onerror="javascript:this.src=\'https://picx.zhimg.com/80/v2-d7666d074ec59ca4cf14f15c5f891643_1440w.webp\';" /></div>
+                <div class="img"><img src="${screenshot}" onerror="javascript:this.src=\'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/_sgZ2bKRQFmUpT\';" /></div>
                 <div class="info">
                     <img src="${avatar}"/>
                     <span class="title">${title}</span><span class="desc">${description}</span>
