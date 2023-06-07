@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>友人帐 | diffghjklのblog</title>
+  <title>【Linux】Screen使用 | diffghjklのblog</title>
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -195,7 +195,7 @@
       <main class="main" id="pjax-container">
         <!-- 头部导航 -->
         
-<header class="header  no-img-top" 
+<header class="header  " 
   id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
@@ -555,16 +555,119 @@
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
 
 
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/3ynV2ily5zYybW')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        【Linux】Screen使用
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2022-01-27 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BAWiki/" class="post-detail-header_category">
+              计算机Wiki
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
 
 
 <div class="post-detail-content post-row" 
-  style="padding-top: 60px;">
+  style="padding-top: 0px;">
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <div class="getJsonSite-api" api="/links/site.json" isRegular="4"></div>
+        <p>（本文主体内容来自<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_28832135/article/details/79831700%EF%BC%8C%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9%E8%AF%B7%E5%8F%82%E8%80%83%E6%AD%A4%E6%96%87%EF%BC%89">https://blog.csdn.net/qq_28832135/article/details/79831700，更多内容请参考此文）</a></p>
+<p>（因为其他的我暂时用不到，实在是太多了…萌新的我排版不易~）</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Screen是一款由GNU计划开发的用于命令行终端切换的自由软件。用户可以通过该软件同时连接多个本地或远程的命令行会话，并在其间自由切换。GNU Screen可以看作是窗口管理器的命令行界面版本。它提供了统一的管理多个会话的界面和相应的功能。</p>
+<ul>
+<li>会话恢复</li>
+</ul>
+<p>只要Screen本身没有终止，在其内部运行的会话都可以恢复。这一点对于远程登录的用户特别有用——即使网络连接中断，用户也不会失去对已经打开的命令行会话的控制。只要再次登录到主机上执行screen -r就可以恢复会话的运行。同样在暂时离开的时候，也可以执行分离命令detach，在保证里面的程序正常运行的情况下让Screen挂起（切换到后台）。这一点和图形界面下的VNC很相似。</p>
+<ul>
+<li>多窗口</li>
+</ul>
+<p>在Screen环境下，所有的会话都独立的运行，并拥有各自的编号、输入、输出和窗口缓存。用户可以通过快捷键在不同的窗口下切换，并可以自由的重定向各个窗口的输入和输出。Screen实现了基本的文本操作，如复制粘贴等；还提供了类似滚动条的功能，可以查看窗口状况的历史记录。窗口还可以被分区和命名，还可以监视后台窗口的活动。 会话共享 Screen可以让一个或多个用户从不同终端多次登录一个会话，并共享会话的所有特性（比如可以看到完全相同的输出）。它同时提供了窗口访问权限的机制，可以对窗口进行密码保护。</p>
+<p>GNU’s Screen 官方站点：<a target="_blank" rel="noopener" href="http://www.gnu.org/software/screen/">http://www.gnu.org/software/screen/</a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install screen # (Centos)</span><br><span class="line">apt install screen # (Ubuntu)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><ul>
+<li>语法</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen [-AmRvx -ls -wipe][-d &lt;作业名称&gt;][-h &lt;行数&gt;][-r &lt;作业名称&gt;][-s ][-S &lt;作业名称&gt;]</span><br></pre></td></tr></table></figure>
+
+<p>运行命令（示例）：<br>（创建一个名为test的screen）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -S test</span><br></pre></td></tr></table></figure>
+
+<p>重新连接命令（示例）：<br>（重新连接一个名为test的screen）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -r test</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>选项</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-A 　将所有的视窗都调整为目前终端机的大小</span><br><span class="line">-d &lt;作业名称&gt; 　将指定的screen作业离线</span><br><span class="line">-h &lt;行数&gt; 　指定视窗的缓冲区行数</span><br><span class="line">-m 　即使目前已在作业中的screen作业，仍强制建立新的screen作业</span><br><span class="line">-r &lt;作业名称&gt; 　恢复离线的screen作业</span><br><span class="line">-r &lt;作业名称&gt; 　恢复离线的screen作业</span><br><span class="line">-R 　先试图恢复离线的作业。若找不到离线的作业，即建立新的screen作业</span><br><span class="line">-s 　指定建立新视窗时，所要执行的shell</span><br><span class="line">-S &lt;作业名称&gt; 　指定screen作业的名称</span><br><span class="line">-v 　显示版本信息</span><br><span class="line">-x 　恢复之前离线的screen作业</span><br><span class="line">-ls或--list 　显示目前所有的screen作业</span><br><span class="line">-wipe 　检查目前所有的screen作业，并删除已经无法使用的screen作业</span><br></pre></td></tr></table></figure>
+
+
+<p>常用screen参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">screen -S test -&gt; 新建一个名为test的会话</span><br><span class="line">screen -ls -&gt; 列出当前所有的会话</span><br><span class="line">screen -r test -&gt; 回到test这个会话</span><br><span class="line">screen -d test -&gt; 远程脱离test这个会话</span><br><span class="line">screen -d -r test -&gt; 结束当前会话并回到test这个会话</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在每个screen会话下，所有命令都以 ctrl+a(C-a) 开始。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">C-a ? -&gt; 显示所有键绑定信息</span><br><span class="line">C-a c -&gt; 创建一个新的运行shell的窗口并切换到该窗口</span><br><span class="line">C-a n -&gt; Next，切换到下一个 window</span><br><span class="line">C-a p -&gt; Previous，切换到前一个 window</span><br><span class="line">C-a 0..9 -&gt; 切换到第 0..9 个 window</span><br><span class="line">Ctrl+a [Space] -&gt; 由视窗0循序切换到视窗9</span><br><span class="line">C-a C-a -&gt; 在两个最近使用的 window 间切换</span><br><span class="line">C-a x -&gt; 锁住当前的 window，需用用户密码解锁</span><br></pre></td></tr></table></figure>
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/Linux/" class="">
+              Linux
+            </a>
+          
+            <a href="/tags/Screen/" class="">
+              Screen
+            </a>
+          
+            <a href="/tags/Linux-Screen/" class="">
+              Linux-Screen
+            </a>
+          
+        </div>
         
       </div>
       
@@ -575,7 +678,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/links/index.html" target="_blank" title="友人帐">https://blog.dmoe.top/links/index.html</a>
+    <a href="/2022/01/27/wiki-Screen/" target="_blank" title="【Linux】Screen使用">https://blog.dmoe.top/2022/01/27/wiki-Screen/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -593,7 +696,45 @@
 
 
 
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/uRpImCi3sVolnb" class="lazyload placeholder" data-srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/uRpImCi3sVolnb" srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/3pyRZV5b8dB_Rt" alt="">
+    </div>
+    <a href="/2022/04/02/course-CloudDisk/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">网盘不限速下载</div>
+      </div>
+      
+      <!-- <div class="content">
+        前言2023&#x2F;06&#x2F;07：目前不保证方法的可行性！
+准备
+一台 Windows &#x2F; Mac
+      </div> -->
+    </a>
+  </div>
 
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/QCOqNCvxt6QCI8" class="lazyload placeholder" data-srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/QCOqNCvxt6QCI8" srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/3pyRZV5b8dB_Rt" src="" alt="">
+    </div>
+    <a href="/2022/01/26/resource-DomainTool/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">【域名工具推荐#1】</div>
+      </div>
+      <!-- <div class="content">
+        本文主体内容转载于 Dark’s blog
+【#1网页工具】*whois 查询 http://whois.qling.x
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -756,58 +897,29 @@
   <div class="layout_sticky">    
     
       
-        
-    <section class="widget side_category">
-      
+<section class="widget side_toc">
+  
   <header>
     
-      <a style="color: " href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">文章目录</span>
     
   </header>
 
 
-      <div class='content'>
-        <ul class="entry navigation">
-          
-            <li><a class="flat-box"
-              title="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"
-              id="categoriesE68A80E69CAFE69599E7A88B"
-              ><div class='name'>技术教程</div><div class='badge'>(8)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BAWiki/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BAWiki/"
-              id="categoriesE8AEA1E7AE97E69CBAWiki"
-              ><div class='name'>计算机Wiki</div><div class='badge'>(3)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" href="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/"
-              id="categoriesE8B584E6BA90E58886E4BAAB"
-              ><div class='name'>资源分享</div><div class='badge'>(2)</div></a></li>
-          
-        </ul>
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C"><span class="toc-text">运行</span></a></li></ol> -->
+        <div class="toc"></div>
       </div>
-    </section>
-  
-  
-      
-      
-        
-<section class="widget side_tagcloud">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-    <a href="/tags/DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">DNS服务</a> <a href="/tags/Frp%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp客户端搭建</a> <a href="/tags/Frp%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp搭建</a> <a href="/tags/Frp%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp服务端搭建</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/Github-Page/" style="font-size: 14px; color: #999">Github Page</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/Hexo%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Hexo搭建</a> <a href="/tags/Hexo%E6%95%99%E7%A8%8B/" style="font-size: 14px; color: #999">Hexo教程</a> <a href="/tags/Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="/tags/Linux-Screen/" style="font-size: 14px; color: #999">Linux-Screen</a> <a href="/tags/MCBE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B/" style="font-size: 24px; color: #555">MCBE服务器教程</a> <a href="/tags/MinecraftBE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B/" style="font-size: 24px; color: #555">MinecraftBE服务器教程</a> <a href="/tags/PicGo/" style="font-size: 14px; color: #999">PicGo</a> <a href="/tags/Screen/" style="font-size: 14px; color: #999">Screen</a> <a href="/tags/Tampermonkey/" style="font-size: 14px; color: #999">Tampermonkey</a> <a href="/tags/Whois%E6%9F%A5%E8%AF%A2/" style="font-size: 14px; color: #999">Whois查询</a> <a href="/tags/Windows/" style="font-size: 19px; color: #777">Windows</a> <a href="/tags/Windows10/" style="font-size: 14px; color: #999">Windows10</a> <a href="/tags/Windows10%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">Windows10常见问题</a> <a href="/tags/Windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">Windows常见问题</a> <a href="/tags/jsdelivr/" style="font-size: 14px; color: #999">jsdelivr</a> <a href="/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">免费图床搭建</a> <a href="/tags/%E5%85%8D%E8%B4%B9%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">免费邮箱</a> <a href="/tags/%E5%85%A8%E7%90%83DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">全球DNS服务</a> <a href="/tags/%E5%9B%BD%E5%86%85DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">国内DNS服务</a> <a href="/tags/%E5%9B%BD%E5%86%85%E5%85%8D%E8%B4%B9%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">国内免费邮箱</a> <a href="/tags/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">图床搭建</a> <a href="/tags/%E5%9F%9F%E5%90%8D%E5%B7%A5%E5%85%B7%EF%BC%8C-Whois/" style="font-size: 14px; color: #999">域名工具， Whois</a> <a href="/tags/%E6%B2%B9%E7%8C%B4/" style="font-size: 14px; color: #999">油猴</a> <a href="/tags/%E6%B5%B7%E5%A4%96DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">海外DNS服务</a> <a href="/tags/%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E9%80%9F%E4%B8%8B%E8%BD%BD/" style="font-size: 14px; color: #999">网盘不限速下载</a> <a href="/tags/%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">邮箱</a>
     </div>
+  </div>
 </section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  
-      
       
   <section class="widget side_recent_post">
     
@@ -933,115 +1045,6 @@
     </div>
   </section>
 
-      
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>友人帐</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">5</span></a></li></ul></div>
-  </section>
-
-      <section class="widget side_webinfo">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class='name' style="color: ">站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>13 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2022/05/07'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Wed Jun 07 2023 19:25:34 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2023-06-07 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2023-06-07 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-      
     
   </div>
 </aside>
@@ -1123,7 +1126,7 @@
 			clearInterval(this.time);
 		},
 		mounted() {
-			let prop = 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/NwsVTjxKIks9Fx' || 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/evXBXwnTbh50-a';
+			let prop = '' || 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/evXBXwnTbh50-a';
 			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
 			if (isImg) {
 				let img = prop.split(',');

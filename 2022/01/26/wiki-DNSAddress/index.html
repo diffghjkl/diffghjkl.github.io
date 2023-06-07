@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>友人帐 | diffghjklのblog</title>
+  <title>全球免费公共 DNS 服务的 IP 地址 | diffghjklのblog</title>
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -195,7 +195,7 @@
       <main class="main" id="pjax-container">
         <!-- 头部导航 -->
         
-<header class="header  no-img-top" 
+<header class="header  " 
   id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
@@ -555,16 +555,298 @@
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
 
 
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/YRbFGO4fUYULZ3')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        全球免费公共 DNS 服务的 IP 地址
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2022-01-26 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BAWiki/" class="post-detail-header_category">
+              计算机Wiki
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
 
 
 <div class="post-detail-content post-row" 
-  style="padding-top: 60px;">
+  style="padding-top: 0px;">
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <div class="getJsonSite-api" api="/links/site.json" isRegular="4"></div>
+        <p>以下收集的是目前全球范围内的免费公共 DNS 服务的 IP 地址</p>
+<p>（内容来自互联网，排版不易，如有不妥之处还请指出！）</p>
+<p>（Tips：由于地区差异，同一组 DNS 服务器在不同国家不同地区的表现并不完全相同，解析速度、响应期间等都有所区别，所以建议各位以自行测速结果为准，多多对比再行选择！如果PING不通不代表不能用，可能是禁止PING了！）</p>
+<h1 id="【-1国内免费公共-DNS-解析服务】"><a href="#【-1国内免费公共-DNS-解析服务】" class="headerlink" title="【#1国内免费公共 DNS 解析服务】"></a>【#1国内免费公共 DNS 解析服务】</h1><h2 id="Public-DNS"><a href="#Public-DNS" class="headerlink" title="Public DNS+"></a>Public DNS+</h2><p>属于 腾讯云旗下的公共 DNS 服务</p>
+<p>拥有 80 多条国内线路和 4 条海外线路，有 BGP Anycast 技术，也是国内首家支持谷歌 ECS (edns-client-subnet) 要求的公共 DNS 解析服务</p>
+<p>它只使用一个 IP，但有三地集群容灾和秒级自动问题更换，在国内大多数地方的测速数据都非常好</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">首选：119.29.29.29</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="AliDNS-阿里公共-DNS"><a href="#AliDNS-阿里公共-DNS" class="headerlink" title="AliDNS 阿里公共 DNS"></a>AliDNS 阿里公共 DNS</h2><p>阿里云 推出的免费 DNS 递归解析系统，宣称全球数百台服务器组成的集群，拥有充足的带宽资源，目标是成为国内互联网基本设施的组成部分，支持 BGP Anycast 以及 ECS 技术</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：223.5.5.5</span><br><span class="line">（2）备用：223.6.6.6</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="114-DNS"><a href="#114-DNS" class="headerlink" title="114 DNS"></a>114 DNS</h2><p>在国内的客户量相当巨大，其 DNS 解析成功的机率高，能访问更多的国内外网站<br>号称纯净、无劫持、无需再忍受被强插广告或粗俗网站之痛苦<br>114DNS 做得比较早，有一定的技术积累，稳定性不错，尽管速度比前两者差一点点，但也都能让人满意<br>它还有一个特色，就是根据不同用途可以随便自由选择不同的 DNS 组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">常规公共 DNS (干净无劫持)</span><br><span class="line">（1）首选：114.114.114.114</span><br><span class="line">（2）备选：114.114.115.115</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">拦截钓鱼病毒木马网站 (保护上网安全)</span><br><span class="line">（1）首选：114.114.114.119</span><br><span class="line">（2）备用：114.114.115.119</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">拦截色情网站 (保护幼儿)</span><br><span class="line">（1）首选：114.114.114.110</span><br><span class="line">（2）备用：114.114.115.110</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="百度-BaiduDNS"><a href="#百度-BaiduDNS" class="headerlink" title="百度 BaiduDNS"></a>百度 BaiduDNS</h2><p>百度 DNS 公共解析服务，支持 ipv4 和 ipv6</p>
+<p>作为中国最大的搜索引擎，百度拥有一流的基本设施和强大技术实力，国内速度相当快！</p>
+<p>该服务超快稳定无劫持，AI智能拦截恶意网站，支持 BGP Anycast 和 ECS 技术</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址：180.76.76.76</span><br><span class="line">IPv6 地址：2400:da00::6666</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="DNS-派（DNSpai-Public-DNS）"><a href="#DNS-派（DNSpai-Public-DNS）" class="headerlink" title="DNS 派（DNSpai Public DNS）"></a>DNS 派（DNSpai Public DNS）</h2><p>DNS 派是由 360 出品的免费公众 DNS 解析服务</p>
+<p>它可以让网上冲浪更加稳定、超快、安全</p>
+<p>为家庭拦截钓鱼网站，过滤非法网站，建立一个绿色健康的网上环境</p>
+<p>为域名拼写自动纠错等</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">首选（电信/移动/铁通）：101.226.4.6</span><br><span class="line">备选（电信/移动/铁通）：218.30.118.6</span><br><span class="line">首选（联通）：123.125.81.6</span><br><span class="line">备选（联通）：140.207.198.6</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="CNNIC-sDNS-SecureDNS，简称-sDNS"><a href="#CNNIC-sDNS-SecureDNS，简称-sDNS" class="headerlink" title="CNNIC sDNS (SecureDNS，简称 sDNS)"></a>CNNIC sDNS (SecureDNS，简称 sDNS)</h2><p>由中国互联网络信息中心 CNNIC 与国内外电信运营服务商合作推出的免费公共云解析服务，旨在为客户提供高速、安全、AI智能的上网接入解析服务</p>
+<p>sDNS递归云解析服务选用 IP Anycast+BGP 技术跨位置、跨运营服务商的分布式异构部署，比运营服务商提供的 DNS 更快更稳定</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：1.2.4.8</span><br><span class="line">（2）备用：210.2.4.8</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="OneDNS"><a href="#OneDNS" class="headerlink" title="OneDNS"></a>OneDNS</h2><p>一个安全、超快、免费的小众 DNS 服务。它能屏蔽恶意网站、摆脱无良 ISP 的DNS污染与劫持</p>
+<p>同时横跨南北的高速线路加速您的互联网络连接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：117.50.11.11</span><br><span class="line">（2）备用：117.50.22.22</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="香港地区公共-DNS-解析服务香港宽频-x2F-HKBN香港宽频-DNS"><a href="#香港地区公共-DNS-解析服务香港宽频-x2F-HKBN香港宽频-DNS" class="headerlink" title="香港地区公共 DNS 解析服务香港宽频 &#x2F; HKBN香港宽频 DNS"></a>香港地区公共 DNS 解析服务香港宽频 &#x2F; HKBN香港宽频 DNS</h2> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">首选：203.80.96.10</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="【-2国内公共-IPv6-DNS-服务器-IP】"><a href="#【-2国内公共-IPv6-DNS-服务器-IP】" class="headerlink" title="【#2国内公共 IPv6 DNS 服务器 IP】"></a>【#2国内公共 IPv6 DNS 服务器 IP】</h1><h2 id="雪人计划-Yeti-DNS-Project"><a href="#雪人计划-Yeti-DNS-Project" class="headerlink" title="*雪人计划 Yeti DNS Project"></a>*雪人计划 Yeti DNS Project</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：240C::6666</span><br><span class="line">（2）备用：240C::6644</span><br><span class="line">（3）备用：240C::4444</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="CNNIC-IPv6-DNS-服务器"><a href="#CNNIC-IPv6-DNS-服务器" class="headerlink" title="*CNNIC IPv6 DNS 服务器"></a>*CNNIC IPv6 DNS 服务器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">首选：2001:dc7:1000::1</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="【-3国内教育网-IPv6-DNS-服务器-IP】"><a href="#【-3国内教育网-IPv6-DNS-服务器-IP】" class="headerlink" title="【#3国内教育网 IPv6 DNS 服务器 IP】"></a>【#3国内教育网 IPv6 DNS 服务器 IP】</h1><h2 id="北京邮电大学-IPv6-DNS-服务器"><a href="#北京邮电大学-IPv6-DNS-服务器" class="headerlink" title="北京邮电大学 IPv6 DNS 服务器"></a>北京邮电大学 IPv6 DNS 服务器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2001:da8:202:10::36</span><br><span class="line">（2）备用：2001:da8:202:10::37</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="上海交通大学-IPv6-DNS-服务器"><a href="#上海交通大学-IPv6-DNS-服务器" class="headerlink" title="*上海交通大学 IPv6 DNS 服务器"></a>*上海交通大学 IPv6 DNS 服务器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2001:da8:8000:1:202:120:2:100</span><br><span class="line">（2）备用：2001:da8:8000:1:202:120:2:101</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="清华大学-TUNA-协会-IPv6-DNS-服务器"><a href="#清华大学-TUNA-协会-IPv6-DNS-服务器" class="headerlink" title="*清华大学 TUNA 协会 IPv6 DNS 服务器"></a>*清华大学 TUNA 协会 IPv6 DNS 服务器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">首选：2001:da8::666</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="北京科技大学-IPv6-DNS-服务器"><a href="#北京科技大学-IPv6-DNS-服务器" class="headerlink" title="*北京科技大学 IPv6 DNS 服务器"></a>*北京科技大学 IPv6 DNS 服务器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">首选：2001:da8:208:10::6</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="科技网-IPv6-DNS-服务器"><a href="#科技网-IPv6-DNS-服务器" class="headerlink" title="*科技网 IPv6 DNS 服务器"></a>*科技网 IPv6 DNS 服务器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">首选：2001:cc0:2fff:2::6</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h1 id="【-4海外免费公共-DNS-解析服务】"><a href="#【-4海外免费公共-DNS-解析服务】" class="headerlink" title="【#4海外免费公共 DNS 解析服务】"></a>【#4海外免费公共 DNS 解析服务】</h1><p>顾名思义，海外的 DNS 当然是适合海外客户使用</p>
+<p>而对于国内来说，尽管这些 DNS 服务器在国内访问速度不算快，但作用也不少，比如买了国外的 Vps 来搭建应用时，可以配置它使用海外的 DNS 等等</p>
+<h2 id="Google-Public-DNS-8-8-8-8"><a href="#Google-Public-DNS-8-8-8-8" class="headerlink" title="*Google Public DNS(8.8.8.8)"></a>*Google Public DNS(8.8.8.8)</h2><p>来自 Google 提供的免费全球公共 DNS 服务，主要为了改进网络观看速度、改善网络客户的观看体验</p>
+<p>这个基本上不用多做什么介绍了，可能它也是目前全球范围内使用量最大的公共 DNS 了，老牌、稳定、技术强劲</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：8.8.8.8</span><br><span class="line">（2）备用：8.8.4.4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2001:4860:4860::8888</span><br><span class="line">（2）备用：2001:4860:4860::8844</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="CloudFlare-DNS-1-1-1-1"><a href="#CloudFlare-DNS-1-1-1-1" class="headerlink" title="*CloudFlare DNS (1.1.1.1)"></a>*CloudFlare DNS (1.1.1.1)</h2><p>号称全球最快的 DNS 服务 (当然天朝不算在全球范围内 &gt;_&lt;)， CloudFlare 是全球最大的 CDN &#x2F; DDOS 防护服务提供商之一 (在国内与百度云加速合作)，其遍布全球的基本设施资源极其丰盛，资金和技术实力相当雄厚</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：1.1.1.1</span><br><span class="line">（2）备用：1.0.0.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2606:4700:4700::1111</span><br><span class="line">（2）备用：2606:4700:4700::1001</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="IBM-Quad9-9-9-9-9"><a href="#IBM-Quad9-9-9-9-9" class="headerlink" title="*IBM Quad9 (9.9.9.9)"></a>*IBM Quad9 (9.9.9.9)</h2><p>由IBM 、Global Cyber Alliance 和 Packet Clearing House 合作推出的免费 Quad9 公共 DNS 服务 (9.9.9.9)，主打安全，它会AI智能屏蔽恶意网址、僵尸网络、钓鱼攻击和其它恶意主机相关联的域名，而且更注重隐私保护</p>
+<p>对安全有要求的可以使用这组 DNS</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：9.9.9.9</span><br><span class="line">（2）备用：149.112.112.112</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2620:fe::fe</span><br><span class="line">（2）备用：2620:fe::9</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Cisco-OpenDNSOpenDNS"><a href="#Cisco-OpenDNSOpenDNS" class="headerlink" title="*Cisco OpenDNSOpenDNS"></a>*Cisco OpenDNSOpenDNS</h2><p>一个老牌的免费公共 DNS 提供商，后来被 Cisco (思科) 全资收购</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：208.67.222.222</span><br><span class="line">（2）备用：208.67.220.220</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2620:0:ccc::2</span><br><span class="line">（2）备用：2620:0:ccd::2</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Hurricane-Electric-Public-DNS-（HE）HE-Public-DNS"><a href="#Hurricane-Electric-Public-DNS-（HE）HE-Public-DNS" class="headerlink" title="*Hurricane Electric Public DNS （HE）HE Public DNS"></a>*Hurricane Electric Public DNS （HE）HE Public DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：74.82.42.42</span><br><span class="line">（2）备用：66.220.18.42</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2001:470:20::2</span><br><span class="line">（2）备用：2001:470:0:9d::2</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="科摩多-Comodo-SecureDNS科摩多公共-DNS-服务"><a href="#科摩多-Comodo-SecureDNS科摩多公共-DNS-服务" class="headerlink" title="*科摩多 Comodo SecureDNS科摩多公共 DNS 服务"></a>*科摩多 Comodo SecureDNS科摩多公共 DNS 服务</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：8.26.56.26</span><br><span class="line">（2）备用：8.20.247.20</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Verisign-Public-DNSVerisign-Public-DNS"><a href="#Verisign-Public-DNSVerisign-Public-DNS" class="headerlink" title="*Verisign Public DNSVerisign Public DNS"></a>*Verisign Public DNSVerisign Public DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：64.6.64.6</span><br><span class="line">（2）备用：64.6.65.6</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2620:74:1b::1:1</span><br><span class="line">（2）备用：2620:74:1c::2:2</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Neustar-Recursive-DNSNeustar-Recursive-DNS"><a href="#Neustar-Recursive-DNSNeustar-Recursive-DNS" class="headerlink" title="*Neustar Recursive DNSNeustar Recursive DNS"></a>*Neustar Recursive DNSNeustar Recursive DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：156.154.70.1</span><br><span class="line">（2）备用：156.154.71.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2610:a1:1018::1</span><br><span class="line">（2）备用：2610:a1:1019::1</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="ORACLE-Dyn-Public-DNSDyn-Public-DNS"><a href="#ORACLE-Dyn-Public-DNSDyn-Public-DNS" class="headerlink" title="*ORACLE Dyn Public DNSDyn Public DNS"></a>*ORACLE Dyn Public DNSDyn Public DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：216.146.36.36</span><br><span class="line">（2）备用：216.146.35.35</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Level3-Public-DNSLevel3-Public-DNS"><a href="#Level3-Public-DNSLevel3-Public-DNS" class="headerlink" title="*Level3 Public DNSLevel3 Public DNS"></a>*Level3 Public DNSLevel3 Public DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：209.244.0.3</span><br><span class="line">（2）备用：209.244.0.4</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Alternate-DNSAlternate-DNS"><a href="#Alternate-DNSAlternate-DNS" class="headerlink" title="*Alternate DNSAlternate DNS"></a>*Alternate DNSAlternate DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：23.253.163.53</span><br><span class="line">（2）备用：198.101.242.72</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="和记环球电讯-DNS和记环球电讯-DNS"><a href="#和记环球电讯-DNS和记环球电讯-DNS" class="headerlink" title="*和记环球电讯 DNS和记环球电讯 DNS"></a>*和记环球电讯 DNS和记环球电讯 DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：202.45.84.58</span><br><span class="line">（2）备用：202.45.84.59</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Pacific-SuperNet-DNSPacific-SuperNet-DNS"><a href="#Pacific-SuperNet-DNSPacific-SuperNet-DNS" class="headerlink" title="*Pacific SuperNet DNSPacific SuperNet DNS"></a>*Pacific SuperNet DNSPacific SuperNet DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：202.14.67.4</span><br><span class="line">（2）备用：202.14.67.14</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="台湾地区公共-DNS-解析服务中华电信-x2F-HiNet中华电信公共-DNS"><a href="#台湾地区公共-DNS-解析服务中华电信-x2F-HiNet中华电信公共-DNS" class="headerlink" title="*台湾地区公共 DNS 解析服务中华电信 &#x2F; HiNet中华电信公共 DNS"></a>*台湾地区公共 DNS 解析服务中华电信 &#x2F; HiNet中华电信公共 DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：168.95.1.1</span><br><span class="line">（2）备用：168.95.192.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2001:b000:168::1</span><br><span class="line">（2）备用：2001:b000:168::2</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="数位联合电信-x2F-Seednet数位联合电信-DNS"><a href="#数位联合电信-x2F-Seednet数位联合电信-DNS" class="headerlink" title="*数位联合电信 &#x2F; Seednet数位联合电信 DNS"></a>*数位联合电信 &#x2F; Seednet数位联合电信 DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：139.175.252.16</span><br><span class="line">（2）备用：139.175.55.244</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="台湾网路新闻-x2F-TWNIC-Quad101-Public-DNS台湾网路新闻-TWNIC-Quad101-Public-DNS"><a href="#台湾网路新闻-x2F-TWNIC-Quad101-Public-DNS台湾网路新闻-TWNIC-Quad101-Public-DNS" class="headerlink" title="*台湾网路新闻 &#x2F; TWNIC Quad101 Public DNS台湾网路新闻 TWNIC Quad101 Public DNS"></a>*台湾网路新闻 &#x2F; TWNIC Quad101 Public DNS台湾网路新闻 TWNIC Quad101 Public DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：101.101.101.101</span><br><span class="line">（2）备用：101.102.103.104</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2001:de4::101</span><br><span class="line">（2）备用：2001:de4::102</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="韩国免费公共-DNS-解析服务介绍：KT-ollehKT-olleh-DNS"><a href="#韩国免费公共-DNS-解析服务介绍：KT-ollehKT-olleh-DNS" class="headerlink" title="*韩国免费公共 DNS 解析服务介绍：KT ollehKT olleh DNS"></a>*韩国免费公共 DNS 解析服务介绍：KT ollehKT olleh DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：168.126.63.1</span><br><span class="line">（2）备用：168.126.63.2</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SK-BroadbandSK-Broadband-DNS"><a href="#SK-BroadbandSK-Broadband-DNS" class="headerlink" title="*SK BroadbandSK Broadband DNS"></a>*SK BroadbandSK Broadband DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：210.220.163.82</span><br><span class="line">（2）备用：219.250.36.130</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="LG-U-LG-U-DNS"><a href="#LG-U-LG-U-DNS" class="headerlink" title="*LG U+LG U+ DNS"></a>*LG U+LG U+ DNS</h2><p>两者二选一</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">（1）首选：164.124.101.2</span><br><span class="line"></span><br><span class="line">*****备用：203.248.252.2</span><br><span class="line"></span><br><span class="line">（2）首选：164.124.107.9</span><br><span class="line"></span><br><span class="line">*****备用：203.248.242.2</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="俄罗斯-Yandex-Public-DNS"><a href="#俄罗斯-Yandex-Public-DNS" class="headerlink" title="*俄罗斯 Yandex Public DNS"></a>*俄罗斯 Yandex Public DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：77.88.8.8</span><br><span class="line">（2）备用：77.88.8.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2a02:6b8::feed:0ff</span><br><span class="line">（2）备用：2a02:6b8:0:1::feed:0ff</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="俄罗斯-SafeDNS"><a href="#俄罗斯-SafeDNS" class="headerlink" title="*俄罗斯 SafeDNS"></a>*俄罗斯 SafeDNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：195.46.39.39</span><br><span class="line">（2）备用：195.46.39.40</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="德国-DNS-WATCH-Public-DNS"><a href="#德国-DNS-WATCH-Public-DNS" class="headerlink" title="*德国 DNS.WATCH Public DNS"></a>*德国 DNS.WATCH Public DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：84.200.69.80</span><br><span class="line">（2）备用：84.200.70.40</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2001:1608:10:25::1c04:b12f</span><br><span class="line">（2）备用：2001:1608:10:25::9249:d69b</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="瑞士-xiala-net-Public-DNS"><a href="#瑞士-xiala-net-Public-DNS" class="headerlink" title="*瑞士 xiala.net Public DNS"></a>*瑞士 xiala.net Public DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：77.109.148.136</span><br><span class="line">（2）备用：77.109.148.137</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2001:1620:2078:136::</span><br><span class="line">（2）备用：2001:1620:2078:137::</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="丹麦-UncensoredDNS"><a href="#丹麦-UncensoredDNS" class="headerlink" title="*丹麦 UncensoredDNS"></a>*丹麦 UncensoredDNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4 地址</span><br><span class="line">（1）首选：91.239.100.100</span><br><span class="line">（2）备用：89.233.43.71</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv6 地址</span><br><span class="line">（1）首选：2001:67c:28a4::</span><br><span class="line">（2）备用：2a01:3a0:53:53::</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="荷兰-Freenom-World-Public-DNS"><a href="#荷兰-Freenom-World-Public-DNS" class="headerlink" title="*荷兰 Freenom World Public DNS"></a>*荷兰 Freenom World Public DNS</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IPv4地址</span><br><span class="line">（1）首选：80.80.80.80</span><br><span class="line">（2）备用：80.80.81.81</span><br></pre></td></tr></table></figure>
+
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/DNS%E6%9C%8D%E5%8A%A1/" class="">
+              DNS服务
+            </a>
+          
+            <a href="/tags/%E5%85%A8%E7%90%83DNS%E6%9C%8D%E5%8A%A1/" class="">
+              全球DNS服务
+            </a>
+          
+            <a href="/tags/%E5%9B%BD%E5%86%85DNS%E6%9C%8D%E5%8A%A1/" class="">
+              国内DNS服务
+            </a>
+          
+            <a href="/tags/%E6%B5%B7%E5%A4%96DNS%E6%9C%8D%E5%8A%A1/" class="">
+              海外DNS服务
+            </a>
+          
+        </div>
         
       </div>
       
@@ -575,7 +857,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/links/index.html" target="_blank" title="友人帐">https://blog.dmoe.top/links/index.html</a>
+    <a href="/2022/01/26/wiki-DNSAddress/" target="_blank" title="全球免费公共 DNS 服务的 IP 地址">https://blog.dmoe.top/2022/01/26/wiki-DNSAddress/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -593,7 +875,50 @@
 
 
 
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/QCOqNCvxt6QCI8" class="lazyload placeholder" data-srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/QCOqNCvxt6QCI8" srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/3pyRZV5b8dB_Rt" alt="">
+    </div>
+    <a href="/2022/01/26/resource-DomainTool/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">【域名工具推荐#1】</div>
+      </div>
+      
+      <!-- <div class="content">
+        本文主体内容转载于 Dark’s blog
+【#1网页工具】*whois 查询 http://whois.qling.x
+      </div> -->
+    </a>
+  </div>
 
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://api.imlazy.ink/img" class="lazyload placeholder" data-srcset="https://api.imlazy.ink/img" srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/3pyRZV5b8dB_Rt" src="" alt="">
+    </div>
+    <a href="/2022/01/25/resource-Free-Email/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">【国内免费邮箱推荐】（不定期更新中...）</div>
+      </div>
+      <!-- <div class="content">
+        QQ邮箱
+网址：QQ邮箱官网
+注册方式：需使用微信&#x2F;QQ账号注册
+
+网易邮箱
+网址：
+
+（1）网易163邮箱官
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -756,58 +1081,29 @@
   <div class="layout_sticky">    
     
       
-        
-    <section class="widget side_category">
-      
+<section class="widget side_toc">
+  
   <header>
     
-      <a style="color: " href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">文章目录</span>
     
   </header>
 
 
-      <div class='content'>
-        <ul class="entry navigation">
-          
-            <li><a class="flat-box"
-              title="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"
-              id="categoriesE68A80E69CAFE69599E7A88B"
-              ><div class='name'>技术教程</div><div class='badge'>(8)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BAWiki/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BAWiki/"
-              id="categoriesE8AEA1E7AE97E69CBAWiki"
-              ><div class='name'>计算机Wiki</div><div class='badge'>(3)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" href="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/"
-              id="categoriesE8B584E6BA90E58886E4BAAB"
-              ><div class='name'>资源分享</div><div class='badge'>(2)</div></a></li>
-          
-        </ul>
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%80%90-1%E5%9B%BD%E5%86%85%E5%85%8D%E8%B4%B9%E5%85%AC%E5%85%B1-DNS-%E8%A7%A3%E6%9E%90%E6%9C%8D%E5%8A%A1%E3%80%91"><span class="toc-text">【#1国内免费公共 DNS 解析服务】</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Public-DNS"><span class="toc-text">Public DNS+</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AliDNS-%E9%98%BF%E9%87%8C%E5%85%AC%E5%85%B1-DNS"><span class="toc-text">AliDNS 阿里公共 DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#114-DNS"><span class="toc-text">114 DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BE%E5%BA%A6-BaiduDNS"><span class="toc-text">百度 BaiduDNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DNS-%E6%B4%BE%EF%BC%88DNSpai-Public-DNS%EF%BC%89"><span class="toc-text">DNS 派（DNSpai Public DNS）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CNNIC-sDNS-SecureDNS%EF%BC%8C%E7%AE%80%E7%A7%B0-sDNS"><span class="toc-text">CNNIC sDNS (SecureDNS，简称 sDNS)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OneDNS"><span class="toc-text">OneDNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%99%E6%B8%AF%E5%9C%B0%E5%8C%BA%E5%85%AC%E5%85%B1-DNS-%E8%A7%A3%E6%9E%90%E6%9C%8D%E5%8A%A1%E9%A6%99%E6%B8%AF%E5%AE%BD%E9%A2%91-x2F-HKBN%E9%A6%99%E6%B8%AF%E5%AE%BD%E9%A2%91-DNS"><span class="toc-text">香港地区公共 DNS 解析服务香港宽频 &#x2F; HKBN香港宽频 DNS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%80%90-2%E5%9B%BD%E5%86%85%E5%85%AC%E5%85%B1-IPv6-DNS-%E6%9C%8D%E5%8A%A1%E5%99%A8-IP%E3%80%91"><span class="toc-text">【#2国内公共 IPv6 DNS 服务器 IP】</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%AA%E4%BA%BA%E8%AE%A1%E5%88%92-Yeti-DNS-Project"><span class="toc-text">*雪人计划 Yeti DNS Project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CNNIC-IPv6-DNS-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">*CNNIC IPv6 DNS 服务器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%80%90-3%E5%9B%BD%E5%86%85%E6%95%99%E8%82%B2%E7%BD%91-IPv6-DNS-%E6%9C%8D%E5%8A%A1%E5%99%A8-IP%E3%80%91"><span class="toc-text">【#3国内教育网 IPv6 DNS 服务器 IP】</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%97%E4%BA%AC%E9%82%AE%E7%94%B5%E5%A4%A7%E5%AD%A6-IPv6-DNS-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">北京邮电大学 IPv6 DNS 服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6-IPv6-DNS-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">*上海交通大学 IPv6 DNS 服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6-TUNA-%E5%8D%8F%E4%BC%9A-IPv6-DNS-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">*清华大学 TUNA 协会 IPv6 DNS 服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%97%E4%BA%AC%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6-IPv6-DNS-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">*北京科技大学 IPv6 DNS 服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%91%E6%8A%80%E7%BD%91-IPv6-DNS-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">*科技网 IPv6 DNS 服务器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%80%90-4%E6%B5%B7%E5%A4%96%E5%85%8D%E8%B4%B9%E5%85%AC%E5%85%B1-DNS-%E8%A7%A3%E6%9E%90%E6%9C%8D%E5%8A%A1%E3%80%91"><span class="toc-text">【#4海外免费公共 DNS 解析服务】</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Google-Public-DNS-8-8-8-8"><span class="toc-text">*Google Public DNS(8.8.8.8)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CloudFlare-DNS-1-1-1-1"><span class="toc-text">*CloudFlare DNS (1.1.1.1)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IBM-Quad9-9-9-9-9"><span class="toc-text">*IBM Quad9 (9.9.9.9)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cisco-OpenDNSOpenDNS"><span class="toc-text">*Cisco OpenDNSOpenDNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hurricane-Electric-Public-DNS-%EF%BC%88HE%EF%BC%89HE-Public-DNS"><span class="toc-text">*Hurricane Electric Public DNS （HE）HE Public DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%91%E6%91%A9%E5%A4%9A-Comodo-SecureDNS%E7%A7%91%E6%91%A9%E5%A4%9A%E5%85%AC%E5%85%B1-DNS-%E6%9C%8D%E5%8A%A1"><span class="toc-text">*科摩多 Comodo SecureDNS科摩多公共 DNS 服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Verisign-Public-DNSVerisign-Public-DNS"><span class="toc-text">*Verisign Public DNSVerisign Public DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Neustar-Recursive-DNSNeustar-Recursive-DNS"><span class="toc-text">*Neustar Recursive DNSNeustar Recursive DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ORACLE-Dyn-Public-DNSDyn-Public-DNS"><span class="toc-text">*ORACLE Dyn Public DNSDyn Public DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Level3-Public-DNSLevel3-Public-DNS"><span class="toc-text">*Level3 Public DNSLevel3 Public DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Alternate-DNSAlternate-DNS"><span class="toc-text">*Alternate DNSAlternate DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%92%8C%E8%AE%B0%E7%8E%AF%E7%90%83%E7%94%B5%E8%AE%AF-DNS%E5%92%8C%E8%AE%B0%E7%8E%AF%E7%90%83%E7%94%B5%E8%AE%AF-DNS"><span class="toc-text">*和记环球电讯 DNS和记环球电讯 DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pacific-SuperNet-DNSPacific-SuperNet-DNS"><span class="toc-text">*Pacific SuperNet DNSPacific SuperNet DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%B0%E6%B9%BE%E5%9C%B0%E5%8C%BA%E5%85%AC%E5%85%B1-DNS-%E8%A7%A3%E6%9E%90%E6%9C%8D%E5%8A%A1%E4%B8%AD%E5%8D%8E%E7%94%B5%E4%BF%A1-x2F-HiNet%E4%B8%AD%E5%8D%8E%E7%94%B5%E4%BF%A1%E5%85%AC%E5%85%B1-DNS"><span class="toc-text">*台湾地区公共 DNS 解析服务中华电信 &#x2F; HiNet中华电信公共 DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E4%BD%8D%E8%81%94%E5%90%88%E7%94%B5%E4%BF%A1-x2F-Seednet%E6%95%B0%E4%BD%8D%E8%81%94%E5%90%88%E7%94%B5%E4%BF%A1-DNS"><span class="toc-text">*数位联合电信 &#x2F; Seednet数位联合电信 DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%B0%E6%B9%BE%E7%BD%91%E8%B7%AF%E6%96%B0%E9%97%BB-x2F-TWNIC-Quad101-Public-DNS%E5%8F%B0%E6%B9%BE%E7%BD%91%E8%B7%AF%E6%96%B0%E9%97%BB-TWNIC-Quad101-Public-DNS"><span class="toc-text">*台湾网路新闻 &#x2F; TWNIC Quad101 Public DNS台湾网路新闻 TWNIC Quad101 Public DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9F%A9%E5%9B%BD%E5%85%8D%E8%B4%B9%E5%85%AC%E5%85%B1-DNS-%E8%A7%A3%E6%9E%90%E6%9C%8D%E5%8A%A1%E4%BB%8B%E7%BB%8D%EF%BC%9AKT-ollehKT-olleh-DNS"><span class="toc-text">*韩国免费公共 DNS 解析服务介绍：KT ollehKT olleh DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SK-BroadbandSK-Broadband-DNS"><span class="toc-text">*SK BroadbandSK Broadband DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LG-U-LG-U-DNS"><span class="toc-text">*LG U+LG U+ DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%84%E7%BD%97%E6%96%AF-Yandex-Public-DNS"><span class="toc-text">*俄罗斯 Yandex Public DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%84%E7%BD%97%E6%96%AF-SafeDNS"><span class="toc-text">*俄罗斯 SafeDNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%B7%E5%9B%BD-DNS-WATCH-Public-DNS"><span class="toc-text">*德国 DNS.WATCH Public DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%91%9E%E5%A3%AB-xiala-net-Public-DNS"><span class="toc-text">*瑞士 xiala.net Public DNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B9%E9%BA%A6-UncensoredDNS"><span class="toc-text">*丹麦 UncensoredDNS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8D%B7%E5%85%B0-Freenom-World-Public-DNS"><span class="toc-text">*荷兰 Freenom World Public DNS</span></a></li></ol></li></ol> -->
+        <div class="toc"></div>
       </div>
-    </section>
-  
-  
-      
-      
-        
-<section class="widget side_tagcloud">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-    <a href="/tags/DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">DNS服务</a> <a href="/tags/Frp%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp客户端搭建</a> <a href="/tags/Frp%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp搭建</a> <a href="/tags/Frp%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp服务端搭建</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/Github-Page/" style="font-size: 14px; color: #999">Github Page</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/Hexo%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Hexo搭建</a> <a href="/tags/Hexo%E6%95%99%E7%A8%8B/" style="font-size: 14px; color: #999">Hexo教程</a> <a href="/tags/Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="/tags/Linux-Screen/" style="font-size: 14px; color: #999">Linux-Screen</a> <a href="/tags/MCBE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B/" style="font-size: 24px; color: #555">MCBE服务器教程</a> <a href="/tags/MinecraftBE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B/" style="font-size: 24px; color: #555">MinecraftBE服务器教程</a> <a href="/tags/PicGo/" style="font-size: 14px; color: #999">PicGo</a> <a href="/tags/Screen/" style="font-size: 14px; color: #999">Screen</a> <a href="/tags/Tampermonkey/" style="font-size: 14px; color: #999">Tampermonkey</a> <a href="/tags/Whois%E6%9F%A5%E8%AF%A2/" style="font-size: 14px; color: #999">Whois查询</a> <a href="/tags/Windows/" style="font-size: 19px; color: #777">Windows</a> <a href="/tags/Windows10/" style="font-size: 14px; color: #999">Windows10</a> <a href="/tags/Windows10%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">Windows10常见问题</a> <a href="/tags/Windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">Windows常见问题</a> <a href="/tags/jsdelivr/" style="font-size: 14px; color: #999">jsdelivr</a> <a href="/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">免费图床搭建</a> <a href="/tags/%E5%85%8D%E8%B4%B9%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">免费邮箱</a> <a href="/tags/%E5%85%A8%E7%90%83DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">全球DNS服务</a> <a href="/tags/%E5%9B%BD%E5%86%85DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">国内DNS服务</a> <a href="/tags/%E5%9B%BD%E5%86%85%E5%85%8D%E8%B4%B9%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">国内免费邮箱</a> <a href="/tags/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">图床搭建</a> <a href="/tags/%E5%9F%9F%E5%90%8D%E5%B7%A5%E5%85%B7%EF%BC%8C-Whois/" style="font-size: 14px; color: #999">域名工具， Whois</a> <a href="/tags/%E6%B2%B9%E7%8C%B4/" style="font-size: 14px; color: #999">油猴</a> <a href="/tags/%E6%B5%B7%E5%A4%96DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">海外DNS服务</a> <a href="/tags/%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E9%80%9F%E4%B8%8B%E8%BD%BD/" style="font-size: 14px; color: #999">网盘不限速下载</a> <a href="/tags/%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">邮箱</a>
     </div>
+  </div>
 </section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  
-      
       
   <section class="widget side_recent_post">
     
@@ -933,115 +1229,6 @@
     </div>
   </section>
 
-      
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>友人帐</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">5</span></a></li></ul></div>
-  </section>
-
-      <section class="widget side_webinfo">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class='name' style="color: ">站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>13 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2022/05/07'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Wed Jun 07 2023 19:25:34 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2023-06-07 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2023-06-07 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-      
     
   </div>
 </aside>
@@ -1123,7 +1310,7 @@
 			clearInterval(this.time);
 		},
 		mounted() {
-			let prop = 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/NwsVTjxKIks9Fx' || 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/evXBXwnTbh50-a';
+			let prop = '' || 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/evXBXwnTbh50-a';
 			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
 			if (isImg) {
 				let img = prop.split(',');

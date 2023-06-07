@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>友人帐 | diffghjklのblog</title>
+  <title>【Windows10】常见问题（不定期更新中...） | diffghjklのblog</title>
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -195,7 +195,7 @@
       <main class="main" id="pjax-container">
         <!-- 头部导航 -->
         
-<header class="header  no-img-top" 
+<header class="header  " 
   id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
@@ -555,16 +555,144 @@
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
 
 
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://api.imlazy.ink/img')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        【Windows10】常见问题（不定期更新中...）
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2022-01-23 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BAWiki/" class="post-detail-header_category">
+              计算机Wiki
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
 
 
 <div class="post-detail-content post-row" 
-  style="padding-top: 60px;">
+  style="padding-top: 0px;">
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <div class="getJsonSite-api" api="/links/site.json" isRegular="4"></div>
+        <h2 id="win10右下角操作中心图标消失（设置里的开关是灰色的）"><a href="#win10右下角操作中心图标消失（设置里的开关是灰色的）" class="headerlink" title="win10右下角操作中心图标消失（设置里的开关是灰色的）"></a>win10右下角操作中心图标消失（设置里的开关是灰色的）</h2><ul>
+<li>解决方法</li>
+</ul>
+<ol>
+<li><p>在Windows10的桌面，右键点击桌面左下角的开始按钮，在弹出的菜单中选择“运行”菜单项。这时会打开Windows10的运行窗口，在窗口中输入命令gpedit.msc，然后点击确定按钮</p>
+</li>
+<li><p>在打开的本地组策略编辑器窗口中，依次点击“用户配置&#x2F;管理模板&#x2F;开始菜单和任务栏”菜单项</p>
+</li>
+<li><p>在右侧窗口中找到“删除通知和操作中心”设置项<br>右键点击该设置项，在弹出菜单中选择“编辑”菜单项，或是直接双击“删除通知和操作中心”设置项。在打开的编辑窗口中，选择“已禁用”一项，最后点击确定按钮</p>
+</li>
+<li><p>再次进入任务栏图标显示设置窗口，操作中心后面的开关已变成可编辑状态，打开该开关就可以了</p>
+</li>
+</ol>
+<h2 id="Windows-10系统病毒和威胁防护被禁用"><a href="#Windows-10系统病毒和威胁防护被禁用" class="headerlink" title="Windows 10系统病毒和威胁防护被禁用"></a>Windows 10系统病毒和威胁防护被禁用</h2><ul>
+<li>原因</li>
+</ul>
+<p>下载有关软件而关闭了系统自动扫描功能，致使Windows 10系统病毒和威胁防护被禁用，在病毒和威胁防护 窗口中显示【你的 病毒和威胁防护 由你的组织管理】，且任务栏里的 Windows 安全中心图标也消失了</p>
+<ul>
+<li>解决方法</li>
+</ul>
+<ol>
+<li><p>进入注册表编辑器中，删除 DisableAntiSpyware 键项</p>
+</li>
+<li><p>在运行对话框中输入：regedit 命令，点击确定或者回车，打开注册表编辑器窗口</p>
+</li>
+<li><p>复制：\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender （注册表路径）到注册表编辑器窗口中的地址栏内。当命令复制好以后，我们按下键盘上的回车键，即可定位到 Windows Defender 键项</p>
+</li>
+<li><p>在 Windows Defender 对应的右侧窗口中，我们可以看到：DisableAntiSpyware    REG_DWORD  0x00000001(1)；右键点击：DisableAntiSpyware - 删除<br>此时会弹出一个确认数值删除的对话框：删除某些注册表值会引起系统不稳定。确实要永久删除此数值吗？点击：是（Y）后退出注册表编辑器窗口</p>
+</li>
+<li><p>注销或重新启动计算机，点击任务栏右下角的 Windows 安全中心 图标，打开Windows 安全中心，点击：病毒和威胁防护 项下的 立即重新启动<br>之后在病毒和威胁防护窗口中，正在运行快速扫描，说明 Windows 安全中心恢复正常</p>
+</li>
+</ol>
+<h1 id="Win10重装系统提示：在efi系统上windows只能安装到gpt磁盘"><a href="#Win10重装系统提示：在efi系统上windows只能安装到gpt磁盘" class="headerlink" title="Win10重装系统提示：在efi系统上windows只能安装到gpt磁盘"></a>Win10重装系统提示：在efi系统上windows只能安装到gpt磁盘</h1><ul>
+<li>问题描述</li>
+</ul>
+<p>当选中安装的系统盘时，提示Windows无法安装到这个磁盘，选中的磁盘具有MBR分区表。<br>在EFI系统上，Windows只能安装到GPT磁盘。<br>主要是由于BIOS方式对应MBR分区表；EFI方式则对应GPT分区。</p>
+<ul>
+<li>解决方法</li>
+</ul>
+<ol>
+<li>让启动U盘以传统的BIOS方式启动来安装。</li>
+<li>将电脑的系统盘由MBR修改为GPT。</li>
+</ol>
+<ul>
+<li>方法详解</li>
+</ul>
+<p>1）方法一：</p>
+<p>直接将启动U盘里的【efi】整个文件和【bootmgr.efi】文件删除后，再安装即可。</p>
+<p>2）方法二：</p>
+<ol>
+<li><p>在Win10安装界面，按 <code>Shift+F10</code> 打开 命令提示符 窗口</p>
+</li>
+<li><p>在 命令提示符 窗口依次执行如下命令：</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">diskpart  # 进入到 DISKPART 模式</span><br><span class="line">list disk  # 查看电脑的硬盘。编号0，表示电脑的第一块硬盘；编号2，表示电脑的第二块硬盘；........。根据电脑的硬盘数量不同显示不同</span><br><span class="line">select disk  0   # 表示选中第一块硬盘（select disk x 命令中的x，表示选中的硬盘编号）</span><br><span class="line">clean   # 清除选中硬盘上的所有分区和数据</span><br><span class="line">convert gpt   # 将选中的硬盘转换成GPT分区表格式</span><br><span class="line">exit  # 命令退出 DISKPART 模式</span><br><span class="line">exit  # 命令退出命令提示符模式</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>然后再继续进行分区，安装即可。也可以只建立一个主分区，等系统安装完成后再进行分区。</li>
+</ol>
+<p>（注：解决方法来源于互联网，如果侵犯了您的权益，请立即联系博主！）</p>
+<p>（如果还有什么问题可以在评论区提出，我有时间就会更新的）</p>
+
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/Windows/" class="">
+              Windows
+            </a>
+          
+            <a href="/tags/Windows10/" class="">
+              Windows10
+            </a>
+          
+            <a href="/tags/Windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="">
+              Windows常见问题
+            </a>
+          
+            <a href="/tags/Windows10%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="">
+              Windows10常见问题
+            </a>
+          
+        </div>
         
       </div>
       
@@ -575,7 +703,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/links/index.html" target="_blank" title="友人帐">https://blog.dmoe.top/links/index.html</a>
+    <a href="/2022/01/23/course-Win10FAQ/" target="_blank" title="【Windows10】常见问题（不定期更新中...）">https://blog.dmoe.top/2022/01/23/course-Win10FAQ/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -592,6 +720,31 @@
 <div class="post-nav">
 
 
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://api.imlazy.ink/img" class="lazyload placeholder" data-srcset="https://api.imlazy.ink/img" srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/3pyRZV5b8dB_Rt" alt="">
+    </div>
+    <a href="/2022/01/25/resource-Free-Email/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">【国内免费邮箱推荐】（不定期更新中...）</div>
+      </div>
+      
+      <!-- <div class="content">
+        QQ邮箱
+网址：QQ邮箱官网
+注册方式：需使用微信&#x2F;QQ账号注册
+
+网易邮箱
+网址：
+
+（1）网易163邮箱官
+      </div> -->
+    </a>
+  </div>
 
 
 
@@ -756,58 +909,29 @@
   <div class="layout_sticky">    
     
       
-        
-    <section class="widget side_category">
-      
+<section class="widget side_toc">
+  
   <header>
     
-      <a style="color: " href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">文章目录</span>
     
   </header>
 
 
-      <div class='content'>
-        <ul class="entry navigation">
-          
-            <li><a class="flat-box"
-              title="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"
-              id="categoriesE68A80E69CAFE69599E7A88B"
-              ><div class='name'>技术教程</div><div class='badge'>(8)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BAWiki/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BAWiki/"
-              id="categoriesE8AEA1E7AE97E69CBAWiki"
-              ><div class='name'>计算机Wiki</div><div class='badge'>(3)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" href="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/"
-              id="categoriesE8B584E6BA90E58886E4BAAB"
-              ><div class='name'>资源分享</div><div class='badge'>(2)</div></a></li>
-          
-        </ul>
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#win10%E5%8F%B3%E4%B8%8B%E8%A7%92%E6%93%8D%E4%BD%9C%E4%B8%AD%E5%BF%83%E5%9B%BE%E6%A0%87%E6%B6%88%E5%A4%B1%EF%BC%88%E8%AE%BE%E7%BD%AE%E9%87%8C%E7%9A%84%E5%BC%80%E5%85%B3%E6%98%AF%E7%81%B0%E8%89%B2%E7%9A%84%EF%BC%89"><span class="toc-text">win10右下角操作中心图标消失（设置里的开关是灰色的）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows-10%E7%B3%BB%E7%BB%9F%E7%97%85%E6%AF%92%E5%92%8C%E5%A8%81%E8%83%81%E9%98%B2%E6%8A%A4%E8%A2%AB%E7%A6%81%E7%94%A8"><span class="toc-text">Windows 10系统病毒和威胁防护被禁用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Win10%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%EF%BC%9A%E5%9C%A8efi%E7%B3%BB%E7%BB%9F%E4%B8%8Awindows%E5%8F%AA%E8%83%BD%E5%AE%89%E8%A3%85%E5%88%B0gpt%E7%A3%81%E7%9B%98"><span class="toc-text">Win10重装系统提示：在efi系统上windows只能安装到gpt磁盘</span></a> -->
+        <div class="toc"></div>
       </div>
-    </section>
-  
-  
-      
-      
-        
-<section class="widget side_tagcloud">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-    <a href="/tags/DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">DNS服务</a> <a href="/tags/Frp%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp客户端搭建</a> <a href="/tags/Frp%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp搭建</a> <a href="/tags/Frp%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp服务端搭建</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/Github-Page/" style="font-size: 14px; color: #999">Github Page</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/Hexo%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Hexo搭建</a> <a href="/tags/Hexo%E6%95%99%E7%A8%8B/" style="font-size: 14px; color: #999">Hexo教程</a> <a href="/tags/Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="/tags/Linux-Screen/" style="font-size: 14px; color: #999">Linux-Screen</a> <a href="/tags/MCBE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B/" style="font-size: 24px; color: #555">MCBE服务器教程</a> <a href="/tags/MinecraftBE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B/" style="font-size: 24px; color: #555">MinecraftBE服务器教程</a> <a href="/tags/PicGo/" style="font-size: 14px; color: #999">PicGo</a> <a href="/tags/Screen/" style="font-size: 14px; color: #999">Screen</a> <a href="/tags/Tampermonkey/" style="font-size: 14px; color: #999">Tampermonkey</a> <a href="/tags/Whois%E6%9F%A5%E8%AF%A2/" style="font-size: 14px; color: #999">Whois查询</a> <a href="/tags/Windows/" style="font-size: 19px; color: #777">Windows</a> <a href="/tags/Windows10/" style="font-size: 14px; color: #999">Windows10</a> <a href="/tags/Windows10%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">Windows10常见问题</a> <a href="/tags/Windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">Windows常见问题</a> <a href="/tags/jsdelivr/" style="font-size: 14px; color: #999">jsdelivr</a> <a href="/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">免费图床搭建</a> <a href="/tags/%E5%85%8D%E8%B4%B9%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">免费邮箱</a> <a href="/tags/%E5%85%A8%E7%90%83DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">全球DNS服务</a> <a href="/tags/%E5%9B%BD%E5%86%85DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">国内DNS服务</a> <a href="/tags/%E5%9B%BD%E5%86%85%E5%85%8D%E8%B4%B9%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">国内免费邮箱</a> <a href="/tags/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">图床搭建</a> <a href="/tags/%E5%9F%9F%E5%90%8D%E5%B7%A5%E5%85%B7%EF%BC%8C-Whois/" style="font-size: 14px; color: #999">域名工具， Whois</a> <a href="/tags/%E6%B2%B9%E7%8C%B4/" style="font-size: 14px; color: #999">油猴</a> <a href="/tags/%E6%B5%B7%E5%A4%96DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">海外DNS服务</a> <a href="/tags/%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E9%80%9F%E4%B8%8B%E8%BD%BD/" style="font-size: 14px; color: #999">网盘不限速下载</a> <a href="/tags/%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">邮箱</a>
     </div>
+  </div>
 </section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  
-      
       
   <section class="widget side_recent_post">
     
@@ -933,115 +1057,6 @@
     </div>
   </section>
 
-      
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>友人帐</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">5</span></a></li></ul></div>
-  </section>
-
-      <section class="widget side_webinfo">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class='name' style="color: ">站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>13 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2022/05/07'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Wed Jun 07 2023 19:25:34 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2023-06-07 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2023-06-07 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-      
     
   </div>
 </aside>
@@ -1123,7 +1138,7 @@
 			clearInterval(this.time);
 		},
 		mounted() {
-			let prop = 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/NwsVTjxKIks9Fx' || 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/evXBXwnTbh50-a';
+			let prop = '' || 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/evXBXwnTbh50-a';
 			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
 			if (isImg) {
 				let img = prop.split(',');

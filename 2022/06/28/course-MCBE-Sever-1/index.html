@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>友人帐 | diffghjklのblog</title>
+  <title>Windows/Linux搭建MinecraftBE(基岩版)原版服务器 | diffghjklのblog</title>
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -195,7 +195,7 @@
       <main class="main" id="pjax-container">
         <!-- 头部导航 -->
         
-<header class="header  no-img-top" 
+<header class="header  " 
   id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
@@ -555,16 +555,131 @@
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
 
 
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://api.imlazy.ink/img')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        Windows/Linux搭建MinecraftBE(基岩版)原版服务器
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2022-06-28 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-detail-header_category">
+              技术教程
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
 
 
 <div class="post-detail-content post-row" 
-  style="padding-top: 60px;">
+  style="padding-top: 0px;">
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <div class="getJsonSite-api" api="/links/site.json" isRegular="4"></div>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>如果需要使用其他设备搭建，请前往 <a href="https://blog.dmoe.top/2022/06/28/course-MCBE-Sever/">MinecraftBE(基岩版)服务器搭建(总篇)</a> 查看！</p>
+<p>本文以官方提供的服务端为例！</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ul>
+<li>一台有公网IP的电脑&#x2F;服务器</li>
+<li><a target="_blank" rel="noopener" href="https://www.minecraft.net/en-us/download/server/bedrock">BDS服务端</a></li>
+<li>Windows系统 建议 <code>Windows10专业版</code> &#x2F; <code>Windows Server 2016</code> 及以上</li>
+<li>Linux系统 建议 <code>Ubuntu18.04</code> 及以上</li>
+</ul>
+<p>如果没有公网IP，可自行寻找Frp提供商，或者参考 <a href="https://blog.dmoe.top/2022/05/08/course-Frp/">Frp搭建</a> 自行搭建！</p>
+<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><h2 id="使用-Windows-搭建"><a href="#使用-Windows-搭建" class="headerlink" title="*使用 Windows 搭建"></a>*使用 Windows 搭建</h2><ol>
+<li>下载BDS需要的 <a target="_blank" rel="noopener" href="https://diffghjkl.lanzouf.com/b017q3omj">VC运行库（密码:dbmbvc）</a></li>
+</ol>
+<p>然后根据提示安装即可</p>
+<p>之后，将 <code>BDS服务端</code> 解压到你想要的位置</p>
+<ol start="2">
+<li>打开 <code>bedrock_server.exe</code> ，测试运行环境是否正常，如果出现 <code>Server started.</code> ,则说明一切正常</li>
+</ol>
+<p><img src="https://api.mluk.cn/images/Snipaste_2022-06-28_15-00-47.png" class="lazyload placeholder" data-srcset="https://api.mluk.cn/images/Snipaste_2022-06-28_15-00-47.png" srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/3pyRZV5b8dB_Rt" alt="1"></p>
+<p>接下来就是自行设置啦~</p>
+<p>（至于为什么没写如何设置，我是准备之后再写~烦请耐心等待！）</p>
+<h2 id="使用-Linux-搭建"><a href="#使用-Linux-搭建" class="headerlink" title="*使用 Linux 搭建"></a>*使用 Linux 搭建</h2><p>（这里以搭建起来最为简单的 <code>Ubuntu系统</code> 为例，至于 <code>CentOS系统</code> 的，我之后会写的~）</p>
+<ol>
+<li>创建一个目录<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir bds</span><br><span class="line"></span><br><span class="line"># 我这里以bds为例</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>然后进入该目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd bds</span><br></pre></td></tr></table></figure>
+
+
+<ol start="2">
+<li>接下来，下载BDS服务端<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://minecraft.azureedge.net/bin-linux/bedrock-server-1.19.2.02.zip</span><br><span class="line"></span><br><span class="line"># 这里以1.19.2.02版本为例，其他版本请自行更改链接</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>然后解压</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unzip bedrock-server-1.19.2.02.zip</span><br><span class="line"></span><br><span class="line"># 不要忘记把文件名改为你所下载的版本！</span><br></pre></td></tr></table></figure>
+
+<p>Tips：如果担心未解压成功，可使用 <code>ls</code> 命令查看当前目录的文件</p>
+<p>在当前目录给予文件权限</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 775 ./*</span><br></pre></td></tr></table></figure>
+
+<p>先测试下服务端是否可以正常运行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LD_LIBRARY_PATH=. ./bedrock_server</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>使用 <code>screen</code> 软件让服务端保持后台运行<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt install screen # 安装 screen</span><br><span class="line">screen -S bds # 创建一个名为 bds 的窗口</span><br><span class="line">cd bds</span><br><span class="line">LD_LIBRARY_PATH=. ./bedrock_server</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>Tips：如果觉得输入启动命令麻烦的话，可以创建一个 <code>start.sh</code> 文件，将 <code>LD_LIBRARY_PATH=. ./bedrock_server</code> 复制到该文件里，之后输入 <code>sh start.sh</code> 就可以启动服务器啦~</p>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><p>Q1：服务端的配置文件是什么？</p>
+<p>A1：在你解压到的路径根目录，名为 <code>server.properties</code> 的文件就是啦~</p>
+<p>Q2：配置文件看不懂欸…</p>
+<p>A2：呃…那就看下面这个吧（摘自 <a target="_blank" rel="noopener" href="https://www.gymxbl.com/868.html">孤影墨香</a> ）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">server-name=LinMS</span><br><span class="line"># 服务器的描述信息，这个在选择服务器界面的副标题，因为正标题被玩家自定义名字所限制。</span><br><span class="line"># 可以输入: 任意内容</span><br><span class="line"> </span><br><span class="line">gamemode=survival</span><br><span class="line"># 设置玩家默认游戏模式</span><br><span class="line"># 你可以设置: &quot;survival&quot;生存, &quot;creative&quot;,创造 或者 &quot;adventure&quot;冒险</span><br><span class="line"> </span><br><span class="line">difficulty=hard</span><br><span class="line"># 设置默认游戏难度</span><br><span class="line"># 你可以设置: &quot;peaceful&quot;, 和平&quot;easy&quot;,简单 &quot;normal&quot;, 普通，或者 &quot;hard&quot;困难</span><br><span class="line"> </span><br><span class="line">allow-cheats=false</span><br><span class="line"># 开启作弊，如果打开它，你将可以使用命令。但会导致成就失效?</span><br><span class="line"># 你可以设置: &quot;true&quot; 或者 &quot;false&quot;</span><br><span class="line"> </span><br><span class="line">max-players=30</span><br><span class="line"># 最大同时在线玩家数</span><br><span class="line"># 你可以设置: 任意数字</span><br><span class="line"> </span><br><span class="line">online-mode=true</span><br><span class="line"># 在线验证，如果你开启在线验证，玩家需先登录Xbox才可加入服务器。</span><br><span class="line"># 如果关闭此项，你必须开启登录插件，但遗憾的是官服没有登录插件。</span><br><span class="line"># 如果你尝试用白名单替代登录插件，那么很遗憾，有心人只需要冒用ID即可进服。</span><br><span class="line"># 你可以选择: &quot;true&quot; 或者 &quot;false&quot;</span><br><span class="line"> </span><br><span class="line">white-list=true</span><br><span class="line"># 白名单，，开启后必须在白名单内才可进服。你可以通过此项来防止恶意熊服，也可以准备两套白名单，一套正常玩，另一套停服维护。</span><br><span class="line"># 你可以选择: &quot;true&quot; 或者 &quot;false&quot;</span><br><span class="line"> </span><br><span class="line">server-port=19132</span><br><span class="line"># 在ipv4网络环境下的端口，不能和已有端口重复，如果重复将随机选取</span><br><span class="line"># 你可以选择: 选择范围 [1, 65535]</span><br><span class="line"> </span><br><span class="line">server-portv6=19133</span><br><span class="line"># 在IPv6网络环境下的端口，不能和已有端口重复，但要知道，服务器需要有ipv6地址才可以使用此端口通信，玩家也必须有ipv6才可连接</span><br><span class="line"># 你可以选择: 选择范围 [1, 65535]</span><br><span class="line"> </span><br><span class="line">view-distance=5</span><br><span class="line"># 玩家最大视距，这个将会以服务器为准，哪怕玩家设置再大也会被限制。如果设置为0将不再设限。</span><br><span class="line"># 你可以填写: 任意数值</span><br><span class="line"> </span><br><span class="line">tick-distance=4</span><br><span class="line"># The world will be ticked this many chunks away from any player.</span><br><span class="line"># 你可以填写: Integers in the range [4, 12]</span><br><span class="line"> </span><br><span class="line">player-idle-timeout=600</span><br><span class="line"># 玩家超时时间，防止玩家挂机。如果设置为0将不再设限。</span><br><span class="line"># 你可以填写: 任何非负数</span><br><span class="line"> </span><br><span class="line">max-threads=8</span><br><span class="line"># 服务器最大线程数。如果设置为0将会自动选择。</span><br><span class="line"># 你可以填写: 任意数值</span><br><span class="line"> </span><br><span class="line">level-name=Bedrock level</span><br><span class="line"># 你可以填写: 任意地图名</span><br><span class="line"> </span><br><span class="line">level-seed=</span><br><span class="line"># 选择一个地图种子，留空为随机，仅对第一次开服无地图生效。</span><br><span class="line"># 你可以填写: 任意种子</span><br><span class="line"> </span><br><span class="line">default-player-permission-level=member</span><br><span class="line"># 默认玩家游戏权限</span><br><span class="line"># 你可以选择: &quot;visitor&quot;, &quot;member&quot;, &quot;operator&quot;</span><br><span class="line"> </span><br><span class="line">texturepack-required=false</span><br><span class="line"># 强制锁定材质包 用途防材质作弊</span><br><span class="line"># 你可以选择: &quot;true&quot; 或者 &quot;false&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>写这篇文章前前后后大概用掉了近2个小时的时间？</p>
+<p><del>（虽然不是详细版的教程…）</del></p>
+<p>希望这篇文章能对你有所帮助！</p>
+
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/MCBE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B/" class="">
+              MCBE服务器教程
+            </a>
+          
+            <a href="/tags/MinecraftBE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B/" class="">
+              MinecraftBE服务器教程
+            </a>
+          
+        </div>
         
       </div>
       
@@ -575,7 +690,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/links/index.html" target="_blank" title="友人帐">https://blog.dmoe.top/links/index.html</a>
+    <a href="/2022/06/28/course-MCBE-Sever-1/" target="_blank" title="Windows/Linux搭建MinecraftBE(基岩版)原版服务器">https://blog.dmoe.top/2022/06/28/course-MCBE-Sever-1/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -593,7 +708,45 @@
 
 
 
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/lsBPW3e8OCaYvR" class="lazyload placeholder" data-srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/lsBPW3e8OCaYvR" srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/3pyRZV5b8dB_Rt" alt="">
+    </div>
+    <a href="/2022/06/28/course-MCBE-Sever-2/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">Android手机搭建MinecraftBE(基岩版)原版服务器</div>
+      </div>
+      
+      <!-- <div class="content">
+        前言如果需要使用其他设备搭建，请前往 MinecraftBE(基岩版)服务器搭建(总篇) 查看！
+目前本文还未写完，烦请
+      </div> -->
+    </a>
+  </div>
 
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/jp7NJAlg20YRC4" class="lazyload placeholder" data-srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/jp7NJAlg20YRC4" srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/3pyRZV5b8dB_Rt" src="" alt="">
+    </div>
+    <a href="/2022/06/28/course-MCBE-Sever/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">MinecraftBE(基岩版)服务器搭建(总篇)</div>
+      </div>
+      <!-- <div class="content">
+        前言近几年的服务器搭建还真是越来越简单了…
+（那我写这篇文章干嘛）
+可能是因为疫情影响，导致闲的离谱的会编程的开始写MC
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -756,58 +909,29 @@
   <div class="layout_sticky">    
     
       
-        
-    <section class="widget side_category">
-      
+<section class="widget side_toc">
+  
   <header>
     
-      <a style="color: " href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">文章目录</span>
     
   </header>
 
 
-      <div class='content'>
-        <ul class="entry navigation">
-          
-            <li><a class="flat-box"
-              title="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"
-              id="categoriesE68A80E69CAFE69599E7A88B"
-              ><div class='name'>技术教程</div><div class='badge'>(8)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BAWiki/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BAWiki/"
-              id="categoriesE8AEA1E7AE97E69CBAWiki"
-              ><div class='name'>计算机Wiki</div><div class='badge'>(3)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" href="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/"
-              id="categoriesE8B584E6BA90E58886E4BAAB"
-              ><div class='name'>资源分享</div><div class='badge'>(2)</div></a></li>
-          
-        </ul>
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%99%E7%A8%8B"><span class="toc-text">教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Windows-%E6%90%AD%E5%BB%BA"><span class="toc-text">*使用 Windows 搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Linux-%E6%90%AD%E5%BB%BA"><span class="toc-text">*使用 Linux 搭建</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-text">常见问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol> -->
+        <div class="toc"></div>
       </div>
-    </section>
-  
-  
-      
-      
-        
-<section class="widget side_tagcloud">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-    <a href="/tags/DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">DNS服务</a> <a href="/tags/Frp%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp客户端搭建</a> <a href="/tags/Frp%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp搭建</a> <a href="/tags/Frp%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp服务端搭建</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/Github-Page/" style="font-size: 14px; color: #999">Github Page</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/Hexo%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Hexo搭建</a> <a href="/tags/Hexo%E6%95%99%E7%A8%8B/" style="font-size: 14px; color: #999">Hexo教程</a> <a href="/tags/Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="/tags/Linux-Screen/" style="font-size: 14px; color: #999">Linux-Screen</a> <a href="/tags/MCBE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B/" style="font-size: 24px; color: #555">MCBE服务器教程</a> <a href="/tags/MinecraftBE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B/" style="font-size: 24px; color: #555">MinecraftBE服务器教程</a> <a href="/tags/PicGo/" style="font-size: 14px; color: #999">PicGo</a> <a href="/tags/Screen/" style="font-size: 14px; color: #999">Screen</a> <a href="/tags/Tampermonkey/" style="font-size: 14px; color: #999">Tampermonkey</a> <a href="/tags/Whois%E6%9F%A5%E8%AF%A2/" style="font-size: 14px; color: #999">Whois查询</a> <a href="/tags/Windows/" style="font-size: 19px; color: #777">Windows</a> <a href="/tags/Windows10/" style="font-size: 14px; color: #999">Windows10</a> <a href="/tags/Windows10%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">Windows10常见问题</a> <a href="/tags/Windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">Windows常见问题</a> <a href="/tags/jsdelivr/" style="font-size: 14px; color: #999">jsdelivr</a> <a href="/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">免费图床搭建</a> <a href="/tags/%E5%85%8D%E8%B4%B9%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">免费邮箱</a> <a href="/tags/%E5%85%A8%E7%90%83DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">全球DNS服务</a> <a href="/tags/%E5%9B%BD%E5%86%85DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">国内DNS服务</a> <a href="/tags/%E5%9B%BD%E5%86%85%E5%85%8D%E8%B4%B9%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">国内免费邮箱</a> <a href="/tags/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">图床搭建</a> <a href="/tags/%E5%9F%9F%E5%90%8D%E5%B7%A5%E5%85%B7%EF%BC%8C-Whois/" style="font-size: 14px; color: #999">域名工具， Whois</a> <a href="/tags/%E6%B2%B9%E7%8C%B4/" style="font-size: 14px; color: #999">油猴</a> <a href="/tags/%E6%B5%B7%E5%A4%96DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">海外DNS服务</a> <a href="/tags/%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E9%80%9F%E4%B8%8B%E8%BD%BD/" style="font-size: 14px; color: #999">网盘不限速下载</a> <a href="/tags/%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">邮箱</a>
     </div>
+  </div>
 </section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  
-      
       
   <section class="widget side_recent_post">
     
@@ -933,115 +1057,6 @@
     </div>
   </section>
 
-      
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>友人帐</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">5</span></a></li></ul></div>
-  </section>
-
-      <section class="widget side_webinfo">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class='name' style="color: ">站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>13 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2022/05/07'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Wed Jun 07 2023 19:25:34 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2023-06-07 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2023-06-07 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-      
     
   </div>
 </aside>
@@ -1123,7 +1138,7 @@
 			clearInterval(this.time);
 		},
 		mounted() {
-			let prop = 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/NwsVTjxKIks9Fx' || 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/evXBXwnTbh50-a';
+			let prop = '' || 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/evXBXwnTbh50-a';
 			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
 			if (isImg) {
 				let img = prop.split(',');

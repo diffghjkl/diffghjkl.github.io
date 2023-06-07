@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>友人帐 | diffghjklのblog</title>
+  <title>Frp搭建 | diffghjklのblog</title>
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -195,7 +195,7 @@
       <main class="main" id="pjax-container">
         <!-- 头部导航 -->
         
-<header class="header  no-img-top" 
+<header class="header  " 
   id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
@@ -555,16 +555,154 @@
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
 
 
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/jp7NJAlg20YRC4')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        Frp搭建
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2022-05-08 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" class="post-detail-header_category">
+              技术教程
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
 
 
 <div class="post-detail-content post-row" 
-  style="padding-top: 60px;">
+  style="padding-top: 0px;">
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <div class="getJsonSite-api" api="/links/site.json" isRegular="4"></div>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>因为一些原因，我开始接触Frp</p>
+<p>然而我发现，网上相关的教程不是很全，于是这篇文章就诞生了！</p>
+<p>本篇文章主要是帮助我以后使用而记录的</p>
+<p><del>其实事实是想水篇文章</del></p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ul>
+<li>一台有公网的服务器&#x2F;电脑</li>
+<li>一台没有公网的服务器&#x2F;电脑</li>
+<li>下载 <a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases">Frp</a></li>
+</ul>
+<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p>服务器端和内网机器端下载的版本要相同，否则可能会影响内网穿透；根据服务器系统选择合适的版本</p>
+<p>Tips：frps前缀的是服务端所需的文件，frpc前缀的是客户端所需的文件<br>服务端可只保留服务端文件，客户端同理</p>
+<h2 id="服务端搭建"><a href="#服务端搭建" class="headerlink" title="服务端搭建"></a>服务端搭建</h2><h3 id="使用-Linux-作为服务端"><a href="#使用-Linux-作为服务端" class="headerlink" title="*使用 Linux 作为服务端"></a>*使用 Linux 作为服务端</h3><p>1.将解压压缩包并命重命名文件夹为frp：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir frp</span><br><span class="line">tar  xzvf frp_0.42.0_linux_386.tar.gz</span><br><span class="line">mv  frp_0.42.0_linux_386  frp</span><br><span class="line"></span><br><span class="line"># 创建frp文件夹，然后上传linux压缩包至文件夹并解压</span><br></pre></td></tr></table></figure>
+<p>如果版本与我的不同，请不要忘记更改文件名！</p>
+<p>2.修改服务端配置文件（Frps.ini）</p>
+<p>(1)进入frp文件夹下：<code>cd frp</code>，修改frps.ini文件 （<code>vim frps.ini</code>）</p>
+<p>(2)修改完成，:wq 退出</p>
+<p>默认的配置文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line"># 内网穿透服务器端监听的IP地址，可以省略，默认为127.0.0.1</span><br><span class="line">bind_addr = 0.0.0.0</span><br><span class="line"># 服务器端监听的端口，默认是7000，可自定义</span><br><span class="line">bind_port = 7001</span><br></pre></td></tr></table></figure>
+<p>如果无特殊需要可不更改</p>
+<p>3.启动服务端</p>
+<p>启动命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frps -c frps.ini</span><br></pre></td></tr></table></figure>
+
+<p>停止服务：<br>Ctrl+C</p>
+<p>如果看到 Start frps success ，说明启动成功</p>
+<p>4.端口开放</p>
+<p>这部分建议根据自己的系统百度~</p>
+<p><del>懒得写了</del></p>
+<p>如果是 腾讯云，阿里云 这些服务商的，请不要忘记在 安全组&#x2F;防火墙 开放端口！</p>
+<h3 id="使用-Windows-作为服务端"><a href="#使用-Windows-作为服务端" class="headerlink" title="*使用 Windows 作为服务端"></a>*使用 Windows 作为服务端</h3><p>1.将解压压缩包并命重命名文件夹为frp</p>
+<p>2.修改服务端配置文件（Frps.ini）<br>（参考 使用 Linux 作为服务端 ）</p>
+<p>3.启动服务端</p>
+<p>进入frp文件夹，按住 Shift 并右键点击空白处，点击在此处打开 PowerShell 窗口</p>
+<p>Tips：我这里是 Windows10 ，如果是 Windows7 可能为 cmd窗口，直接执行 frps.exe -c frps.ini 即可</p>
+<p>然后在 Powershell 输入 <code>cmd</code> </p>
+<p>最后输入 <code>frps.exe -c frps.ini</code> 即可启动服务端</p>
+<p>如果看到 Start frps success ，说明启动成功</p>
+<p>Ctrl+C 停止服务</p>
+<p>（如果觉得麻烦可自行写一个bat脚本）</p>
+<p>4.端口开放</p>
+<p>这部分建议根据自己的系统百度~</p>
+<p><del>懒得写了</del></p>
+<p>如果是 腾讯云，阿里云 这些服务商的，请不要忘记在 安全组&#x2F;防火墙 开放端口！</p>
+<h2 id="客户端搭建"><a href="#客户端搭建" class="headerlink" title="客户端搭建"></a>客户端搭建</h2><h3 id="使用-Linux-作为客户端"><a href="#使用-Linux-作为客户端" class="headerlink" title="*使用 Linux 作为客户端"></a>*使用 Linux 作为客户端</h3><p>1.将解压压缩包并命重命名文件夹为frp：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir frp</span><br><span class="line">tar  xzvf frp_0.42.0_linux_386.tar.gz</span><br><span class="line">mv  frp_0.42.0_linux_386  frp</span><br><span class="line"></span><br><span class="line"># 创建frp文件夹，然后上传linux压缩包至文件夹并解压</span><br></pre></td></tr></table></figure>
+<p>如果版本与我的不同，请不要忘记更改文件名！</p>
+<p>2.修改服务端配置文件（Frpc.ini）</p>
+<p>(1)进入frp文件夹下：<code>cd frp</code>，修改frps.ini文件 （<code>vim frpc.ini</code>）</p>
+<p>(2)修改完成，:wq 退出</p>
+<p>配置文件请根据自己的需求更改！</p>
+<p> [common] 部分是服务端的配置，请与服务端的配置保持一致！</p>
+<p>例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 客户端配置</span><br><span class="line">[common]</span><br><span class="line">server_addr = 服务器ip</span><br><span class="line">server_port = 7000 # 与frps.ini的bind_port一致</span><br><span class="line">token = 52010  # 与frps.ini的token一致</span><br><span class="line"></span><br><span class="line"># 配置ssh服务</span><br><span class="line">[ssh]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 22</span><br><span class="line">remote_port = 6000  # 这个自定义，之后再ssh连接的时候要用</span><br></pre></td></tr></table></figure>
+
+
+<p>3.启动客户端</p>
+<p>启动命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frpc -c ./frpc.ini</span><br></pre></td></tr></table></figure>
+
+<p>停止服务：<br>Ctrl+C</p>
+<p>如果看到 start proxy success ，说明启动成功</p>
+<h3 id="使用-Windows-作为客户端"><a href="#使用-Windows-作为客户端" class="headerlink" title="*使用 Windows 作为客户端"></a>*使用 Windows 作为客户端</h3><p>1.将解压压缩包并命重命名文件夹为frp</p>
+<p>2.修改客户端配置文件（Frpc.ini）<br>（参考 使用 Linux 作为客户端 ）</p>
+<p>3.启动客户端</p>
+<p>进入frp文件夹，按住 Shift 并右键点击空白处，点击在此处打开 PowerShell 窗口</p>
+<p>Tips：我这里是 Windows10 ，如果是 Windows7 可能为 cmd窗口</p>
+<p>然后在 Powershell 输入 <code>cmd</code> </p>
+<p>最后输入 <code>frpc.exe -c frpc.ini</code> 即可启动服务端</p>
+<p>如果看到    start proxy success ，说明启动成功</p>
+<p>Ctrl+C 停止服务</p>
+<p>（如果觉得麻烦可自行写一个bat脚本）</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>在启动服务端&amp;客户端的时候请不要忘记：需要进入Frp所在的文件目录！！！</p>
+<p>在写完这篇文章后，我发现了一个问题</p>
+<p>似乎没什么写的必要…</p>
+<p><del>不过能水个文章也是值得的！</del></p>
+
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/Frp%E6%90%AD%E5%BB%BA/" class="">
+              Frp搭建
+            </a>
+          
+            <a href="/tags/Frp%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%90%AD%E5%BB%BA/" class="">
+              Frp服务端搭建
+            </a>
+          
+            <a href="/tags/Frp%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA/" class="">
+              Frp客户端搭建
+            </a>
+          
+        </div>
         
       </div>
       
@@ -575,7 +713,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/links/index.html" target="_blank" title="友人帐">https://blog.dmoe.top/links/index.html</a>
+    <a href="/2022/05/08/course-Frp/" target="_blank" title="Frp搭建">https://blog.dmoe.top/2022/05/08/course-Frp/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -593,7 +731,46 @@
 
 
 
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/tWtsUeevkYF1YV" class="lazyload placeholder" data-srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/tWtsUeevkYF1YV" srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/3pyRZV5b8dB_Rt" alt="">
+    </div>
+    <a href="/2022/05/13/course-Hexo/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">在Windows下搭建Hexo（使用GitHub Page）</div>
+      </div>
+      
+      <!-- <div class="content">
+        前言由于经济上的原因，博主便开始用上了Hexo
+这篇文章以记录为主，方便日后使用
+（2022&#x2F;05&#x2F;
+      </div> -->
+    </a>
+  </div>
 
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/uRpImCi3sVolnb" class="lazyload placeholder" data-srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/uRpImCi3sVolnb" srcset="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/3pyRZV5b8dB_Rt" src="" alt="">
+    </div>
+    <a href="/2022/04/02/course-CloudDisk/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">网盘不限速下载</div>
+      </div>
+      <!-- <div class="content">
+        前言2023&#x2F;06&#x2F;07：目前不保证方法的可行性！
+准备
+一台 Windows &#x2F; Mac
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -756,58 +933,29 @@
   <div class="layout_sticky">    
     
       
-        
-    <section class="widget side_category">
-      
+<section class="widget side_toc">
+  
   <header>
     
-      <a style="color: " href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">文章目录</span>
     
   </header>
 
 
-      <div class='content'>
-        <ul class="entry navigation">
-          
-            <li><a class="flat-box"
-              title="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" href="/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"
-              id="categoriesE68A80E69CAFE69599E7A88B"
-              ><div class='name'>技术教程</div><div class='badge'>(8)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BAWiki/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BAWiki/"
-              id="categoriesE8AEA1E7AE97E69CBAWiki"
-              ><div class='name'>计算机Wiki</div><div class='badge'>(3)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/" href="/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/"
-              id="categoriesE8B584E6BA90E58886E4BAAB"
-              ><div class='name'>资源分享</div><div class='badge'>(2)</div></a></li>
-          
-        </ul>
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%99%E7%A8%8B"><span class="toc-text">教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%90%AD%E5%BB%BA"><span class="toc-text">服务端搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Linux-%E4%BD%9C%E4%B8%BA%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">*使用 Linux 作为服务端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Windows-%E4%BD%9C%E4%B8%BA%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">*使用 Windows 作为服务端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA"><span class="toc-text">客户端搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Linux-%E4%BD%9C%E4%B8%BA%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">*使用 Linux 作为客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Windows-%E4%BD%9C%E4%B8%BA%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-text">*使用 Windows 作为客户端</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a></li></ol> -->
+        <div class="toc"></div>
       </div>
-    </section>
-  
-  
-      
-      
-        
-<section class="widget side_tagcloud">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-    <a href="/tags/DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">DNS服务</a> <a href="/tags/Frp%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp客户端搭建</a> <a href="/tags/Frp%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp搭建</a> <a href="/tags/Frp%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Frp服务端搭建</a> <a href="/tags/GitHub/" style="font-size: 14px; color: #999">GitHub</a> <a href="/tags/Github-Page/" style="font-size: 14px; color: #999">Github Page</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/Hexo%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">Hexo搭建</a> <a href="/tags/Hexo%E6%95%99%E7%A8%8B/" style="font-size: 14px; color: #999">Hexo教程</a> <a href="/tags/Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="/tags/Linux-Screen/" style="font-size: 14px; color: #999">Linux-Screen</a> <a href="/tags/MCBE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B/" style="font-size: 24px; color: #555">MCBE服务器教程</a> <a href="/tags/MinecraftBE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B/" style="font-size: 24px; color: #555">MinecraftBE服务器教程</a> <a href="/tags/PicGo/" style="font-size: 14px; color: #999">PicGo</a> <a href="/tags/Screen/" style="font-size: 14px; color: #999">Screen</a> <a href="/tags/Tampermonkey/" style="font-size: 14px; color: #999">Tampermonkey</a> <a href="/tags/Whois%E6%9F%A5%E8%AF%A2/" style="font-size: 14px; color: #999">Whois查询</a> <a href="/tags/Windows/" style="font-size: 19px; color: #777">Windows</a> <a href="/tags/Windows10/" style="font-size: 14px; color: #999">Windows10</a> <a href="/tags/Windows10%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">Windows10常见问题</a> <a href="/tags/Windows%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">Windows常见问题</a> <a href="/tags/jsdelivr/" style="font-size: 14px; color: #999">jsdelivr</a> <a href="/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">免费图床搭建</a> <a href="/tags/%E5%85%8D%E8%B4%B9%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">免费邮箱</a> <a href="/tags/%E5%85%A8%E7%90%83DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">全球DNS服务</a> <a href="/tags/%E5%9B%BD%E5%86%85DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">国内DNS服务</a> <a href="/tags/%E5%9B%BD%E5%86%85%E5%85%8D%E8%B4%B9%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">国内免费邮箱</a> <a href="/tags/%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">图床搭建</a> <a href="/tags/%E5%9F%9F%E5%90%8D%E5%B7%A5%E5%85%B7%EF%BC%8C-Whois/" style="font-size: 14px; color: #999">域名工具， Whois</a> <a href="/tags/%E6%B2%B9%E7%8C%B4/" style="font-size: 14px; color: #999">油猴</a> <a href="/tags/%E6%B5%B7%E5%A4%96DNS%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">海外DNS服务</a> <a href="/tags/%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E9%80%9F%E4%B8%8B%E8%BD%BD/" style="font-size: 14px; color: #999">网盘不限速下载</a> <a href="/tags/%E9%82%AE%E7%AE%B1/" style="font-size: 14px; color: #999">邮箱</a>
     </div>
+  </div>
 </section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  
-      
       
   <section class="widget side_recent_post">
     
@@ -933,115 +1081,6 @@
     </div>
   </section>
 
-      
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>友人帐</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">5</span></a></li></ul></div>
-  </section>
-
-      <section class="widget side_webinfo">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class='name' style="color: ">站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>13 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2022/05/07'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Wed Jun 07 2023 19:25:34 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2023-06-07 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2023-06-07 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-      
     
   </div>
 </aside>
@@ -1123,7 +1162,7 @@
 			clearInterval(this.time);
 		},
 		mounted() {
-			let prop = 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/NwsVTjxKIks9Fx' || 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/evXBXwnTbh50-a';
+			let prop = '' || 'https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/evXBXwnTbh50-a';
 			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
 			if (isImg) {
 				let img = prop.split(',');
