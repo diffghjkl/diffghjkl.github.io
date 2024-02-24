@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="禾守"><meta name="copyright" content="禾守"><meta name="generator" content="Hexo 6.3.0"><meta name="theme" content="hexo-theme-yun"><title>记一次失败的刷机经历 | 禾守の小站</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="icon" type="image/png" href="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/IGTdG4v7xXd4bv"><link rel="mask-icon" href="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/IGTdG4v7xXd4bv" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"blog.dmoe.top","root":"/","title":"禾守の小站","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"您需要查找什么内容？我会全力帮助您的！","empty":"啊呀，很抱歉，我找不到您需要的内容 ( ${query} ) ... 换个关键词试试？","hits":"芜湖——我找到了 ${hits} 条内容！看看有您需要的吗？","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"local_search":{"path":"/search.xml"},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"fireworks":{"colors":null},"waline":{"config":{"enable":true,"serverURL":"https://bpl.dmoe.top/","comment":true,"visitor":true,"emoji":["https://jsd.onmicrosoft.cn/gh/walinejs/emojis@latest/bilibili/","https://jsd.onmicrosoft.cn/gh/walinejs/emojis@latest/weibo/","https://jsd.onmicrosoft.cn/gh/walinejs/emojis@latest/qq/"],"locale":{"placeholder":"填写邮箱，可以收到回复通知哦～"},"requiredMeta":["nick"],"el":"#waline","lang":"zh-CN"},"cdn":"https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.js","dark":"html.dark"},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><meta name="description" content="本文不是教程，你不需要亲自尝试其中的每一个操作。如果你不知道自己在做什么，那就不要做。   若阅读本文并执行相关操作后出现设备损坏、隐私泄露、数据丢失等情况，则机主需要自行承担损失。  前言经过生活的摧残，决定做些其他的事情放松心情 于是乎，我找到了刷机 只可惜，在此之前，并无刷机经验 （身边的手机都是 华为 荣耀 什么的…….） 这次，我找到了目标—— OPPO A83  接下来就谈谈过程吧~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次失败的刷机经历">
+<meta property="og:url" content="https://blog.dmoe.top/2024/02/23/log-OPPOA83-ROM/index.html">
+<meta property="og:site_name" content="禾守の小站">
+<meta property="og:description" content="本文不是教程，你不需要亲自尝试其中的每一个操作。如果你不知道自己在做什么，那就不要做。   若阅读本文并执行相关操作后出现设备损坏、隐私泄露、数据丢失等情况，则机主需要自行承担损失。  前言经过生活的摧残，决定做些其他的事情放松心情 于是乎，我找到了刷机 只可惜，在此之前，并无刷机经验 （身边的手机都是 华为 荣耀 什么的…….） 这次，我找到了目标—— OPPO A83  接下来就谈谈过程吧~">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sway-cdn.com/s/4aEiTpcBD4PPvwex/images/V-tgnwq354pF5x">
+<meta property="og:image" content="https://sway-cdn.com/s/4aEiTpcBD4PPvwex/images/WY0ICrLwvt3QbA">
+<meta property="article:published_time" content="2024-02-23T13:25:00.000Z">
+<meta property="article:modified_time" content="2024-02-24T10:38:34.918Z">
+<meta property="article:author" content="禾守">
+<meta property="article:tag" content="OPPO">
+<meta property="article:tag" content="OPPO A83">
+<meta property="article:tag" content="刷机">
+<meta property="article:tag" content="深度刷机">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sway-cdn.com/s/4aEiTpcBD4PPvwex/images/V-tgnwq354pF5x"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="禾守"><img width="96" loading="lazy" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/IGTdG4v7xXd4bv" alt="禾守"></a><div class="site-author-name"><a href="/about/">禾守</a></div><span class="site-name">禾守の小站</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">16</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">45</span></a></div><a class="site-state-item hty-icon-button" href="/about/" title="留言板"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><span class="icon iconify" data-icon="ri:rss-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://pd.qq.com/s/b5pmo2vsp" title="QQ 频道 - ACGN爱好者交流社" target="_blank" style="color:#12B7F5"><span class="icon iconify" data-icon="ri:qq-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/diffghjkl" title="GitHub" target="_blank" style="color:#6e5494"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://weibo.com/6170110088" title="微博" target="_blank" style="color:#E6162D"><span class="icon iconify" data-icon="ri:weibo-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=3577283325" title="网易云音乐" target="_blank" style="color:#C20C0C"><span class="icon iconify" data-icon="ri:netease-cloud-music-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com/264994611" title="BiliBili" target="_blank" style="color:#FF8EB3"><span class="icon iconify" data-icon="ri:bilibili-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://twitter.com/fj26o_o" title="Twitter - @枫酱o_o" target="_blank" style="color:#1da1f2"><span class="icon iconify" data-icon="ri:twitter-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://t.me/HS_note" title="Telegram Channel" target="_blank" style="color:#0088CC"><span class="icon iconify" data-icon="ri:telegram-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:猜猜看?" title="E-Mail" target="_blank" style="color:#8E71C1"><span class="icon iconify" data-icon="ri:mail-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:var(--hty-text-color)"><span class="icon iconify" data-icon="ri:train-line"></span></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-number">2.</span> <span class="toc-text">准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-number">3.</span> <span class="toc-text">开始</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">3.1.</span> <span class="toc-text">环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-number">3.1.1.</span> <span class="toc-text">驱动安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E6%B7%B1%E5%88%B7%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">进入深刷模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-number">4.</span> <span class="toc-text">后记</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://blog.dmoe.top/2024/02/23/log-OPPOA83-ROM/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="禾守"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="禾守の小站"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">记一次失败的刷机经历<a class="post-edit-link" href="https://github.com/diffghjkl/diffghjkl.github.io/tree/hexo/source/_posts/log-OPPOA83-ROM.md" target="_blank" title="编辑" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <time title="创建时间：2024-02-23 21:25:00" itemprop="dateCreated datePublished" datetime="2024-02-23T21:25:00+08:00">2024-02-23</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-2-line"></span></span> <time title="修改时间：2024-02-24 18:38:34" itemprop="dateModified" datetime="2024-02-24T18:38:34+08:00">2024-02-24</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">1k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">3m</span></span></span><span class="leancloud_visitors" id="/2024/02/23/log-OPPOA83-ROM/" data-flag-title="记一次失败的刷机经历"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><span class="icon iconify" data-icon="ri:eye-line"></span> <span class="leancloud-visitors-count"></span></span></span><span class="post-meta-divider">-</span><a href="#comment"><span class="post-meta-item-icon" title="评论数"><span class="icon iconify" data-icon="ri:chat-3-line"></span> <span class="waline-comment-count" id="/2024/02/23/log-OPPOA83-ROM/"></span></span></a><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">日常记录</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/OPPO/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">OPPO</span></a><a class="tag-item" href="/tags/OPPO-A83/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">OPPO A83</span></a><a class="tag-item" href="/tags/%E5%88%B7%E6%9C%BA/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">刷机</span></a><a class="tag-item" href="/tags/%E6%B7%B1%E5%BA%A6%E5%88%B7%E6%9C%BA/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">深度刷机</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><blockquote>
+<p>本文不是教程，你不需要亲自尝试其中的每一个操作。如果你不知道自己在做什么，那就不要做。</p>
+</blockquote>
+<blockquote>
+<p>若阅读本文并执行相关操作后出现设备损坏、隐私泄露、数据丢失等情况，则机主需要自行承担损失。</p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><del>经过生活的摧残</del>，决定做些其他的事情放松心情</p>
+<p>于是乎，我找到了刷机</p>
+<p>只可惜，在此之前，并无刷机经验</p>
+<p>（身边的手机都是 华为 荣耀 什么的…….）</p>
+<p>这次，我找到了目标—— <code>OPPO A83</code> </p>
+<p>接下来就谈谈过程吧~</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>通过必应搜索，找到了教程：</p>
+<p><a target="_blank" rel="noopener" href="https://onfix.cn/course/3363">刷机线刷救砖、解话机锁、账户锁，恢复出厂设置，无需加密狗 - ONFIX</a></p>
+<p>刚好， <code>OPPO A83</code> 的 CPU 是 <code>Helio P23 MT6763V/CT</code> </p>
+<p>虽然文章已经提供工具包，但是我没注意价格</p>
+<blockquote>
+<p>链接在这：<a target="_blank" rel="noopener" href="https://onfix.cn/course/3364">刷机线刷工具软件包，无需任何加密狗 - ONFIX</a> </p>
+</blockquote>
+<p>本着节省的想法，在茫茫互联网中寻找所需工具</p>
+<p>经历半个小时的“大海捞针”，我的目光回到了工具包：仅需1元</p>
+<blockquote>
+<p>我：“啊这…”</p>
+</blockquote>
+<p><img src="https://sway-cdn.com/s/4aEiTpcBD4PPvwex/images/V-tgnwq354pF5x" alt="工具包" loading="lazy"></p>
+<p><del>工具准备好了，接下来就是愉快的（?）刷机了</del></p>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>根据工具包序号，依次进行…</p>
+<blockquote>
+<p>1.安装 libusb-win32-devel-filter-1.2.6.0.exe<br>2.安装 OPPO售后驱动 : QcomMtk_Driver_Setup_V3.0.3.exe<br>3.运行mtk_bypass_rev4.exe工具<br>……</p>
+</blockquote>
+<p>直到这里，我才发现工具包没有提供 <code>Mediatek Bypass Tool</code> 的驱动…</p>
+<blockquote>
+<p>驱动下载：<a target="_blank" rel="noopener" href="https://diffghjkl.lanzouq.com/iMUzc1p6suxe">LibUSB - 蓝奏云</a></p>
+</blockquote>
+<p>然后就可以正常启动了：</p>
+<p><img src="https://sway-cdn.com/s/4aEiTpcBD4PPvwex/images/WY0ICrLwvt3QbA" alt="Mediatek Bypass Tool V4" loading="lazy"></p>
+<blockquote>
+<p>欸？到这里为止是不是看起来很正常？<br>好，那么接下来糟糕的来啦（悲）</p>
+</blockquote>
+<p>点击 <code>BYPASS</code> ，工具提示 <code>MEDIATEK DRIVER NOT DETECTED</code> </p>
+<p>根据提示，似乎是缺少驱动？</p>
+<h3 id="驱动安装"><a href="#驱动安装" class="headerlink" title="驱动安装"></a>驱动安装</h3><blockquote>
+<p>*找到了未经官方签名的驱动！<br>*系统强制驱动程序需要签名！</p>
+</blockquote>
+<p>根据其他教程，了解到禁用强制签名的方法：</p>
+<p>打开 <code>设置</code> - <code>更新和安全</code> - <code>恢复</code> - <code>高级启动</code> - <code>立即重新启动</code></p>
+<p>选择<code>疑难解答</code> - <code>启动设置</code> - <code>重启</code> </p>
+<p>重启后，根据提示输入 <code>7</code> 来禁用强制签名</p>
+<p>问题解决，接下来是安装 <code>MTK驱动</code> ：</p>
+<blockquote>
+<p>链接：<a target="_blank" rel="noopener" href="https://files.cnblogs.com/files/schips/Driver-USB_VCOM_Driver(binary).zip">Driver-USB_VCOM_Driver(binary).zip - 博客园</a></p>
+</blockquote>
+<blockquote>
+<p>然而离谱的是，我在写文章时找到了更优解：<br>安装 已签名驱动 便不需要禁用强制签名…<br>链接：<a target="_blank" rel="noopener" href="https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20USB%20Port">“MediaTek USB Port” - Microsoft Update Catalog</a></p>
+</blockquote>
+<p>打开 <code>设备管理器</code> - <code>操作</code> - <code>添加过时硬件</code></p>
+<p>选择 <code>安装我手动从列表选择的硬件(高级)</code> - <code>显示所有设备</code> - <code>从磁盘安装</code> </p>
+<p>选择驱动路径，选择<code>MediaTek USB Port</code>（或<code>MTK USB Port</code>）</p>
+<p>这样驱动安装完成</p>
+<blockquote>
+<p>如果需要 <code>MediaTek USB VCOM</code> 可以在这里下载：<br><a target="_blank" rel="noopener" href="https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20USB%20VCOM">“MediaTek USB VCOM” - Microsoft Update Catalog</a></p>
+</blockquote>
+<h2 id="进入深刷模式"><a href="#进入深刷模式" class="headerlink" title="进入深刷模式"></a>进入深刷模式</h2><p>联发科手机 进入 <code>深刷模式</code> 的方法一般有三种：</p>
+<ul>
+<li>1.【取下电池】，按住 音量- ，然后通过数据线连接电脑。</li>
+<li>2.【取下电池】(最常用)，无需操作，直接连接电脑。</li>
+<li>3.【不取下电池】(一体机常用)，同样无需操作，直接连接电脑。</li>
+</ul>
+<blockquote>
+<p><strong>Tips</strong>:<br>1.进入后，手机一般处于黑屏状态，若手机显示了任何字符&#x2F;图案&#x2F;充电界面，即没有进入 深刷模式 。<br>2.手机连接电脑的一瞬间，电脑会提示安装驱动， <code>设备管理器</code> - <code>端口</code> 处将出现类似于 <code>MediaTek PreLoader USB VCOM （Android)</code> 的设备<br>3.部分一体机手机可能出现 <code>MediaTek PreLoader USB VCOM （Android)</code> 一闪而过的现象（我愿称之为“转瞬即逝”），原因未知</p>
+</blockquote>
+<p>糟糕的是，我这里的 <code>OPPO A83</code> 会出现“转瞬即逝”的现象，原因未知…</p>
+<p>到这里，本次尝试以失败告终（悲）</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>直到最后，我才意识到， <code>Mediatek Bypass Tool V4</code> 似乎不是需要我安装驱动，而是手机并未进入深刷模式，造成无法连接…</p>
+<p>总结：总之就是非常糟糕啊啊啊——，耗费了六个小时还没成功…</p>
+</div></section><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="打赏" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><span class="icon iconify" data-icon="ri:hand-coin-line"></span></span><div id="reward-comment">我很可爱，请给我钱</div><div id="qr" style="display:none;"><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/wG7t-nWvCHcy3K"><img loading="lazy" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/wG7t-nWvCHcy3K" alt="AliPay" title="AliPay"></a><div><span style="color:#00A3EE"><span class="icon iconify" data-icon="ri:alipay-line"></span></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/BpvGZy5IAz-uvy"><img loading="lazy" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/BpvGZy5IAz-uvy" alt="QQPay" title="QQPay"></a><div><span style="color:#12B7F5"><span class="icon iconify" data-icon="ri:qq-line"></span></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/ucEaHWRQXfQ1_x"><img loading="lazy" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/ucEaHWRQXfQ1_x" alt="WeChatPay" title="WeChatPay"></a><div><span style="color:#2DC100"><span class="icon iconify" data-icon="ri:wechat-pay-line"></span></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>禾守</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://blog.dmoe.top/2024/02/23/log-OPPOA83-ROM/" title="记一次失败的刷机经历">https://blog.dmoe.top/2024/02/23/log-OPPOA83-ROM/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客的所有文章，除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2024/02/24/wiki-Android-Mode/" rel="prev" title="Android手机部分术语讲解（不定期更新中...）"><span class="icon iconify" data-icon="ri:arrow-left-s-line"></span><span class="post-nav-text">Android手机部分术语讲解（不定期更新中...）</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2022/06/28/course-MCBE-Sever-2/" rel="next" title="Android手机搭建MinecraftBE(基岩版)原版服务器"><span class="post-nav-text">Android手机搭建MinecraftBE(基岩版)原版服务器</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/diffghjkl/diffghjkl.github.io/discussions/" target="_blank">GitHub Discussions</a> 与我交流。</span><br></div><div id="waline"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"><script>window.CONFIG.waline.config.path = "/2024/02/23/log-OPPOA83-ROM/"</script><div class="js-Pjax"><script src="/js/comments/waline.js" type="module" defer></script></div></div></main><footer class="sidebar-translate" id="footer"><div class="beian"><a rel="noopener" href="https://icp.gov.moe/?keyword=20210730" target="_blank">萌ICP备20210730号</a></div><div class="copyright"><span>&copy; 2022 – 2024 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> 禾守</span></div><div class="powered"><span>本站由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="footer-custom-text">[object Object]</div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="搜索"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:search-line"></span></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script src="https://fastly.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js"></script><script src="/js/search/local-search.js" defer type="module"></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><span class="icon iconify" data-icon="ri:close-line"></span></span></div><div class="search-input-container"><input class="search-input" id="local-search-input" type="text" placeholder="您需要查找什么内容？我会全力帮助您的！" value=""></div><div class="search-result-container"></div></div></body></html>

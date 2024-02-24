@@ -4,6 +4,70 @@
   
     
     <entry>
+      <title>Android手机部分术语讲解（不定期更新中...）</title>
+      <link href="/2024/02/24/wiki-Android-Mode/"/>
+      <url>/2024/02/24/wiki-Android-Mode/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>本文不是教程，你不需要亲自尝试其中的每一个操作。如果你不知道自己在做什么，那就不要做。</p></blockquote><blockquote><p>若阅读本文并执行相关操作后出现设备损坏、隐私泄露、数据丢失等情况，则机主需要自行承担损失。</p></blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由于没什么机会调试手机&amp;刷机，所以经常忘记相关术语…</p><p>而之前刚好尝试了 <a href="https://blog.dmoe.top/2024/02/23/log-OPPOA83-ROM/">OPPO A83</a> </p><p><del>趁现在还没忘记，抓紧梳理一下</del></p><blockquote><p>由于处于萌新阶段，内容可能存在错误…如有发现，请在评论区指出！</p></blockquote><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="ADB（安卓调试桥）"><a href="#ADB（安卓调试桥）" class="headerlink" title="ADB（安卓调试桥）"></a>ADB（安卓调试桥）</h2><p>英文全称：Android Debug Bridge</p><p>一般用于 调试设备 或 调试开发的<code>Android APP</code></p><p>ADB工具 下载：<a href="https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn">SDK 平台工具版本说明 - Android Developers</a></p><p>安装教程：<a href="https://zhuanlan.zhihu.com/p/653371171">adb工具下载及环境配置（一看就会）- 知乎</a></p><p>更多内容请参阅：<a href="https://source.android.google.cn/docs/setup/build/adb?hl=zh-cn">Android 调试桥 (ADB) - Android Open Source Project</a></p><blockquote><p><strong>Tips</strong>：<br>1.你可能会认为官方文档过于复杂，建议尝试看看这篇文章：<a href="https://zhuanlan.zhihu.com/p/35215293">Adb使用教程，看了教程后你也是玩机达人啦 - 知乎</a><br>2.如果需要快速查找命令，这篇文章可能会帮助到你：<a href="https://zhuanlan.zhihu.com/p/89060003">ADB 命令大全 - 知乎</a></p></blockquote><h2 id="Recovery（恢复模式）"><a href="#Recovery（恢复模式）" class="headerlink" title="Recovery（恢复模式）"></a>Recovery（恢复模式）</h2><p>独立于系统的一个模式，具有高权限，可以对手机的各个分区做修改。</p><blockquote><p>一般长按 电源键 和 音量+ 即可进入</p></blockquote><p>目前分为两种：手机厂商提供的<code>官方Recovery</code> 和 <code>第三方Recovery</code></p><p>（下文简称”Rec”）</p><p>一般来说， <code>官方Rec</code> 功能非常有限，只能进行 升级官方系统包 ， 恢复出厂 和 连接 手机助手 等操作。</p><p>而 <code>第三方Rec</code> 具有更丰富的功能，比如：</p><p>安装 第三方系统包 ，修改备份恢复系统，使用ADB指令 ，获取Root，分区扩容等等。</p><p>无论是 刷入 <code>第三方Rec</code> ，还是仅用 <code>官方Rec</code> 操作,一般都采用 <code>外置存储卡</code> 的方式，因此 此模式 也被称为 <code>“卡刷模式”</code> 。</p><blockquote><p>刷入 第三方Recovery 需要解锁Bootloader，然后通过 Fastboot模式 刷入</p></blockquote><p>题外话：<br>从 <code>ClockWorkMod Recovery（CWM）</code> 到 <code>Team Win Recovery Project（TWRP）</code>，刷入 第三方Recovery 几乎是刷机必不可少的一环。</p><blockquote><p>若需要更详细的讲解，请参阅：<br><a href="https://news.mydrivers.com/1/542/542943.htm">安卓Recovery你知多少？不懂别说是刷机高手 - 快科技</a><br><a href="https://zhuanlan.zhihu.com/p/50166506">对于安卓手机刷入Recovery模式的介绍与理解 - 知乎</a></p></blockquote><h2 id="Fastboot（引导模式）"><a href="#Fastboot（引导模式）" class="headerlink" title="Fastboot（引导模式）"></a>Fastboot（引导模式）</h2><p>同样具有高权限</p><blockquote><p>一般长按电源键和音量减即可进入<br>若上述方法未成功进入，可以参考以下方法：<br>1.同时按住 音量- 和 开机键 3<del>5秒钟 松手；<br>2.按住 音量- ，插入数据线 进入模式后 松手；<br>3.同时按住 音量+ 和 开机键 3</del>5秒钟 松手；<br>4.同时按住 音量加减键 和 开机键 3~5秒钟 松手；</p></blockquote><blockquote><p>Tips：部分手机厂商会对Fastboot进行限制，如 OPPO手机 需要通过 深度测试 ，然后解锁 Bootloader ， Fastboot模式 才会开放</p></blockquote><p>与 Recovery 不同的是， <code>Fastboot</code> 只能连接电脑使用 ，而且功能上相比 Recovery 也比较单一。</p><blockquote><p>对此，万能的网友交出了答卷：手机刷手机，手机刷Win…</p></blockquote><p> 一般可以通过连接电脑刷入 分区镜像文件 ，以及 执行一些 Fastboot指令 。所以此模式一般用来 “救砖” 和 恢复系统 。</p><p> 因此 <code>Fastboot</code> 也被称为 <code>“线刷模式”</code> 。</p><blockquote><p>注意：只有在BL锁已解锁的情况下，才可以使用Fastboot相关功能！</p></blockquote><h2 id="Fastbootd（用户空间Fastboot模式）"><a href="#Fastbootd（用户空间Fastboot模式）" class="headerlink" title="Fastbootd（用户空间Fastboot模式）"></a>Fastbootd（用户空间Fastboot模式）</h2><p>是动态分区机型特有的一个模式，属于Recovery分区 的功能。</p><p>动态分区机型以一个super分区囊括了system，vendor，odm等分区，在Fastboot模式只能刷入完整的super，不能单独刷入system，vendor，odm。</p><p>而进入 Fastbootd 即可单独刷入他们。从 Fastboot 重启到 Fastbootd 的指令是 <code>fastboot reboot fastboot</code></p><h2 id="Download-Mode-（下载模式-x2F-深度刷机模式）"><a href="#Download-Mode-（下载模式-x2F-深度刷机模式）" class="headerlink" title="Download Mode （下载模式&#x2F;深度刷机模式）"></a>Download Mode （下载模式&#x2F;深度刷机模式）</h2><p>一个特殊的模式，它是最底层的刷机方式，可以无视BL锁，只要硬件没坏就可以进行。</p><p>因此被称为 <code>“深度刷机模式”</code> ，主要用于 “救砖” 。</p><blockquote><p>当 Recovery ，Fastboot 都被篡改或清除时，唯一能进入还不会被摧毁的就是该模式</p></blockquote><p>理论上每种处理器都有自己独特的深刷模式,例如：</p><p>高通的 <code>Qualcomm HS-USB QDLoader 9008</code>（一般简称<code>“9008模式”</code>）<br>联发科的 <code>MediaTek USB Port</code> </p><blockquote><p>这个模式的进入方法各有不同，一般为 <code>按键</code> 或者 <code>拆机短接</code> 。</p></blockquote><p>但是，由于官方权限的收紧，大致在 小米6 之后的机器进行深刷就需要 <code>售后账号权限</code> ，这使得正常情况下我们自己很难进行深刷。</p><h3 id="高通9008模式"><a href="#高通9008模式" class="headerlink" title="高通9008模式"></a>高通9008模式</h3><blockquote><p>进入方法一般是 <code>短接</code>，各机型的 <code>短接点</code> 会有所不同，不熟悉短接的可以自行搜索需要的机型</p></blockquote><blockquote><p>可能会用到的：<br><a href="https://www.bilibili.com/read/cv205958/">9008是什么？如何进入9008模式给手机解锁，降级？ - Bilibili</a><br><a href="https://www.bilibili.com/read/cv18123434/">你知道手机9008模式如何刷机吗？ - Bilibili</a><br><a href="https://zhuanlan.zhihu.com/p/35422254">重磅干货！高通9008模式与数据提取 - 知乎</a><br><a href="https://www.cnblogs.com/sztom/p/10352957.html">开启9008端口进入深刷模式 - 博客园</a><br><a href="https://www.zhihu.com/question/51329039">高通9008下，bootloader锁的意义是什么？ - 知乎</a></p></blockquote><h3 id="联发科"><a href="#联发科" class="headerlink" title="联发科"></a>联发科</h3><p>进入方法一般有三种：</p><ul><li>1.【取下电池】，按住音量减键，然后通过数据线连接电脑。</li><li>2.【取下电池】(最常用)，无需操作，直接连接电脑。</li><li>3.【不取下电池】(一体机常用)，同样无需操作，直接连接电脑。请注意：需保持手机黑屏！</li></ul><blockquote><p>可能会用到的：<br><a href="https://www.bilibili.com/read/cv15140322/">MTK（联发科）黑砖拯救（无法进入fastboot或recovery）- Bilibili</a></p></blockquote><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://zhuanlan.zhihu.com/p/427118261">手机的各个模式简介 - 知乎</a></p><p>其他的在上文中提到了，便不再标出</p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>要整理的内容好多…</p><p>所以…<del>更新是不可能更新的！</del></p><p>在这里推荐一篇文章：<a href="https://ak-ioi.com/763-preintro-android-bootmode/"><br>[基础预科] Android 分区、启动模式、Fastboot - yezhiyi9670’s blog</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机Wiki </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 刷机 </tag>
+            
+            <tag> 深度刷机 </tag>
+            
+            <tag> Android </tag>
+            
+            <tag> Recovery </tag>
+            
+            <tag> Fastboot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记一次失败的刷机经历</title>
+      <link href="/2024/02/23/log-OPPOA83-ROM/"/>
+      <url>/2024/02/23/log-OPPOA83-ROM/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>本文不是教程，你不需要亲自尝试其中的每一个操作。如果你不知道自己在做什么，那就不要做。</p></blockquote><blockquote><p>若阅读本文并执行相关操作后出现设备损坏、隐私泄露、数据丢失等情况，则机主需要自行承担损失。</p></blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><del>经过生活的摧残</del>，决定做些其他的事情放松心情</p><p>于是乎，我找到了刷机</p><p>只可惜，在此之前，并无刷机经验</p><p>（身边的手机都是 华为 荣耀 什么的…….）</p><p>这次，我找到了目标—— <code>OPPO A83</code> </p><p>接下来就谈谈过程吧~</p><h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>通过必应搜索，找到了教程：</p><p><a href="https://onfix.cn/course/3363">刷机线刷救砖、解话机锁、账户锁，恢复出厂设置，无需加密狗 - ONFIX</a></p><p>刚好， <code>OPPO A83</code> 的 CPU 是 <code>Helio P23 MT6763V/CT</code> </p><p>虽然文章已经提供工具包，但是我没注意价格</p><blockquote><p>链接在这：<a href="https://onfix.cn/course/3364">刷机线刷工具软件包，无需任何加密狗 - ONFIX</a> </p></blockquote><p>本着节省的想法，在茫茫互联网中寻找所需工具</p><p>经历半个小时的“大海捞针”，我的目光回到了工具包：仅需1元</p><blockquote><p>我：“啊这…”</p></blockquote><p><img src="https://sway-cdn.com/s/4aEiTpcBD4PPvwex/images/V-tgnwq354pF5x" alt="工具包" loading="lazy"></p><p><del>工具准备好了，接下来就是愉快的（?）刷机了</del></p><h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>根据工具包序号，依次进行…</p><blockquote><p>1.安装 libusb-win32-devel-filter-1.2.6.0.exe<br>2.安装 OPPO售后驱动 : QcomMtk_Driver_Setup_V3.0.3.exe<br>3.运行mtk_bypass_rev4.exe工具<br>……</p></blockquote><p>直到这里，我才发现工具包没有提供 <code>Mediatek Bypass Tool</code> 的驱动…</p><blockquote><p>驱动下载：<a href="https://diffghjkl.lanzouq.com/iMUzc1p6suxe">LibUSB - 蓝奏云</a></p></blockquote><p>然后就可以正常启动了：</p><p><img src="https://sway-cdn.com/s/4aEiTpcBD4PPvwex/images/WY0ICrLwvt3QbA" alt="Mediatek Bypass Tool V4" loading="lazy"></p><blockquote><p>欸？到这里为止是不是看起来很正常？<br>好，那么接下来糟糕的来啦（悲）</p></blockquote><p>点击 <code>BYPASS</code> ，工具提示 <code>MEDIATEK DRIVER NOT DETECTED</code> </p><p>根据提示，似乎是缺少驱动？</p><h3 id="驱动安装"><a href="#驱动安装" class="headerlink" title="驱动安装"></a>驱动安装</h3><blockquote><p>*找到了未经官方签名的驱动！<br>*系统强制驱动程序需要签名！</p></blockquote><p>根据其他教程，了解到禁用强制签名的方法：</p><p>打开 <code>设置</code> - <code>更新和安全</code> - <code>恢复</code> - <code>高级启动</code> - <code>立即重新启动</code></p><p>选择<code>疑难解答</code> - <code>启动设置</code> - <code>重启</code> </p><p>重启后，根据提示输入 <code>7</code> 来禁用强制签名</p><p>问题解决，接下来是安装 <code>MTK驱动</code> ：</p><blockquote><p>链接：<a href="https://files.cnblogs.com/files/schips/Driver-USB_VCOM_Driver(binary).zip">Driver-USB_VCOM_Driver(binary).zip - 博客园</a></p></blockquote><blockquote><p>然而离谱的是，我在写文章时找到了更优解：<br>安装 已签名驱动 便不需要禁用强制签名…<br>链接：<a href="https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20USB%20Port">“MediaTek USB Port” - Microsoft Update Catalog</a></p></blockquote><p>打开 <code>设备管理器</code> - <code>操作</code> - <code>添加过时硬件</code></p><p>选择 <code>安装我手动从列表选择的硬件(高级)</code> - <code>显示所有设备</code> - <code>从磁盘安装</code> </p><p>选择驱动路径，选择<code>MediaTek USB Port</code>（或<code>MTK USB Port</code>）</p><p>这样驱动安装完成</p><blockquote><p>如果需要 <code>MediaTek USB VCOM</code> 可以在这里下载：<br><a href="https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20USB%20VCOM">“MediaTek USB VCOM” - Microsoft Update Catalog</a></p></blockquote><h2 id="进入深刷模式"><a href="#进入深刷模式" class="headerlink" title="进入深刷模式"></a>进入深刷模式</h2><p>联发科手机 进入 <code>深刷模式</code> 的方法一般有三种：</p><ul><li>1.【取下电池】，按住 音量- ，然后通过数据线连接电脑。</li><li>2.【取下电池】(最常用)，无需操作，直接连接电脑。</li><li>3.【不取下电池】(一体机常用)，同样无需操作，直接连接电脑。</li></ul><blockquote><p><strong>Tips</strong>:<br>1.进入后，手机一般处于黑屏状态，若手机显示了任何字符&#x2F;图案&#x2F;充电界面，即没有进入 深刷模式 。<br>2.手机连接电脑的一瞬间，电脑会提示安装驱动， <code>设备管理器</code> - <code>端口</code> 处将出现类似于 <code>MediaTek PreLoader USB VCOM （Android)</code> 的设备<br>3.部分一体机手机可能出现 <code>MediaTek PreLoader USB VCOM （Android)</code> 一闪而过的现象（我愿称之为“转瞬即逝”），原因未知</p></blockquote><p>糟糕的是，我这里的 <code>OPPO A83</code> 会出现“转瞬即逝”的现象，原因未知…</p><p>到这里，本次尝试以失败告终（悲）</p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>直到最后，我才意识到， <code>Mediatek Bypass Tool V4</code> 似乎不是需要我安装驱动，而是手机并未进入深刷模式，造成无法连接…</p><p>总结：总之就是非常糟糕啊啊啊——，耗费了六个小时还没成功…</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> OPPO </tag>
+            
+            <tag> OPPO A83 </tag>
+            
+            <tag> 刷机 </tag>
+            
+            <tag> 深度刷机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Android手机搭建MinecraftBE(基岩版)原版服务器</title>
       <link href="/2022/06/28/course-MCBE-Sever-2/"/>
       <url>/2022/06/28/course-MCBE-Sever-2/</url>
@@ -228,6 +292,39 @@
             <tag> 网盘不限速下载 </tag>
             
             <tag> Tampermonkey </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《硬盘》</title>
+      <link href="/2022/01/27/wiki-Disk/"/>
+      <url>/2022/01/27/wiki-Disk/</url>
+      
+        <content type="html"><![CDATA[<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>本文内容参考各大网站提供的资料，博主并未学习过相应内容…</p><p>目前无法确保文章内容的准确性！</p><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="硬盘の简述"><a href="#硬盘の简述" class="headerlink" title="硬盘の简述"></a>硬盘の简述</h2><p>英文名称 Hard Disk Drive</p><p>目前有三种类型：<br>SSD（固态硬盘），HDD（机械硬盘），HHD（混合硬盘）</p><p>下面是各类型的介绍</p><h2 id="SSD"><a href="#SSD" class="headerlink" title="SSD"></a>SSD</h2><p>英文全称：Solid State Disk 或 Solid State Drive<br>在中文中，通常被称为 固态硬盘 ，有时也称 固态驱动器</p><p>是一种用固态电子存储芯片阵列制成的硬盘,主要由以下两部分组成：</p><ol><li><p><strong>主控单元</strong>：<br>用来操作存储单元，并驻留一定固件，带有操作系统的部件。</p></li><li><p><strong>存储阵列</strong>：<br>闪存芯片（NAND FLASH）,单片FLASH芯片有64GB&#x2F;128GB&#x2F;256GB，也有少量SSD存储芯片采用DRAM芯片制作而成。</p></li></ol><p>其内部如下图所示，主要由 控制器 、 电源 、 NAND FLASH阵列 、 对外连接器 组成。</p><p><img src="https://pic2.zhimg.com/80/v2-57d0908f1ebf743c59c1347711eb26d9_720w.webp" alt="来自知乎" loading="lazy"></p><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><h4 id="SATA"><a href="#SATA" class="headerlink" title="SATA"></a>SATA</h4><p>全称 Serial Advanced Technology Attachment ，是由Intel、IBM、Dell、APT、Maxtor和Seagate公司共同提出的硬盘接口规范，采用串行连接方式</p><p> SATA接口 结构简单，支持热插拔，传输速度快，执行效率高。</p><p>使用 SATA（Serial ATA） 接口的硬盘又叫串口硬盘，是现在主流的硬盘接口。现在绝大多数 SSD 都是采用 SATA 接口的串口硬盘。</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>硬盘变革史 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/33727204">https://zhuanlan.zhihu.com/p/33727204</a></p><p>一文了解固态硬盘（SSD） - 知乎<br><a href="https://zhuanlan.zhihu.com/p/87642131">https://zhuanlan.zhihu.com/p/87642131</a></p><p>固态硬盘 SSD 和 HDD 的区别是什么？ - 知乎<br><a href="https://www.zhihu.com/question/579906066">https://www.zhihu.com/question/579906066</a></p><p>机械硬盘 - 百度百科<br><a href="https://baike.baidu.com/item/%E6%9C%BA%E6%A2%B0%E7%A1%AC%E7%9B%98">https://baike.baidu.com/item/%E6%9C%BA%E6%A2%B0%E7%A1%AC%E7%9B%98</a></p><p>硬盘驱动器（HDD）的简单介绍 - 中科院<br><a href="https://www.cas.cn/kxcb/kpwz/201105/t20110530_3143885.shtml">https://www.cas.cn/kxcb/kpwz/201105/t20110530_3143885.shtml</a></p><p>硬盘基础知识（HDD、SSD、IDE、PATA、SATA、SCSI、SAS） - 博客园<br><a href="https://www.cnblogs.com/xiaodoujiaohome/p/11732687.html">https://www.cnblogs.com/xiaodoujiaohome/p/11732687.html</a></p><p>硬盘三大种类（SSD；HHD；HDD） - 知乎<br><a href="https://zhuanlan.zhihu.com/p/63234450">https://zhuanlan.zhihu.com/p/63234450</a></p><p>硬盘SATA接口详细解析 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/343463255">https://zhuanlan.zhihu.com/p/343463255</a></p><p>串口和并口分别连接什么硬盘；那种硬盘数据传输数率快？ - 知乎<br><a href="https://www.zhihu.com/question/422377130">https://www.zhihu.com/question/422377130</a></p><p>选硬盘时，该选择SSD&#x2F;SATA&#x2F;SAS哪个好？ - 知乎<br><a href="https://www.zhihu.com/question/24439361">https://www.zhihu.com/question/24439361</a></p><p>知识 | 常见硬盘分类介绍 - 知乎<br><a href="https://zhuanlan.zhihu.com/p/159676400">https://zhuanlan.zhihu.com/p/159676400</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机Wiki </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机 </tag>
+            
+            <tag> 硬盘 </tag>
+            
+            <tag> SSD </tag>
+            
+            <tag> HDD </tag>
+            
+            <tag> HHD </tag>
             
         </tags>
       
