@@ -1805,9 +1805,6 @@ input {
 }
 .post-toc ol .toc-child {
   font-size: 1rem;
-  overflow: hidden;
-  transition: max-height 0.6s ease-in;
-  max-height: 0;
 }
 .post-toc ol .toc-item.active>.toc-link {
   color: #f2711c;
