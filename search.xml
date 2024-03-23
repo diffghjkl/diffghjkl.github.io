@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>记 SM-T311 的刷机&amp;ROOT历程</title>
+      <link href="/2024/03/22/log-SM-T311/"/>
+      <url>/2024/03/22/log-SM-T311/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>本文不是教程，你不需要亲自尝试其中的每一个操作。如果你不知道自己在做什么，那就不要做。</p></blockquote><blockquote><p>若阅读本文并执行相关操作后出现设备损坏、隐私泄露、数据丢失等情况，则机主需要自行承担损失。</p></blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote><p>Tips：<br>1.Samsung Galaxy Tab 3 8.0 分为 T310（lt01wifi） 、 T311（lt013g） 、 T315（lt01lte）<br>2.这三种的操作方法应该基本一致？本文可作参考，出了问题我可不负责哦</p></blockquote><p>近期在 XDA论坛 发现了适配 SM-T311 的 第三方TWRP </p><p>在各种因素的加持下，开始了本次刷机之旅</p><p>理论上支持 Windows &amp; MacOS ，但由于我没有MacOS的设备，无法保证本文适用于 MacOS ，本文仅供参考！</p><h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="必备"><a href="#必备" class="headerlink" title="必备"></a>必备</h2><ul><li>一台 SM-T311</li><li><a href="https://www.123pan.com/s/BOa8Vv-Fio7A.html">适配的 TWRP</a> （非官方）</li><li><a href="https://www.123pan.com/s/BOa8Vv-Yio7A.html">LineageOS 14.1</a>（非官方）</li></ul><h2 id="非必备"><a href="#非必备" class="headerlink" title="非必备"></a>非必备</h2><ul><li><a href="https://github.com/topjohnwu/Magisk/releases">Magisk</a>（获取ROOT）</li><li><a href="https://www.123pan.com/s/BOa8Vv-Gio7A.html">kerNoleOC</a>（超频内核）</li></ul><h2 id="PC端的准备"><a href="#PC端的准备" class="headerlink" title="PC端的准备"></a>PC端的准备</h2><h3 id="Windows端"><a href="#Windows端" class="headerlink" title="Windows端"></a>Windows端</h3><ul><li>安装 <a href="https://diffghjkl.lanzouq.com/iCXck1sca1ha">Kies for Windows</a>（Windows端驱动）</li><li>安装 <a href="https://diffghjkl.lanzouq.com/iqlK01sc9iba">Odin_v3.07</a>（针对三星Android平台的Windows刷机工具）</li></ul><h3 id="MacOS端"><a href="#MacOS端" class="headerlink" title="MacOS端"></a>MacOS端</h3><ul><li>安装 <a href="https://diffghjkl.lanzouq.com/i6iwU1sca47i">Kies for MacOS</a>（MacOS端驱动）</li><li>安装 <a href="https://diffghjkl.lanzouq.com/ii8RP1scchsj">JOdin for MacOS</a>（针对三星Android平台的MacOS刷机工具）</li></ul><blockquote><p>Tips:<br>1.<a href="https://diffghjkl.lanzouq.com/iYRVb1scfa8f">Magisk v27.0</a> 成功刷入，其他版本请自行尝试！<br>2.Kies官网：<a href="https://www.samsung.com/hk/support/kies/">https://www.samsung.com/hk/support/kies/</a><br>3.如果您需要 JOdin 的安装教程，请前往 <a href="https://odinflashtool.com/downloads/download-jodin3/">Download JOdin3 for macOS X, Linux, and Windows - ODIN FLASH TOOL</a> 查看！</p></blockquote><h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="刷入-TWRP"><a href="#刷入-TWRP" class="headerlink" title="刷入 TWRP"></a>刷入 TWRP</h2><blockquote><p>请在确保 Kies 能正常连接手机的前提下进行！</p></blockquote><p>在关机状态下，同时按住 <code>Home键</code>、<code>音量-</code>、<code>电源键</code>（约5秒钟）</p><p>根据警告的提示，按下 <code>音量+</code> ，即可进入 <code>Download模式</code>（如果你需要警告页面取消，则需按下<code>音量-</code>）</p><p>打开 Odin ，并将 SM-T311 连接到电脑</p><p><code>ID:COM</code> 一栏将会出现如下提示：</p><p><img src="https://sway-cdn.com/s/4aEiTpcBD4PPvwex/images/PB3BPdSHbp2lNo" alt="1" loading="lazy"></p><p>也可以通过查看 Messages 栏是否有如下提示</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;ID:0/012&gt; Added!!</span><br></pre></td></tr></table></figure><p>点击 <code>PDA</code> ，选择 TWRP 所在路径</p><blockquote><p>如果选择的是 .tar.md5 格式的文件，就会触发Odin的文件校验（约5秒钟）：<br><OSM> Enter CS for MD5..<br><OSM> Check MD5.. Do not unplug the cable..<br><OSM> Please wait..<br><OSM> T311.TWRP.3.1.1-0.tar.md5 is valid.<br><OSM> Checking MD5 finished Sucessfully..<br><OSM> Leave CS..</p></blockquote><p>点击 <code>Start</code>，执行刷入操作（约2分钟？）</p><blockquote><p>Tips：<br>1.部分情况下可能需要取消 Odin 中的 <code>Auto Reboot</code> ，否则将会出现执行错误…<br>2.建议执行前直接取消，这个问题困扰了我一个小时…（没认真看教程啊啊啊）</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 刷入成功的提示</span><br><span class="line">&lt;OSM&gt; All threads completed. (succeed 1 / failed 0)</span><br></pre></td></tr></table></figure><p>同时按住 <code>电源键</code> 、 <code>音量+</code> 、 <code>Home键</code> ，直到出现三星Logo，只松开 <code>电源键</code> ，等到进入 TWRP 后松开所有按键</p><p>至此，TWRP的刷入工作完成~</p><h2 id="刷入-LineageOS"><a href="#刷入-LineageOS" class="headerlink" title="刷入 LineageOS"></a>刷入 LineageOS</h2><p> 进入 TWRP 后，将会询问是否修改系统分区，滑动 <code>Swipe to Allow Modifications</code> 即可</p><p> 点击 <code>Wipe</code> - <code>Format Data</code> ，将数据格式化，再滑动 <code>Swipe to Factory Reset</code>，执行双清</p><blockquote><p>如果需要保留数据文件，建议提前备份，不清除Data可能会影响后续操作（因为没清除Data设备无限重启…）</p></blockquote><p>将 SM-T311 连接电脑，创建一个英文名ROM文件夹（个人习惯，可有可无），将LineageOS放入其中</p><p>返回TWRP主页，进入 <code>Install</code> ，点击 <code>Select Storage</code> ，选择 <code>Internal Storage</code> ，找到<code>/sdcard/ROM</code> 或 <code>/data/media/0/ROM</code> 下的 LineageOS 文件，滑动<code>Swipe to confirm Flash</code></p><p>提示完成后，点击 <code>Rebot System</code> 重启</p><blockquote><p>Tips:<br>1.需要安装 TWRP APP 的，则滑动 <code>Swipe to Install TWRP APP</code><br>2.若不需要安装TWRP APP，则选择 <code>Do Not Install</code><br>即便我尝试选择安装，似乎并没有找到它，并且稳定性似乎不太行了？</p></blockquote><p>至此，LineageOS便安装成功啦~</p><blockquote><p>Tips:<br>连接WIFI时，可能会提醒：已连接，但无法访问互联网<br>无须担心，这只是Lineage无法在大陆连接到服务器，略过即可</p></blockquote><h2 id="获取-ROOT-权限"><a href="#获取-ROOT-权限" class="headerlink" title="获取 ROOT 权限"></a>获取 ROOT 权限</h2><h3 id="原系统（未刷入-LineageOS-前）"><a href="#原系统（未刷入-LineageOS-前）" class="headerlink" title="原系统（未刷入 LineageOS 前）"></a>原系统（未刷入 LineageOS 前）</h3><blockquote><p>教程来自 <a href="https://xdaforums.com/t/root-the-samsung-galaxy-tab-3-8-0-and-install-custom-recovery.2525630/">Root the Samsung Galaxy Tab 3 8.0 and Install Custom Recovery - XDA</a><br>因我未在设备的原系统中尝试，无法确保内容的可行性，设备出现的一切问题机主自行负责！</p></blockquote><p>将 <a href="https://diffghjkl.lanzouq.com/iERNA1sc99za"><code>ROOT_SGT3_8.0.zip</code></a> 放入上文中提到的 ROM 文件夹</p><p>再次进入TWRP，找到 <code>/scard/ROM</code> ，选择<code>ROOT_SGT3_8.0.zip</code> ，滑动 <code>SWip to confirm Flash</code> </p><p>完成后，点击 <code>Reboot System</code></p><h3 id="刷入-LineageOS-后"><a href="#刷入-LineageOS-后" class="headerlink" title="刷入 LineageOS 后"></a>刷入 LineageOS 后</h3><p>将 <a href="https://github.com/topjohnwu/Magisk/releases/download/v27.0/Magisk-v27.0.apk">Magisk-v27.0.apk</a> 后缀改为.zip</p><p>进入 TWRP ，在 <code>Install</code> 选择 <code>Magisk-v27.0.zip</code> 的所在路径，执行刷入操作</p><p>成功后重启系统，将 <code>Magisk-v27.0.zip</code> 后缀改回 <code>.apk</code> ，然后安装</p><p>打开 Magisk ，将会提示修复操作，根据提示进行即可</p><blockquote><p>Tips:<br>1.选项：应该无需勾选 <code>保留 AVB 2.0/dm-verity</code> ，我这里没勾选也可以正常刷入<br>2.方式：选择 <code>直接安装</code> </p></blockquote><h2 id="刷入内核"><a href="#刷入内核" class="headerlink" title="刷入内核"></a>刷入内核</h2><blockquote><p>Tips:<br>kerNoleOC-1.8 - 启动时默认为 1.8GHz（在安兔兔基准测试中约为 15-18% 提升）<br>kerNoleOC-1.6 - 启动时默认为 1.6GHz</p></blockquote><p>进入 TWRP ，点击 <code>Install</code> - <code>Install Image</code> ，选择 <code>T311-kerNoleOC-1.8v6.img</code> 的所在路径，选择 <code>boot</code> ,再滑动 <code>Swipe to confirm Flash</code></p><p>内核输入工作完成！</p><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://xdaforums.com/t/recovery-twrp-3-1-1-x-for-t31x.2619518/">[Recovery] TWRP 3.1.1-x for T31x - XDA</a><br><a href="https://xdaforums.com/t/root-the-samsung-galaxy-tab-3-8-0-and-install-custom-recovery.2525630/">Root the Samsung Galaxy Tab 3 8.0 and Install Custom Recovery - XDA</a><br><a href="https://xdaforums.com/t/kernel-kernoleoc-for-t31x-oc-and-uv-v6-updated-4-15-17.3311718/">[Kernel] kerNoleOC for T31x (OC and UV) v6 Updated 4&#x2F;15&#x2F;17</a></p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><blockquote><p>一些 SM-T311 支持的软件合集：<a href="https://www.123pan.com/s/BOa8Vv-Pio7A.html">https://www.123pan.com/s/BOa8Vv-Pio7A.html</a></p></blockquote><p>这篇文章写了7个小时啊啊啊啊（悲）</p><p>主要是强迫症在作怪，想收集全文件…</p><p>总之，看到这里，不打算给我个打赏嘛</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 日常记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Samsung </tag>
+            
+            <tag> 三星 </tag>
+            
+            <tag> 刷机 </tag>
+            
+            <tag> 深度刷机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Android 系统代号、版本、API级别/NDK 版本</title>
       <link href="/2024/03/09/wiki-Android-Code-Versions/"/>
       <url>/2024/03/09/wiki-Android-Code-Versions/</url>
@@ -82,13 +113,13 @@
       
         <tags>
             
-            <tag> OPPO </tag>
-            
-            <tag> OPPO A83 </tag>
-            
             <tag> 刷机 </tag>
             
             <tag> 深度刷机 </tag>
+            
+            <tag> OPPO </tag>
+            
+            <tag> OPPO A83 </tag>
             
         </tags>
       
@@ -329,6 +360,35 @@
     
     
     <entry>
+      <title>【Linux】Screen使用</title>
+      <link href="/2022/01/27/wiki-Screen/"/>
+      <url>/2022/01/27/wiki-Screen/</url>
+      
+        <content type="html"><![CDATA[<p>（本文主体内容来自<a href="https://blog.csdn.net/qq_28832135/article/details/79831700%EF%BC%8C%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9%E8%AF%B7%E5%8F%82%E8%80%83%E6%AD%A4%E6%96%87%EF%BC%89">https://blog.csdn.net/qq_28832135/article/details/79831700，更多内容请参考此文）</a></p><p>（因为其他的我暂时用不到，实在是太多了…萌新的我排版不易~）</p><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Screen是一款由GNU计划开发的用于命令行终端切换的自由软件。用户可以通过该软件同时连接多个本地或远程的命令行会话，并在其间自由切换。GNU Screen可以看作是窗口管理器的命令行界面版本。它提供了统一的管理多个会话的界面和相应的功能。</p><ul><li>会话恢复</li></ul><p>只要Screen本身没有终止，在其内部运行的会话都可以恢复。这一点对于远程登录的用户特别有用——即使网络连接中断，用户也不会失去对已经打开的命令行会话的控制。只要再次登录到主机上执行screen -r就可以恢复会话的运行。同样在暂时离开的时候，也可以执行分离命令detach，在保证里面的程序正常运行的情况下让Screen挂起（切换到后台）。这一点和图形界面下的VNC很相似。</p><ul><li>多窗口</li></ul><p>在Screen环境下，所有的会话都独立的运行，并拥有各自的编号、输入、输出和窗口缓存。用户可以通过快捷键在不同的窗口下切换，并可以自由的重定向各个窗口的输入和输出。Screen实现了基本的文本操作，如复制粘贴等；还提供了类似滚动条的功能，可以查看窗口状况的历史记录。窗口还可以被分区和命名，还可以监视后台窗口的活动。 会话共享 Screen可以让一个或多个用户从不同终端多次登录一个会话，并共享会话的所有特性（比如可以看到完全相同的输出）。它同时提供了窗口访问权限的机制，可以对窗口进行密码保护。</p><p>GNU’s Screen 官方站点：<a href="http://www.gnu.org/software/screen/">http://www.gnu.org/software/screen/</a></p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install screen # (Centos)</span><br><span class="line">apt install screen # (Ubuntu)</span><br></pre></td></tr></table></figure><h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><ul><li>语法</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen [-AmRvx -ls -wipe][-d &lt;作业名称&gt;][-h &lt;行数&gt;][-r &lt;作业名称&gt;][-s ][-S &lt;作业名称&gt;]</span><br></pre></td></tr></table></figure><p>运行命令（示例）：<br>（创建一个名为test的screen）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -S test</span><br></pre></td></tr></table></figure><p>重新连接命令（示例）：<br>（重新连接一个名为test的screen）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -r test</span><br></pre></td></tr></table></figure><ul><li>选项</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-A 　将所有的视窗都调整为目前终端机的大小</span><br><span class="line">-d &lt;作业名称&gt; 　将指定的screen作业离线</span><br><span class="line">-h &lt;行数&gt; 　指定视窗的缓冲区行数</span><br><span class="line">-m 　即使目前已在作业中的screen作业，仍强制建立新的screen作业</span><br><span class="line">-r &lt;作业名称&gt; 　恢复离线的screen作业</span><br><span class="line">-r &lt;作业名称&gt; 　恢复离线的screen作业</span><br><span class="line">-R 　先试图恢复离线的作业。若找不到离线的作业，即建立新的screen作业</span><br><span class="line">-s 　指定建立新视窗时，所要执行的shell</span><br><span class="line">-S &lt;作业名称&gt; 　指定screen作业的名称</span><br><span class="line">-v 　显示版本信息</span><br><span class="line">-x 　恢复之前离线的screen作业</span><br><span class="line">-ls或--list 　显示目前所有的screen作业</span><br><span class="line">-wipe 　检查目前所有的screen作业，并删除已经无法使用的screen作业</span><br></pre></td></tr></table></figure><p>常用screen参数</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">screen -S test -&gt; 新建一个名为test的会话</span><br><span class="line">screen -ls -&gt; 列出当前所有的会话</span><br><span class="line">screen -r test -&gt; 回到test这个会话</span><br><span class="line">screen -d test -&gt; 远程脱离test这个会话</span><br><span class="line">screen -d -r test -&gt; 结束当前会话并回到test这个会话</span><br></pre></td></tr></table></figure><p>在每个screen会话下，所有命令都以 ctrl+a(C-a) 开始。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">C-a ? -&gt; 显示所有键绑定信息</span><br><span class="line">C-a c -&gt; 创建一个新的运行shell的窗口并切换到该窗口</span><br><span class="line">C-a n -&gt; Next，切换到下一个 window</span><br><span class="line">C-a p -&gt; Previous，切换到前一个 window</span><br><span class="line">C-a 0..9 -&gt; 切换到第 0..9 个 window</span><br><span class="line">Ctrl+a [Space] -&gt; 由视窗0循序切换到视窗9</span><br><span class="line">C-a C-a -&gt; 在两个最近使用的 window 间切换</span><br><span class="line">C-a x -&gt; 锁住当前的 window，需用用户密码解锁</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机Wiki </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Screen </tag>
+            
+            <tag> Linux-Screen </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《硬盘》</title>
       <link href="/2022/01/27/wiki-Disk/"/>
       <url>/2022/01/27/wiki-Disk/</url>
@@ -354,35 +414,6 @@
             <tag> HDD </tag>
             
             <tag> HHD </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>【Linux】Screen使用</title>
-      <link href="/2022/01/27/wiki-Screen/"/>
-      <url>/2022/01/27/wiki-Screen/</url>
-      
-        <content type="html"><![CDATA[<p>（本文主体内容来自<a href="https://blog.csdn.net/qq_28832135/article/details/79831700%EF%BC%8C%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9%E8%AF%B7%E5%8F%82%E8%80%83%E6%AD%A4%E6%96%87%EF%BC%89">https://blog.csdn.net/qq_28832135/article/details/79831700，更多内容请参考此文）</a></p><p>（因为其他的我暂时用不到，实在是太多了…萌新的我排版不易~）</p><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Screen是一款由GNU计划开发的用于命令行终端切换的自由软件。用户可以通过该软件同时连接多个本地或远程的命令行会话，并在其间自由切换。GNU Screen可以看作是窗口管理器的命令行界面版本。它提供了统一的管理多个会话的界面和相应的功能。</p><ul><li>会话恢复</li></ul><p>只要Screen本身没有终止，在其内部运行的会话都可以恢复。这一点对于远程登录的用户特别有用——即使网络连接中断，用户也不会失去对已经打开的命令行会话的控制。只要再次登录到主机上执行screen -r就可以恢复会话的运行。同样在暂时离开的时候，也可以执行分离命令detach，在保证里面的程序正常运行的情况下让Screen挂起（切换到后台）。这一点和图形界面下的VNC很相似。</p><ul><li>多窗口</li></ul><p>在Screen环境下，所有的会话都独立的运行，并拥有各自的编号、输入、输出和窗口缓存。用户可以通过快捷键在不同的窗口下切换，并可以自由的重定向各个窗口的输入和输出。Screen实现了基本的文本操作，如复制粘贴等；还提供了类似滚动条的功能，可以查看窗口状况的历史记录。窗口还可以被分区和命名，还可以监视后台窗口的活动。 会话共享 Screen可以让一个或多个用户从不同终端多次登录一个会话，并共享会话的所有特性（比如可以看到完全相同的输出）。它同时提供了窗口访问权限的机制，可以对窗口进行密码保护。</p><p>GNU’s Screen 官方站点：<a href="http://www.gnu.org/software/screen/">http://www.gnu.org/software/screen/</a></p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install screen # (Centos)</span><br><span class="line">apt install screen # (Ubuntu)</span><br></pre></td></tr></table></figure><h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><ul><li>语法</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen [-AmRvx -ls -wipe][-d &lt;作业名称&gt;][-h &lt;行数&gt;][-r &lt;作业名称&gt;][-s ][-S &lt;作业名称&gt;]</span><br></pre></td></tr></table></figure><p>运行命令（示例）：<br>（创建一个名为test的screen）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -S test</span><br></pre></td></tr></table></figure><p>重新连接命令（示例）：<br>（重新连接一个名为test的screen）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -r test</span><br></pre></td></tr></table></figure><ul><li>选项</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-A 　将所有的视窗都调整为目前终端机的大小</span><br><span class="line">-d &lt;作业名称&gt; 　将指定的screen作业离线</span><br><span class="line">-h &lt;行数&gt; 　指定视窗的缓冲区行数</span><br><span class="line">-m 　即使目前已在作业中的screen作业，仍强制建立新的screen作业</span><br><span class="line">-r &lt;作业名称&gt; 　恢复离线的screen作业</span><br><span class="line">-r &lt;作业名称&gt; 　恢复离线的screen作业</span><br><span class="line">-R 　先试图恢复离线的作业。若找不到离线的作业，即建立新的screen作业</span><br><span class="line">-s 　指定建立新视窗时，所要执行的shell</span><br><span class="line">-S &lt;作业名称&gt; 　指定screen作业的名称</span><br><span class="line">-v 　显示版本信息</span><br><span class="line">-x 　恢复之前离线的screen作业</span><br><span class="line">-ls或--list 　显示目前所有的screen作业</span><br><span class="line">-wipe 　检查目前所有的screen作业，并删除已经无法使用的screen作业</span><br></pre></td></tr></table></figure><p>常用screen参数</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">screen -S test -&gt; 新建一个名为test的会话</span><br><span class="line">screen -ls -&gt; 列出当前所有的会话</span><br><span class="line">screen -r test -&gt; 回到test这个会话</span><br><span class="line">screen -d test -&gt; 远程脱离test这个会话</span><br><span class="line">screen -d -r test -&gt; 结束当前会话并回到test这个会话</span><br></pre></td></tr></table></figure><p>在每个screen会话下，所有命令都以 ctrl+a(C-a) 开始。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">C-a ? -&gt; 显示所有键绑定信息</span><br><span class="line">C-a c -&gt; 创建一个新的运行shell的窗口并切换到该窗口</span><br><span class="line">C-a n -&gt; Next，切换到下一个 window</span><br><span class="line">C-a p -&gt; Previous，切换到前一个 window</span><br><span class="line">C-a 0..9 -&gt; 切换到第 0..9 个 window</span><br><span class="line">Ctrl+a [Space] -&gt; 由视窗0循序切换到视窗9</span><br><span class="line">C-a C-a -&gt; 在两个最近使用的 window 间切换</span><br><span class="line">C-a x -&gt; 锁住当前的 window，需用用户密码解锁</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 计算机Wiki </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Linux </tag>
-            
-            <tag> Screen </tag>
-            
-            <tag> Linux-Screen </tag>
             
         </tags>
       

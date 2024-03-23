@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="禾守酱"><meta name="copyright" content="禾守酱"><meta name="generator" content="Hexo 7.1.1"><meta name="theme" content="hexo-theme-yun"><title>记 SM-T311 的刷机&amp;ROOT历程 | 禾守の小站</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/star-markdown-css@0.4.1/dist/yun/yun-markdown.min.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/prism-theme-vars/base.css"><script src="https://fastly.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".markdown-body img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link rel="icon" type="image/png" href="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/IGTdG4v7xXd4bv"><link rel="mask-icon" href="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/IGTdG4v7xXd4bv" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://fastly.jsdelivr.net/npm/" crossorigin><script id="yun-config">
+    window.Yun = {}
+    window.CONFIG = {"hostname":"blog.dmoe.top","root":"/","title":"禾守の小站","version":"1.10.11","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"您需要查找什么内容？我会全力帮助您的！","empty":"啊呀，很抱歉，我找不到您需要的内容 ( ${query} ) ... 换个关键词试试？","hits":"芜湖——我找到了 ${hits} 条内容！看看有您需要的吗？","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.yunyoujun.cn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"local_search":{"path":"/search.xml"},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"fireworks":{"colors":null},"waline":{"config":{"enable":true,"serverURL":"https://bpl.dmoe.top/","comment":true,"visitor":true,"emoji":["https://jsd.onmicrosoft.cn/gh/walinejs/emojis@latest/bilibili/","https://jsd.onmicrosoft.cn/gh/walinejs/emojis@latest/weibo/","https://jsd.onmicrosoft.cn/gh/walinejs/emojis@latest/qq/"],"locale":{"placeholder":"填写邮箱，可以收到回复通知哦～"},"requiredMeta":["nick"],"el":"#waline","lang":"zh-CN"},"cdn":"https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.js","dark":"html.dark"},"vendors":{"host":"https://fastly.jsdelivr.net/npm/","darken":"https://fastly.jsdelivr.net/npm/darken@1.5.0"}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/hexo-theme-yun.js" type="module"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><meta name="description" content="本文不是教程，你不需要亲自尝试其中的每一个操作。如果你不知道自己在做什么，那就不要做。   若阅读本文并执行相关操作后出现设备损坏、隐私泄露、数据丢失等情况，则机主需要自行承担损失。  前言 Tips：1.Samsung Galaxy Tab 3 8.0 分为 T310（lt01wifi） 、 T311（lt013g） 、 T315（lt01lte）2.这三种的操作方法应该基本一致？本文可作参考">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记 SM-T311 的刷机&amp;ROOT历程">
+<meta property="og:url" content="https://blog.dmoe.top/2024/03/22/log-SM-T311/index.html">
+<meta property="og:site_name" content="禾守の小站">
+<meta property="og:description" content="本文不是教程，你不需要亲自尝试其中的每一个操作。如果你不知道自己在做什么，那就不要做。   若阅读本文并执行相关操作后出现设备损坏、隐私泄露、数据丢失等情况，则机主需要自行承担损失。  前言 Tips：1.Samsung Galaxy Tab 3 8.0 分为 T310（lt01wifi） 、 T311（lt013g） 、 T315（lt01lte）2.这三种的操作方法应该基本一致？本文可作参考">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sway-cdn.com/s/4aEiTpcBD4PPvwex/images/PB3BPdSHbp2lNo">
+<meta property="article:published_time" content="2024-03-22T14:40:00.000Z">
+<meta property="article:modified_time" content="2024-03-23T11:24:42.543Z">
+<meta property="article:author" content="禾守酱">
+<meta property="article:tag" content="Samsung">
+<meta property="article:tag" content="三星">
+<meta property="article:tag" content="刷机">
+<meta property="article:tag" content="深度刷机">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sway-cdn.com/s/4aEiTpcBD4PPvwex/images/PB3BPdSHbp2lNo"><script>(function() {
+  if (CONFIG.mode !== 'auto') return
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const setting = localStorage.getItem('darken-mode') || 'auto'
+  if (setting === 'dark' || (prefersDark && setting !== 'light'))
+    document.documentElement.classList.toggle('dark', true)
+})()</script></head><body><script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script><script>// Define global variable
+IconifyProviders = {
+  // Empty prefix: overwrite default API provider configuration
+  '': {
+    // Use custom API first, use Iconify public API as backup
+    resources: [
+        'https://api.iconify.design',
+    ],
+    // Wait for 1 second before switching API hosts
+    rotate: 1000,
+  },
+};</script><script defer src="https://fastly.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js" type="module"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js" type="module"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><span class="icon iconify" data-icon="ri:list-ordered"></span></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><span class="icon iconify" data-icon="ri:passport-line"></span></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info mickey-mouse"><a class="site-author-avatar" href="/about/" title="禾守酱"><img width="96" loading="lazy" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/IGTdG4v7xXd4bv" alt="禾守酱"></a><div class="site-author-name"><a href="/about/">禾守酱</a></div><span class="site-name">禾守の小站</span><sub class="site-subtitle"></sub><div class="site-description"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:home-4-line"></span></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:archive-line"></span></span><span class="site-state-item-count">18</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:folder-2-line"></span></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="site-state-item-count">49</span></a></div><a class="site-state-item hty-icon-button" href="/About/" title="留言板"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:clipboard-line"></span></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><span class="icon iconify" data-icon="ri:rss-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://pd.qq.com/s/b5pmo2vsp" title="QQ 频道 - ACGN爱好者交流社" target="_blank" style="color:#12B7F5"><span class="icon iconify" data-icon="ri:qq-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/diffghjkl" title="GitHub" target="_blank" style="color:#6e5494"><span class="icon iconify" data-icon="ri:github-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://weibo.com/6170110088" title="微博" target="_blank" style="color:#E6162D"><span class="icon iconify" data-icon="ri:weibo-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=3577283325" title="网易云音乐" target="_blank" style="color:#C20C0C"><span class="icon iconify" data-icon="ri:netease-cloud-music-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com/264994611" title="BiliBili" target="_blank" style="color:#FF8EB3"><span class="icon iconify" data-icon="ri:bilibili-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://twitter.com/fj26o_o" title="Twitter - @枫酱o_o" target="_blank" style="color:#1da1f2"><span class="icon iconify" data-icon="ri:twitter-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://t.me/HS_note" title="Telegram Channel" target="_blank" style="color:#0088CC"><span class="icon iconify" data-icon="ri:telegram-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:猜猜看?" title="E-Mail" target="_blank" style="color:#8E71C1"><span class="icon iconify" data-icon="ri:mail-line"></span></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://travellings.link" title="Travelling" target="_blank" style="color:var(--hty-text-color)"><span class="icon iconify" data-icon="ri:train-line"></span></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><span class="icon iconify" data-icon="ri:genderless-line"></span></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><span class="icon iconify" data-icon="ri:women-line"></span></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><span class="icon iconify" data-icon="ri:contrast-2-line"></span></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87"><span class="toc-number">2.</span> <span class="toc-text">准备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%85%E5%A4%87"><span class="toc-number">2.1.</span> <span class="toc-text">必备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E5%BF%85%E5%A4%87"><span class="toc-number">2.2.</span> <span class="toc-text">非必备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PC%E7%AB%AF%E7%9A%84%E5%87%86%E5%A4%87"><span class="toc-number">2.3.</span> <span class="toc-text">PC端的准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows%E7%AB%AF"><span class="toc-number">2.3.1.</span> <span class="toc-text">Windows端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MacOS%E7%AB%AF"><span class="toc-number">2.3.2.</span> <span class="toc-text">MacOS端</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-number">3.</span> <span class="toc-text">开始</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B7%E5%85%A5-TWRP"><span class="toc-number">3.1.</span> <span class="toc-text">刷入 TWRP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B7%E5%85%A5-LineageOS"><span class="toc-number">3.2.</span> <span class="toc-text">刷入 LineageOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96-ROOT-%E6%9D%83%E9%99%90"><span class="toc-number">3.3.</span> <span class="toc-text">获取 ROOT 权限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%B3%BB%E7%BB%9F%EF%BC%88%E6%9C%AA%E5%88%B7%E5%85%A5-LineageOS-%E5%89%8D%EF%BC%89"><span class="toc-number">3.3.1.</span> <span class="toc-text">原系统（未刷入 LineageOS 前）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%B7%E5%85%A5-LineageOS-%E5%90%8E"><span class="toc-number">3.3.2.</span> <span class="toc-text">刷入 LineageOS 后</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B7%E5%85%A5%E5%86%85%E6%A0%B8"><span class="toc-number">3.4.</span> <span class="toc-text">刷入内核</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-number">5.</span> <span class="toc-text">后记</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article" style="--smc-primary:#0078E7;"><link itemprop="mainEntityOfPage" href="https://blog.dmoe.top/2024/03/22/log-SM-T311/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="禾守酱"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="禾守の小站"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">记 SM-T311 的刷机&amp;ROOT历程<a class="post-edit-link" href="https://github.com/diffghjkl/diffghjkl.github.io/tree/hexo/source/_posts/log-SM-T311.md" target="_blank" title="编辑" rel="noopener"><span class="icon iconify" data-icon="ri:edit-line"></span></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:calendar-line"></span></span> <span class="post-meta-icon-text">发表于</span> <time title="创建时间：2024-03-22 22:40:00" itemprop="dateCreated datePublished" datetime="2024-03-22T22:40:00+08:00">2024-03-22</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><span class="icon iconify" data-icon="ri:file-word-line"></span></span> <span title="本文字数">1.4k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><span class="icon iconify" data-icon="ri:timer-line"></span></span> <span title="阅读时长">5m</span></span></span><span class="leancloud_visitors" id="/2024/03/22/log-SM-T311/" data-flag-title="记 SM-T311 的刷机&amp;ROOT历程"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><span class="icon iconify" data-icon="ri:eye-line"></span> <span class="leancloud-visitors-count"></span></span></span><span class="post-meta-divider">-</span><a href="#comment"><span class="post-meta-item-icon" title="评论数"><span class="icon iconify" data-icon="ri:chat-3-line"></span> <span class="waline-comment-count" id="/2024/03/22/log-SM-T311/"></span></span></a><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><span class="icon iconify" data-icon="ri:folder-line"></span></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">日常记录</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/Samsung/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">Samsung</span></a><a class="tag-item" href="/tags/%E4%B8%89%E6%98%9F/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">三星</span></a><a class="tag-item" href="/tags/%E5%88%B7%E6%9C%BA/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">刷机</span></a><a class="tag-item" href="/tags/%E6%B7%B1%E5%BA%A6%E5%88%B7%E6%9C%BA/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><span class="icon iconify" data-icon="ri:price-tag-3-line"></span></span><span class="tag-name">深度刷机</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"><blockquote>
+<p>本文不是教程，你不需要亲自尝试其中的每一个操作。如果你不知道自己在做什么，那就不要做。</p>
+</blockquote>
+<blockquote>
+<p>若阅读本文并执行相关操作后出现设备损坏、隐私泄露、数据丢失等情况，则机主需要自行承担损失。</p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>Tips：<br>1.Samsung Galaxy Tab 3 8.0 分为 T310（lt01wifi） 、 T311（lt013g） 、 T315（lt01lte）<br>2.这三种的操作方法应该基本一致？本文可作参考，出了问题我可不负责哦</p>
+</blockquote>
+<p>近期在 XDA论坛 发现了适配 SM-T311 的 第三方TWRP </p>
+<p>在各种因素的加持下，开始了本次刷机之旅</p>
+<p>理论上支持 Windows &amp; MacOS ，但由于我没有MacOS的设备，无法保证本文适用于 MacOS ，本文仅供参考！</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="必备"><a href="#必备" class="headerlink" title="必备"></a>必备</h2><ul>
+<li>一台 SM-T311</li>
+<li><a target="_blank" rel="noopener" href="https://www.123pan.com/s/BOa8Vv-Fio7A.html">适配的 TWRP</a> （非官方）</li>
+<li><a target="_blank" rel="noopener" href="https://www.123pan.com/s/BOa8Vv-Yio7A.html">LineageOS 14.1</a>（非官方）</li>
+</ul>
+<h2 id="非必备"><a href="#非必备" class="headerlink" title="非必备"></a>非必备</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases">Magisk</a>（获取ROOT）</li>
+<li><a target="_blank" rel="noopener" href="https://www.123pan.com/s/BOa8Vv-Gio7A.html">kerNoleOC</a>（超频内核）</li>
+</ul>
+<h2 id="PC端的准备"><a href="#PC端的准备" class="headerlink" title="PC端的准备"></a>PC端的准备</h2><h3 id="Windows端"><a href="#Windows端" class="headerlink" title="Windows端"></a>Windows端</h3><ul>
+<li>安装 <a target="_blank" rel="noopener" href="https://diffghjkl.lanzouq.com/iCXck1sca1ha">Kies for Windows</a>（Windows端驱动）</li>
+<li>安装 <a target="_blank" rel="noopener" href="https://diffghjkl.lanzouq.com/iqlK01sc9iba">Odin_v3.07</a>（针对三星Android平台的Windows刷机工具）</li>
+</ul>
+<h3 id="MacOS端"><a href="#MacOS端" class="headerlink" title="MacOS端"></a>MacOS端</h3><ul>
+<li>安装 <a target="_blank" rel="noopener" href="https://diffghjkl.lanzouq.com/i6iwU1sca47i">Kies for MacOS</a>（MacOS端驱动）</li>
+<li>安装 <a target="_blank" rel="noopener" href="https://diffghjkl.lanzouq.com/ii8RP1scchsj">JOdin for MacOS</a>（针对三星Android平台的MacOS刷机工具）</li>
+</ul>
+<blockquote>
+<p>Tips:<br>1.<a target="_blank" rel="noopener" href="https://diffghjkl.lanzouq.com/iYRVb1scfa8f">Magisk v27.0</a> 成功刷入，其他版本请自行尝试！<br>2.Kies官网：<a target="_blank" rel="noopener" href="https://www.samsung.com/hk/support/kies/">https://www.samsung.com/hk/support/kies/</a><br>3.如果您需要 JOdin 的安装教程，请前往 <a target="_blank" rel="noopener" href="https://odinflashtool.com/downloads/download-jodin3/">Download JOdin3 for macOS X, Linux, and Windows - ODIN FLASH TOOL</a> 查看！</p>
+</blockquote>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="刷入-TWRP"><a href="#刷入-TWRP" class="headerlink" title="刷入 TWRP"></a>刷入 TWRP</h2><blockquote>
+<p>请在确保 Kies 能正常连接手机的前提下进行！</p>
+</blockquote>
+<p>在关机状态下，同时按住 <code>Home键</code>、<code>音量-</code>、<code>电源键</code>（约5秒钟）</p>
+<p>根据警告的提示，按下 <code>音量+</code> ，即可进入 <code>Download模式</code>（如果你需要警告页面取消，则需按下<code>音量-</code>）</p>
+<p>打开 Odin ，并将 SM-T311 连接到电脑</p>
+<p><code>ID:COM</code> 一栏将会出现如下提示：</p>
+<p><img src="https://sway-cdn.com/s/4aEiTpcBD4PPvwex/images/PB3BPdSHbp2lNo" alt="1" loading="lazy"></p>
+<p>也可以通过查看 Messages 栏是否有如下提示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;ID:0/012&gt; Added!!</span><br></pre></td></tr></table></figure>
+
+<p>点击 <code>PDA</code> ，选择 TWRP 所在路径</p>
+<blockquote>
+<p>如果选择的是 .tar.md5 格式的文件，就会触发Odin的文件校验（约5秒钟）：<br><OSM> Enter CS for MD5..<br><OSM> Check MD5.. Do not unplug the cable..<br><OSM> Please wait..<br><OSM> T311.TWRP.3.1.1-0.tar.md5 is valid.<br><OSM> Checking MD5 finished Sucessfully..<br><OSM> Leave CS..</p>
+</blockquote>
+<p>点击 <code>Start</code>，执行刷入操作（约2分钟？）</p>
+<blockquote>
+<p>Tips：<br>1.部分情况下可能需要取消 Odin 中的 <code>Auto Reboot</code> ，否则将会出现执行错误…<br>2.建议执行前直接取消，这个问题困扰了我一个小时…（没认真看教程啊啊啊）</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 刷入成功的提示</span><br><span class="line">&lt;OSM&gt; All threads completed. (succeed 1 / failed 0)</span><br></pre></td></tr></table></figure>
+
+<p>同时按住 <code>电源键</code> 、 <code>音量+</code> 、 <code>Home键</code> ，直到出现三星Logo，只松开 <code>电源键</code> ，等到进入 TWRP 后松开所有按键</p>
+<p>至此，TWRP的刷入工作完成~</p>
+<h2 id="刷入-LineageOS"><a href="#刷入-LineageOS" class="headerlink" title="刷入 LineageOS"></a>刷入 LineageOS</h2><p> 进入 TWRP 后，将会询问是否修改系统分区，滑动 <code>Swipe to Allow Modifications</code> 即可</p>
+<p> 点击 <code>Wipe</code> - <code>Format Data</code> ，将数据格式化，再滑动 <code>Swipe to Factory Reset</code>，执行双清</p>
+<blockquote>
+<p>如果需要保留数据文件，建议提前备份，不清除Data可能会影响后续操作（因为没清除Data设备无限重启…）</p>
+</blockquote>
+<p>将 SM-T311 连接电脑，创建一个英文名ROM文件夹（个人习惯，可有可无），将LineageOS放入其中</p>
+<p>返回TWRP主页，进入 <code>Install</code> ，点击 <code>Select Storage</code> ，选择 <code>Internal Storage</code> ，找到<code>/sdcard/ROM</code> 或 <code>/data/media/0/ROM</code> 下的 LineageOS 文件，滑动<code>Swipe to confirm Flash</code></p>
+<p>提示完成后，点击 <code>Rebot System</code> 重启</p>
+<blockquote>
+<p>Tips:<br>1.需要安装 TWRP APP 的，则滑动 <code>Swipe to Install TWRP APP</code><br>2.若不需要安装TWRP APP，则选择 <code>Do Not Install</code><br>即便我尝试选择安装，似乎并没有找到它，并且稳定性似乎不太行了？</p>
+</blockquote>
+<p>至此，LineageOS便安装成功啦~</p>
+<blockquote>
+<p>Tips:<br>连接WIFI时，可能会提醒：已连接，但无法访问互联网<br>无须担心，这只是Lineage无法在大陆连接到服务器，略过即可</p>
+</blockquote>
+<h2 id="获取-ROOT-权限"><a href="#获取-ROOT-权限" class="headerlink" title="获取 ROOT 权限"></a>获取 ROOT 权限</h2><h3 id="原系统（未刷入-LineageOS-前）"><a href="#原系统（未刷入-LineageOS-前）" class="headerlink" title="原系统（未刷入 LineageOS 前）"></a>原系统（未刷入 LineageOS 前）</h3><blockquote>
+<p>教程来自 <a target="_blank" rel="noopener" href="https://xdaforums.com/t/root-the-samsung-galaxy-tab-3-8-0-and-install-custom-recovery.2525630/">Root the Samsung Galaxy Tab 3 8.0 and Install Custom Recovery - XDA</a><br>因我未在设备的原系统中尝试，无法确保内容的可行性，设备出现的一切问题机主自行负责！</p>
+</blockquote>
+<p>将 <a target="_blank" rel="noopener" href="https://diffghjkl.lanzouq.com/iERNA1sc99za"><code>ROOT_SGT3_8.0.zip</code></a> 放入上文中提到的 ROM 文件夹</p>
+<p>再次进入TWRP，找到 <code>/scard/ROM</code> ，选择<code>ROOT_SGT3_8.0.zip</code> ，滑动 <code>SWip to confirm Flash</code> </p>
+<p>完成后，点击 <code>Reboot System</code></p>
+<h3 id="刷入-LineageOS-后"><a href="#刷入-LineageOS-后" class="headerlink" title="刷入 LineageOS 后"></a>刷入 LineageOS 后</h3><p>将 <a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases/download/v27.0/Magisk-v27.0.apk">Magisk-v27.0.apk</a> 后缀改为.zip</p>
+<p>进入 TWRP ，在 <code>Install</code> 选择 <code>Magisk-v27.0.zip</code> 的所在路径，执行刷入操作</p>
+<p>成功后重启系统，将 <code>Magisk-v27.0.zip</code> 后缀改回 <code>.apk</code> ，然后安装</p>
+<p>打开 Magisk ，将会提示修复操作，根据提示进行即可</p>
+<blockquote>
+<p>Tips:<br>1.选项：应该无需勾选 <code>保留 AVB 2.0/dm-verity</code> ，我这里没勾选也可以正常刷入<br>2.方式：选择 <code>直接安装</code> </p>
+</blockquote>
+<h2 id="刷入内核"><a href="#刷入内核" class="headerlink" title="刷入内核"></a>刷入内核</h2><blockquote>
+<p>Tips:<br>kerNoleOC-1.8 - 启动时默认为 1.8GHz（在安兔兔基准测试中约为 15-18% 提升）<br>kerNoleOC-1.6 - 启动时默认为 1.6GHz</p>
+</blockquote>
+<p>进入 TWRP ，点击 <code>Install</code> - <code>Install Image</code> ，选择 <code>T311-kerNoleOC-1.8v6.img</code> 的所在路径，选择 <code>boot</code> ,再滑动 <code>Swipe to confirm Flash</code></p>
+<p>内核输入工作完成！</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://xdaforums.com/t/recovery-twrp-3-1-1-x-for-t31x.2619518/">[Recovery] TWRP 3.1.1-x for T31x - XDA</a><br><a target="_blank" rel="noopener" href="https://xdaforums.com/t/root-the-samsung-galaxy-tab-3-8-0-and-install-custom-recovery.2525630/">Root the Samsung Galaxy Tab 3 8.0 and Install Custom Recovery - XDA</a><br><a target="_blank" rel="noopener" href="https://xdaforums.com/t/kernel-kernoleoc-for-t31x-oc-and-uv-v6-updated-4-15-17.3311718/">[Kernel] kerNoleOC for T31x (OC and UV) v6 Updated 4&#x2F;15&#x2F;17</a></p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><blockquote>
+<p>一些 SM-T311 支持的软件合集：<a target="_blank" rel="noopener" href="https://www.123pan.com/s/BOa8Vv-Pio7A.html">https://www.123pan.com/s/BOa8Vv-Pio7A.html</a></p>
+</blockquote>
+<p>这篇文章写了7个小时啊啊啊啊（悲）</p>
+<p>主要是强迫症在作怪，想收集全文件…</p>
+<p>总之，看到这里，不打算给我个打赏嘛</p>
+</div></section><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="打赏" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><span class="icon iconify" data-icon="ri:hand-coin-line"></span></span><div id="reward-comment">我这么可爱，真的不考虑打赏下嘛~QAQ</div><div id="qr" style="display:none;"><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/wG7t-nWvCHcy3K"><img loading="lazy" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/wG7t-nWvCHcy3K" alt="AliPay" title="AliPay"></a><div><span style="color:#00A3EE"><span class="icon iconify" data-icon="ri:alipay-line"></span></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/BpvGZy5IAz-uvy"><img loading="lazy" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/BpvGZy5IAz-uvy" alt="QQPay" title="QQPay"></a><div><span style="color:#12B7F5"><span class="icon iconify" data-icon="ri:qq-line"></span></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/ucEaHWRQXfQ1_x"><img loading="lazy" src="https://sway-cdn.com/s/wl1r2oqIuZtCtQbJ/images/ucEaHWRQXfQ1_x" alt="WeChatPay" title="WeChatPay"></a><div><span style="color:#2DC100"><span class="icon iconify" data-icon="ri:wechat-pay-line"></span></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>禾守酱</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://blog.dmoe.top/2024/03/22/log-SM-T311/" title="记 SM-T311 的刷机&amp;ROOT历程">https://blog.dmoe.top/2024/03/22/log-SM-T311/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客的所有文章，除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><span class="icon iconify" data-icon="ri:creative-commons-line"></span><span class="icon iconify" data-icon="ri:creative-commons-by-line"></span><span class="icon iconify" data-icon="ri:creative-commons-nc-line"></span><span class="icon iconify" data-icon="ri:creative-commons-sa-line"></span></a> 许可协议。</li></ul></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2024/03/09/wiki-Android-Code-Versions/" rel="next" title="Android 系统代号、版本、API级别/NDK 版本"><span class="post-nav-text">Android 系统代号、版本、API级别/NDK 版本</span><span class="icon iconify" data-icon="ri:arrow-right-s-line"></span></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/diffghjkl/diffghjkl.github.io/discussions/" target="_blank">GitHub Discussions</a> 与我交流。</span><br></div><div id="waline"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@waline/client@v2/dist/waline.css"><script>window.CONFIG.waline.config.path = "/2024/03/22/log-SM-T311/"</script><div class="js-Pjax"><script src="/js/comments/waline.js" type="module" defer></script></div></div></main><footer class="sidebar-translate" id="footer"><div class="beian"><a rel="noopener" href="https://icp.gov.moe/?keyword=20210730" target="_blank">萌ICP备20210730号</a></div><div class="copyright"><span>&copy; 2022 – 2024 </span><span class="with-love" id="animate"><span class="icon iconify" data-icon="ri:cloud-line"></span></span><span class="author"> 禾守酱</span></div><div class="powered"><span>本站由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.1.1</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.10.11</span></div><div class="footer-custom-text">[object Object]</div></footer></div><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><span class="icon iconify" data-icon="ri:arrow-up-s-line"></span><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="搜索"><span class="site-state-item-icon"><span class="icon iconify" data-icon="ri:search-line"></span></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script src="https://fastly.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js"></script><script src="/js/search/local-search.js" defer type="module"></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><span class="icon iconify" data-icon="ri:close-line"></span></span></div><div class="search-input-container"><input class="search-input" id="local-search-input" type="text" placeholder="您需要查找什么内容？我会全力帮助您的！" value=""></div><div class="search-result-container"></div></div></body></html>
