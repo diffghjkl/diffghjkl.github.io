@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Important Head content -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="canonical" href="./index.html">
+		<title>RPG-Maker-MV &amp; MZ Decrypter v2.2.0 - by Petschko | zh-CN(简中汉化) v0.1(Beta) by 禾守</title>
+
+		<!-- Head-Meta stuff -->
+		<meta name="author" content="Petschko" />
+		<meta name="description" content="Decrypt, Restore or encrypt RPG-Maker-MV & MZ Files (.rpgmvp, .rpgmvm or .rpgmvo, .png_, .ogg_, .m4a_) here" />
+		<meta name="keywords" content="RPG-Maker-MV, RPG-Maker-Decrypter, rpg-maker, decrypt, decrypter, encrypt, encrypter, RPG-Maker-Encrypter, rpgmvp, rpgmvm, rpgmvo, RPG-Maker-MZ" />
+
+		<!-- Fav Icons -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+
+		<!-- MISC -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Styles Scripts etc -->
+		<!-- https://getbootstrap.com/docs/3.4/getting-started/ -->
+		<link rel="stylesheet" href="styles/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="styles/style.css?ver=2.0.1">
+	</head>
+	<body>
+		<noscript>
+			<div>
+				<p>
+					<strong>警告</strong>: 此脚本需要 JavaScript！请启用 JavaScript 或切换到较新的浏览器。
+				</p>
+				<hr>
+				<p>
+					此脚本会为您 加密/解密 文件，但解密不是由服务器完成，而是由您的浏览器完成。<br>
+					如果你不信任这个脚本 <a href="https://github.com/Petschko/RPG-Maker-MV-Decrypter" title="Check out the Source-Code" target="_blank">可检查 Github 上的代码</a> <i>(或者在你的浏览器检查)</i>. =)
+				</p>
+			</div>
+		</noscript>
+		<div>
+			<div class="info">
+				<strong>信息:</strong>
+				<p>
+					我的项目 “<a href="https://github.com/Petschko/Java-RPG-Maker-MV-Decrypter" title="访问 Github 上的项目" target="_blank">Java-RPG-Maker-MV-Decrypter</a>” 发布了一个 <a href="https://github.com/Petschko/Java-RPG-Maker-MV-Decrypter/releases/tag/v0.1.3-alpha" title="在 Github 上查看 Alpha 版本" target="_blank">Alpha版本</a> , 它可以处理整个目录并自行保存/重命名文件...<br>
+					它拥有 GUI ，你可以去尝试一下。 如果你只想解密文件， 我推荐你使用这个版本 <i>(因此你不需要下载)。</i> 但对于整个目录，您应该尝试 Java 版本！=)
+				</p>
+			</div>
+			<div class="center title">
+				<img class="logo" src="img/projectIcon.png" alt="Project Icon (Chest with a key)" title="Un or Re-Lock RPG-Maker MV-Files">
+				<h1>Petschkos RPG-Maker MV &amp; MZ-File Decrypter</h1>
+			</div>
+
+			<!-- Nav bar -->
+			<ul class="nav nav-tabs">
+				<li class="nav-link active">
+					<a href="#home"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> 首页</a>
+				</li>
+				<li class="nav-link">
+					<a href="#en-decrypt"><span class="glyphicon glyphicon-flash" aria-hidden="true"></span> 加密&解密</a>
+				</li>
+				<li class="nav-link">
+					<a href="#restore-images"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> 还原图像 (无加密)</a>
+				</li>
+				<li class="nav-link">
+					<a href="#browser-support"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 支持の浏览器</a>
+				</li>
+				<li class="nav-link">
+					<a href="#howTo"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> 食用方法</a>
+				</li>
+				<li class="nav-link">
+					<a href="#about"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> 关于</a>
+				</li>
+			</ul>
+			<!-- Nav bar end -->
+
+			<div id="home" class="content-container">
+				<p>欢迎使用 RPG-Maker MV &amp; MZ-File Decrypter ，您可以轻松地解密 使用内置加密技术加密 的 任何 RPG-MV/RPG-MZ项目 的文件。 同时，您也可以重新加密它们~ （主要用于翻译游戏内容）</p>
+				<p>请确保您不会使用此工具来窃取内容, 如果你需要查看图像（大多数法律是允许私人使用的），请随意查看，但不要窃取他们！</p>
+				<p>内容由 <a href="https://blog.dmoe.top" target="_blank">禾守</a> 汉化~</p>
+
+				<div class="center">
+					<p>请选择您要执行的操作：</p>
+					<a href="#restore-images" class="menu-link btn btn-primary">
+						（无加密）恢复游戏中的图像
+					</a>
+					<a href="#en-decrypt" class="menu-link btn btn-primary">
+						加密/解密 游戏文件
+					</a>
+				</div>
+			</div>
+
+			<div id="en-decrypt" class="content-container">
+				<p>转换为PNG文件 （一般为 <b>.rpgmvp</b> &amp; <b>.png_</b> 格式的图像文件）不需要解密操作, <b>除非</b> 您需要重新加密它们。 <a href="#restore-images" class="menu-link">点我恢复没有密钥的图像</a></p>
+				<hr />
+				<p>在这里， 你可以解密&（重新）加密 RPG-Maker MV &amp; MZ 游戏文件</p>
+				<p>您可以从以下文件中获取解密代码：</p>
+				<ul>
+					<li><b>RPG-Maker MV</b>: "游戏根目录"/www/data/System(.json) 或任何加密的图像（如"<b>.rpgmvp</b>"文件）</li>
+					<li><b>RPG-Maker MZ</b>: "游戏根目录"/data/System(.json)  或任何加密的图像（如"<b>.png_</b>"文件）</li>
+				</ul>
+				<p>选择文件后点击“检测”。如果您知道密钥，可以在下方的输入框中输入！</p>
+				<hr />
+				<div class="wrapper center">
+					<div class="left">
+						<h2>选择文件</h2>
+						<div class="fileInfoArea">
+							<fieldset class="decryptCodeArea">
+								<legend>1. 文件解密</legend>
+								<div>
+									<label for="systemFile">
+										选择一个 <b>.json</b> / <b>.rpgmvp</b> / <b>.png_</b> 文件， 然后点击检测！<br>
+									</label>
+									<div class="button-grid-wrapper">
+										<div class="box1">
+											<input type="file" accept=".json,.txt,.js,.rpgmvp,.png_" name="system.json" id="systemFile">
+										</div>
+										<div class="box2">
+											<button class="btn btn-default" type="button" id="detectButton">
+												<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+												<span>检测</span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div>
+									<label>
+										密钥： <input type="text" name="decryptCode" id="decryptCode" required>
+									</label>
+								</div>
+							</fieldset>
+							<fieldset>
+								<legend>2. 选择文件</legend>
+							<div>
+								<label for="encryptedFiles">
+									加密/解密文件:
+									<br>
+									（Tips：支持 <b>.rpgmvp</b> / <b>.rpgmvm</b> / <b>.rpgmvo</b> / <b>.png</b> / <b>.ogg</b> / <b>.m4a</b> / <b>.png_</b> / <b>.ogg_</b> / <b>.m4a_</b> 文件）
+								</label>
+								<div class="bottom-space drag-drop-file">
+									<input type="file" accept=".png,.ogg,.m4a,.rpgmvp,.rpgmvm,.rpgmvo,.png_,.ogg_,.m4a_" name="encryptedFiles" id="encryptedFiles" title="将文件拖放到此处或选择文件" multiple required>
+								</div>
+							</div>
+							</fieldset>
+							<fieldset class="advancedArea">
+								<legend>高级</legend>
+								<div class="bottom-space">
+									是否需要验证 Fake-Header？
+									<div class="tooltip help">
+										(?)
+										<div class="tooltipText longText">
+											<p>检查文件头是否正确</p>
+											<p>文件头仅对加密很重要。（解密时可忽略）</p>
+											<hr>
+											<p class="text-left">在 <strong>极少数</strong> 情况下，某些游戏会使用不同的标头设置。您可以在以下位置找到正确的标头设置：<br>
+												<span class="red">"游戏根目录"/www/js/rpg_core.js</span><br>
+												搜索 “<strong>function Decrypter()</strong>”, 您可以找到所有值</p>
+										</div>
+									</div>
+								</div>
+								<div>
+									<label style="margin-right: 5px;">
+										<input type="radio" name="checkFakeHeader" value="1">是
+									</label>
+									<label>
+										<input type="radio" name="checkFakeHeader" value="0" checked="checked">否
+										<span class="tooltip help">
+										(?)
+										<span class="tooltipText longText">
+											忽略文件头<br>
+											<strong>警告</strong>: 这可能会导致解密的文件无效！（若文件未加密，也会解密）<br>
+											<br>
+											若您确定您的文件已被 RPG-Maker 加密，则只需选择“否”！
+										</span>
+									</span>
+									</label>
+								</div>
+								<div id="headerValuesEditArea">
+									<div>
+										<div id="spoilerHeaderInfoText" class="link">Header值 (显示)</div>
+									</div>
+									<div id="headerInfo" class="hidden">
+										<h3>Header 信息</h3>
+										<div class="tooltip help">
+											(?)
+											<div class="tooltipText">
+												专家设置！通常您不需要在这里更改任何内容！（仅在极少数情况下）
+											</div>
+										</div>
+										<div>
+											何时需要更改这些设置？<br>
+											<div class="tooltip help">
+												解密
+												<div class="tooltipText longText">
+													<p>
+														一般情况下您不需要对标头进行解密<br>
+													</p>
+													<p>
+														它只是用来确保你的文件是一个 RPG-Maker 加密的文件^^
+													</p>
+													<hr>
+													<p class="text-left">
+														<span class="green">Tips</span>：您可以在 <b>不了解如何正确设置的情况下</b> 解密任何 RPG 文件<br>
+														如果无法验证 Header，请将其设置为“否” =)<br>
+														通常情况下它适用默认设置
+													</p>
+												</div>
+											</div>
+											|
+											<div class="tooltip help">
+												加密
+												<div class="tooltipText longText">
+													<p class="text-left">
+														如果你想将文件转回游戏，则需要验证Header，游戏会检查文件头是否正确。
+													</p>
+													<hr>
+													<p class="text-left">
+														<span class="green">Tips</span>：你需要确保 <b>文件头正确</b> ，若文件头错误，游戏将无法正确显示<br>
+														理论上默认设置适用于绝大多数游戏<br>
+														因此，请先尝试默认设置，若无法工作，则需搜索正确的 Header设置.
+													</p>
+													<hr>
+													<p class="text-left">
+														您可以根据 “验证 Fake-Header 帮助” 来找到它们：<br>
+														<span class="red">"游戏根目录"/www/js/rpg_core.js</span><br>
+														搜索 “<strong><u>function Decrypter()</u></strong>”, 您可以找到所有值
+													</p>
+												</div>
+											</div>
+										</div>
+										<div>
+											<label>
+												Header-Length <i>(以 Bytes 为单位)</i>: <input type="text" name="headerLen" id="headerLen">
+											</label>
+										</div>
+										<div>
+											<label>
+												Header-Signature: <input type="text" name="signature" id="signature">
+											</label>
+										</div>
+										<div>
+											<label>
+												Header-Version: <input type="text" name="version" id="version">
+											</label>
+										</div>
+										<div>
+											<label>
+												Header-Remain: <input type="text" name="remain" id="remain">
+											</label>
+										</div>
+										<button class="btn btn-danger" type="button" id="resetHeader">
+											<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+											<span>将 Header值 重置为默认值</span>
+										</button>
+									</div>
+								</div>
+							</fieldset>
+							<button class="btn btn-success" type="button" id="decrypt">
+								<img src="img/lock_broken.png" alt="(Broken Lock)">
+								<span>解密</span>
+							</button>
+							<button class="btn btn-default" type="button" id="encrypt-mv">
+								<img src="img/lock.png" alt="(Lock)">
+								<span>（重新）加密 MV</span>
+							</button>
+							<button class="btn btn-default" type="button" id="encrypt-mz">
+								<img src="img/lock.png" alt="(Lock)">
+								<span>（重新）加密 MZ</span>
+							</button>
+						</div>
+					</div>
+					<div class="fileList right">
+						<h2>文件列表</h2>
+						<fieldset>
+							<legend>3. 文件下载</legend>
+							<div class="bottom-space">
+								<button class="btn btn-primary zipSave" type="button" disabled>
+									<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+									<span>全部另存为.zip文件</span>
+								</button>
+								<div class="tooltip help">
+									(i)
+									<div class="tooltipText">
+										文件大小限制将取决于您的内存和浏览器...若要处理许多文件（如500+MB），推荐使用 Java-RPG-Maker-MV-Decrypter ！
+									</div>
+								</div>
+								<button class="btn btn-default clearFileList" type="button" disabled>
+									<span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
+									<span>清空文件列表</span>
+								</button>
+								<div class="tooltip help">
+									(?)
+									<div class="tooltipText">
+										删除列表中的所有文件
+									</div>
+								</div>
+							</div>
+							<div class="blob-list bottom-space"></div>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+
+			<div id="restore-images" class="content-container">
+				<p>在这里，您可以直接恢复 RPG-Maker游戏 中的PNG文件 （支持 <b>.rpgmvp</b> & <b>.png_</b> 图像文件），无需密钥</p>
+				<hr>
+				<div class="wrapper center">
+					<div class="left">
+						<div class="fileInfoArea">
+							<h2>选择文件</h2>
+
+							<fieldset>
+								<legend>1. 选择文件</legend>
+								<label for="encryptedImg">
+									选择要还原的文件：
+								</label>
+								<div class="bottom-space drag-drop-file">
+									<input id="encryptedImg" type="file" accept=".rpgmvp,.png_" name="encryptedImg" title="将文件拖放到此处或选择文件" multiple required>
+								</div>
+							</fieldset>
+
+							<div>
+								<button type="button" class="btn btn-success" id="restoreEncryptedImages">
+									<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+									<span>恢复原始图像</span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="fileList right">
+						<h2>文件列表</h2>
+						<fieldset>
+							<legend>2. 下载文件</legend>
+							<button class="btn btn-primary zipSave" type="button" disabled>
+								<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+								<span>全部另存为.zip文件</span>
+							</button>
+							<div class="tooltip help">
+								(i)
+								<div class="tooltipText">
+									文件大小限制将取决于您的内存和浏览器...若要处理许多文件（如500+MB），推荐使用 Java-RPG-Maker-MV-Decrypter ！
+								</div>
+							</div>
+							<button class="btn btn-default clearFileList" type="button" disabled>
+								<span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
+								<span>清空文件列表</span>
+							</button>
+							<div class="tooltip help">
+								(?)
+								<div class="tooltipText">
+									删除列表中的所有文件
+								</div>
+							</div>
+							<div class="blob-list bottom-space"></div>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+
+			<div id="browser-support" class="content-container">
+				<h2 id="browserSupport">支持の浏览器</h2>
+				<p><strong>请注意</strong>：此脚本仅在 Firefox 上测试和开发。您可以通过 <a href="https://github.com/Petschko/RPG-Maker-MV-Decrypter/issues" title="通过报告错误来帮助我" target="_blank">报告错误</a> 帮助我使其在所有浏览器上运行！</p>
+				<ul>
+					<li>
+						<s>Internet-Explorer<span class="red">（无法使用 - 不受支持）</span></s>
+						<span class="tooltip help">
+							(细节)
+							<span class="tooltipText">
+								<span class="red">下载文件</span><br>
+								<span class="red">查看文件</span><br>
+								<span class="yellow">加密/解密</span><br>
+								<span class="grey">ZIP下载</span> - <i>未知</i>
+							</span>
+						</span>
+					</li>
+					<li>
+						Edge<span class="green">（可用）</span>
+					</li>
+					<li>
+						Google-Chrome<span class="green">（可用）</span>
+					</li>
+					<li>
+						Firefox<span class="green">（可用）</span>
+					</li>
+					<li>
+						Safari<span class="green">（几乎完全可用 - 需要测试）</span>
+						<span class="tooltip help">
+							(细节)
+							<span class="tooltipText longText">
+								<span class="green">下载文件</span><br>
+								<span class="grey">查看文件</span> - <i>未知</i><br>
+								<span class="green">加密/解密</span><br>
+								<span class="grey">ZIP下载</span> - <i>未知</i>
+							</span>
+						</span>
+						<a href="https://github.com/Petschko/RPG-Maker-MV-Decrypter/issues/11" target="_blank">点我分享您的测试结果！</a>
+					</li>
+					<li>
+						Opera<span class="green">（可用）</span>
+					</li>
+				</ul>
+			</div>
+
+			<div id="howTo" class="content-container">
+				<h2>如何使用？</h2>
+				<ol>
+					<li>
+						支持的加密文件的后缀有 <strong>.rpgmvp</strong> / <strong>.rpgmvm</strong> / <strong>.rpgmvo</strong> / <strong>.png_</strong> / <strong>.ogg_</strong> / <strong>.m4a_</strong> ，否则无法使用此脚本<br>
+						<i>如果你需要加密文件，它们通常有一个文件扩展名，如 "png"  =)</i>
+					</li>
+					<li>
+						获取 加密/解密密钥<br>
+						<span class="red">New:</span> PNG文件 （如 <b>.rpgmvp</b> / <b>.png_</b> 图像文件）无需密钥,  <b>除非</b> 你需要重新加密文件。 <a href="#restore-images" class="menu-link">点我恢复没有密钥的图像</a>
+						<ul>
+							<li>上传游戏的 .json 文件后，点击“检测”运行检测代码</li>
+							<li>如果检测不起作用，则会弹出进一步的说明</li>
+						</ul>
+					</li>
+					<li>选择要解密/加密的文件 - <i>可同时选择多个文件！</i></li>
+					<li>点击解密或加密按钮</li>
+					<li>
+						如果您点击文件名旁边的“View”，则可以预览解密的文件。<i>（当然您无法预览加密的文件）</i>
+					</li>
+					<li>
+						您现在可以通过单击“Save”来保存它们。 (脚本将保留文件名并为您更改扩展名！) =)
+						<ul>
+							<li>
+								您还可以通过单击“全部另存为.zip文件”将文件列表中的所有文件打包为.zip格式！
+							</li>
+						</ul>
+					</li>
+				</ol>
+			</div>
+			<div id="about" class="content-container">
+				<h2>关于汉化</h2>
+				首先感谢<a href="https://github.com/Petschko/" target="_blank"> Petschko </a>大大的辛苦付出！<br>
+				汉化：<a href="https://blog.dmoe.top" target="_blank">禾守</a><br>
+				版本：v0.1（Beta），内容测试ing...<br>
+				值得一提的是，汉化是以谷歌翻译为主，然后进行简单的人工润色<br>
+				如有问题，欢迎反馈留言~<br>
+				至于汉化原因？<s>闲着没事做(</s>
+			</div>
+		</div>
+		<footer>
+			<div class="css_valid center">
+				<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+					<img class="valid_css" src="https://jigsaw.w3.org/css-validator/images/vcss" alt="CSS ist valide!" />
+				</a>
+			</div>
+			<div class="center creator">
+				制作者: <a href="mailto:peter@petschko.org" title="如果您有任何问题或疑问，请给我发邮件">Petschko</a>
+				&nbsp;|&nbsp;
+				<a href="https://github.com/Petschko/RPG-Maker-MV-Decrypter" target="_blank" title="在 GitHub 上访问此项目">
+					GitHub 
+				</a>
+				&nbsp;|&nbsp;
+				<a href="https://github.com/Petschko/RPG-Maker-MV-Decrypter/issues" target="_blank" title="如果发现错误，请报告=) (也可以向我发送邮件)">
+					报告错误
+				</a>
+			</div>
+			<br>
+			<div class="center creator">
+				汉化: <a href="https://blog.dmoe.top/" target="_blank">禾守</a> | v0.1(Beta)
+				</a>
+			</div>
+		</footer>
+
+		<!-- Add Scripts -->
+		<script src="libs/FileSaver.min.js"></script>
+		<script src="libs/jszip.min.js?ver=3.1.3"></script>
+		<script src="libs/lz-string.min.js"></script>
+		<script src="scripts/RPGFile.js?ver=1.2.1"></script>
+		<script src="scripts/ErrorException.js?ver=1.0"></script>
+		<script src="scripts/Decrypter.js?ver=2.0.0"></script>
+		<script src="scripts/ZIP.js?ver=0.3"></script>
+		<script src="scripts/functions.js?ver=2.0.1"></script>
+		<script src="scripts/menu.js?ver=1.1.0"></script>
+	</body>
+</html>
