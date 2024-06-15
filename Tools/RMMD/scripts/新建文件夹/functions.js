@@ -21,13 +21,13 @@ function getCode(systemFileElId, codeTextElId, headerLenId) {
 	var headerLen = document.getElementById(headerLenId);
 
 	if(systemFileEl.files.length < 1) {
-		alert('请选择一个 system(.json) 文件！');
+		alert('Please choose the System.json-File!');
 		return;
 	}
 
 	Decrypter.detectEncryptionCode(new RPGFile(systemFileEl.files[0], null), parseInt(headerLen.value), function(key) {
 		if(key === null) {
-			alert('错误：文件内容无效！（可能不是 JSON 或 加密图像 文件） - 仅支持 .json / .rpgmvp / .png_ 格式的文件！)');
+			alert('Error: File-Content was invalid (Was not a JSON-File or an Encrypted Image - .json/.rpgmvp/.png_)');
 			return;
 		}
 
@@ -35,17 +35,17 @@ function getCode(systemFileElId, codeTextElId, headerLenId) {
 			codeTextEl.value = key;
 			codeTextEl.className = removeValidationCssClasses(codeTextEl.className);
 			codeTextEl.className = addCssClass(codeTextEl.className, 'valid');
-			alert('检测密钥成功^^! (' + key + ')');
+			alert('Key found^^! (' + key + ')');
 		} else
 			window.prompt(
-				'错误：未找到密钥——请确保选择了正确的文件！\n\n' +
-				'您还可以使用加密图像（.rpgmvp / .png_）来检测密钥！\n' +
+				'Error: Encryption-Key not found - Make sure that you select the correct file!\n\n' +
+				'You can also use Encrypted-Images (.rpgmvp / .png_) to detect the Key!\n' +
 				'-------------------------------------\n' +
-				'在极少数情况下，密钥在游戏中被隐藏/混淆。请尝试以下步骤：\n' +
-				'1. 打开下方链接并复制代码\n' +
-				'2. 将代码粘贴至此文件的最后一行：./www/js/rpg_core(.js)\n' +
-				'3. 保存文件\n' +
-				'4. 运行游戏并复制代码\n\n',
+				'In rare cases the Key is hidden/obfuscated in the game. Try these steps:\n' +
+				'1. Open the Link below and copy the code\n' +
+				'2. Paste the Code at the last line in this File: ./www/js/rpg_core(.js)\n' +
+				'3. Save the file\n' +
+				'4. Run the game and copy the Code\n\n',
 				'https://pastebin.com/nCrzCpzD'
 			);
 	});
@@ -163,10 +163,10 @@ function spoiler(spoilerTextElId, spoilerText, spoilerElId) {
 
 	if(hasCssClass(spoilerEl.className, 'hidden')) {
 		spoilerEl.className = removeCssClass(spoilerEl.className, 'hidden');
-		spoilerTextEl.innerHTML = spoilerText + ' (隐藏)';
+		spoilerTextEl.innerHTML = spoilerText + ' (Hide)';
 	} else {
 		spoilerEl.className = addCssClass(spoilerEl.className, 'hidden');
-		spoilerTextEl.innerHTML = spoilerText + ' (显示)';
+		spoilerTextEl.innerHTML = spoilerText + ' (Show)';
 	}
 }
 
@@ -208,7 +208,7 @@ function init() {
 		setHeaderDefaultValues(true);
 	}, false);
 	spoilerHeader[addMethod](window.addEventListener ? 'click' : 'onclick', function() {
-		spoiler('spoilerHeaderInfoText', 'Header值', 'headerInfo');
+		spoiler('spoilerHeaderInfoText', 'Header-Values', 'headerInfo');
 	}, false);
 	detectButton[addMethod](window.addEventListener ? 'click' : 'onclick', function() {
 		getCode('systemFile', 'decryptCode', 'headerLen');
@@ -287,7 +287,7 @@ document.body[window.addEventListener ? 'addEventListener' : 'attachEvent'](
  */
 function setHeaderDefaultValues(confirmDialog) {
 	if(confirmDialog) {
-		if(! confirm('您确定要将 Header值 重置为默认值吗？'))
+		if(! confirm('Are you sure to reset the Header-Values to default?'))
 			return;
 	}
 
@@ -323,7 +323,7 @@ function processRestoreFiles(fileUrlElId, outputElClass) {
 
 	// Check if at least 1 File is given
 	if(fileUrlEl.files.length < 1) {
-		alert('请至少选择一个要恢复的文件...');
+		alert('Specify at least 1 File to restore...');
 
 		return;
 	}
@@ -413,7 +413,7 @@ function processFiles(
 
 	// Check if all required stuff is given
 	if(! encryptionCode) {
-		alert('请输入密钥！');
+		alert('Specify the En/Decryption-Code!');
 		encryptCodeEl.className = removeValidationCssClasses(encryptCodeEl.className);
 		encryptCodeEl.className = addCssClass(encryptCodeEl.className, 'invalid');
 
@@ -422,7 +422,7 @@ function processFiles(
 
 	// Check if code just contain HEX-Chars
 	if(! Decrypter.checkHexChars(encryptionCode)) {
-		alert('密钥只能包含十六进制字符！ (如：0-9 & A-F 或 a-f)');
+		alert('En/Decryption-Code can just contain HEX-Chars (0-9 & A-F or a-f)!');
 		encryptCodeEl.className = removeValidationCssClasses(encryptCodeEl.className);
 		encryptCodeEl.className = addCssClass(encryptCodeEl.className, 'invalid');
 
@@ -435,7 +435,7 @@ function processFiles(
 
 	// Check if at least 1 File is given
 	if(fileUrlEl.files.length < 1) {
-		alert('请至少选择一个要解密的文件...');
+		alert('Specify at least 1 File to decrypt...');
 
 		return;
 	}
@@ -449,7 +449,7 @@ function processFiles(
 			decrypter.headerLen = Math.floor(headerLen);
 		else if(headerLen) {
 			headerLenEl.className = addCssClass(headerLenEl.className, 'invalid');
-			alert('信息: Header-Length 必须是正整数！（现在使用默认值: ' +
+			alert('Info: Header-Length must be a positive round Number! (Using default now: ' +
 				decrypter.defaultHeaderLen + ')');
 		}
 
@@ -458,7 +458,7 @@ function processFiles(
 			decrypter.signature = signature;
 		else if(signature) {
 			signatureEl.className = addCssClass(signatureEl.className, 'invalid');
-			alert('信息: Header-Signature 只能包含十六进制字符！ (如：0-9 & A-F 或 a-f)，（现在使用默认值: ' +
+			alert('Info: Header-Signature can just contain HEX-Chars (0-9 & A-F or a-f)! (Using default now: ' +
 				decrypter.defaultSignature + ')');
 		}
 
@@ -467,7 +467,7 @@ function processFiles(
 			decrypter.version = version;
 		else if(version) {
 			versionEl.className = addCssClass(versionEl.className, 'invalid');
-			alert('信息: Header-Version 只能包含十六进制字符！ (如：0-9 & A-F 或 a-f)，（现在使用默认值: ' +
+			alert('Info: Header-Version can just contain HEX-Chars (0-9 & A-F or a-f)! (Using default now: ' +
 				decrypter.defaultVersion + ')');
 		}
 
@@ -476,7 +476,7 @@ function processFiles(
 			decrypter.remain = remain;
 		else if(remain) {
 			remainEl.className = addCssClass(remainEl.className, 'invalid');
-			alert('信息: Header-Remain 只能包含十六进制字符！ (如：0-9 & A-F 或 a-f)，（现在使用默认值: ' +
+			alert('Info: Header-Remain can just contain HEX-Chars (0-9 & A-F or a-f)! (Using default now: ' +
 				decrypter.defaultRemain + ')');
 		}
 	}

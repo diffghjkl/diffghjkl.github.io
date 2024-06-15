@@ -60,5 +60,5 @@ ZIP.prototype.save = function() {
 			blob = null;
 		});
 	} else
-		alert('无法提供 ZIP 下载！ZIP 文件为空...');
+		alert('Can\'t offer ZIP-Download. ZIP would be empty...');
 };

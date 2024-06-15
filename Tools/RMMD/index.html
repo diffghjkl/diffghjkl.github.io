@@ -4,7 +4,7 @@
 		<!-- Important Head content -->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="canonical" href="./index.html">
-		<title>RPG-Maker-MV &amp; MZ Decrypter v2.2.0 - by Petschko | zh-CN(简中汉化) v0.1(Beta) by 禾守</title>
+		<title>RPG-Maker-MV &amp; MZ Decrypter v2.2.0 - by Petschko | zh-CN_v0.1.1-alpha by 禾守</title>
 
 		<!-- Head-Meta stuff -->
 		<meta name="author" content="Petschko" />
@@ -75,13 +75,13 @@
 
 			<div id="home" class="content-container">
 				<p>欢迎使用 RPG-Maker MV &amp; MZ-File Decrypter ，您可以轻松地解密 使用内置加密技术加密 的 任何 RPG-MV/RPG-MZ项目 的文件。 同时，您也可以重新加密它们~ （主要用于翻译游戏内容）</p>
-				<p>请确保您不会使用此工具来窃取内容, 如果你需要查看图像（大多数法律是允许私人使用的），请随意查看，但不要窃取他们！</p>
+				<p>请确保您不会使用此工具来窃取内容, 如果你需要查看图像（大多数法律是允许私人使用的），请随意查看，但不要窃取它们！</p>
 				<p>内容由 <a href="https://blog.dmoe.top" target="_blank">禾守</a> 汉化~</p>
 
 				<div class="center">
 					<p>请选择您要执行的操作：</p>
 					<a href="#restore-images" class="menu-link btn btn-primary">
-						（无加密）恢复游戏中的图像
+						(无加密) 恢复游戏中的图像
 					</a>
 					<a href="#en-decrypt" class="menu-link btn btn-primary">
 						加密/解密 游戏文件
@@ -90,15 +90,16 @@
 			</div>
 
 			<div id="en-decrypt" class="content-container">
-				<p>转换为PNG文件 （一般为 <b>.rpgmvp</b> &amp; <b>.png_</b> 格式的图像文件）不需要解密操作, <b>除非</b> 您需要重新加密它们。 <a href="#restore-images" class="menu-link">点我恢复没有密钥的图像</a></p>
+				<p>Tips：若您需要将 加密的图像文件（一般为 <b>.rpgmvp</b> &amp; <b>.png_</b> 格式）转换为 <b>.png</b> 格式，则不需要进行解密操作，<b>除非</b>您需要重新加密它们。 <a href="#restore-images" class="menu-link">点我前往转换(没有密钥的)图像</a></p>
 				<hr />
-				<p>在这里， 你可以解密&（重新）加密 RPG-Maker MV &amp; MZ 游戏文件</p>
-				<p>您可以从以下文件中获取解密代码：</p>
+				<b>【操作指南】</b></p>
+				<p>在这里， 您可以 解密&(重新)加密 RPG-Maker MV &amp; MZ 游戏文件</p>
+				<p>您可以从以下文件中获取密钥：</p>
 				<ul>
-					<li><b>RPG-Maker MV</b>: "游戏根目录"/www/data/System(.json) 或任何加密的图像（如"<b>.rpgmvp</b>"文件）</li>
-					<li><b>RPG-Maker MZ</b>: "游戏根目录"/data/System(.json)  或任何加密的图像（如"<b>.png_</b>"文件）</li>
+					<li><b>RPG-Maker MV</b>: 游戏根目录/www/data/System(.json) 或任何加密的图像（如 <b>.rpgmvp</b> 文件）</li>
+					<li><b>RPG-Maker MZ</b>: 游戏根目录/data/System(.json)  或任何加密的图像（如 <b>.png_</b> 文件）</li>
 				</ul>
-				<p>选择文件后点击“检测”。如果您知道密钥，可以在下方的输入框中输入！</p>
+				<p>选择文件后点击“检测”。如果您知道密钥，可直接在下方的输入框中输入！</p>
 				<hr />
 				<div class="wrapper center">
 					<div class="left">
@@ -164,7 +165,7 @@
 											<p>文件头仅对加密很重要。（解密时可忽略）</p>
 											<hr>
 											<p class="text-left">在 <strong>极少数</strong> 情况下，某些游戏会使用不同的标头设置。您可以在以下位置找到正确的标头设置：<br>
-												<span class="red">"游戏根目录"/www/js/rpg_core.js</span><br>
+												<span class="red">游戏根目录/www/js/rpg_core.js</span><br>
 												搜索 “<strong>function Decrypter()</strong>”, 您可以找到所有值</p>
 										</div>
 									</div>
@@ -272,11 +273,11 @@
 							</button>
 							<button class="btn btn-default" type="button" id="encrypt-mv">
 								<img src="img/lock.png" alt="(Lock)">
-								<span>（重新）加密 MV</span>
+								<span>(重新) 加密 MV</span>
 							</button>
 							<button class="btn btn-default" type="button" id="encrypt-mz">
 								<img src="img/lock.png" alt="(Lock)">
-								<span>（重新）加密 MZ</span>
+								<span>(重新) 加密 MZ</span>
 							</button>
 						</div>
 					</div>
@@ -313,7 +314,8 @@
 			</div>
 
 			<div id="restore-images" class="content-container">
-				<p>在这里，您可以直接恢复 RPG-Maker游戏 中的PNG文件 （支持 <b>.rpgmvp</b> & <b>.png_</b> 图像文件），无需密钥</p>
+				<p>在这里，您可以直接将 RPG-Maker游戏 中 加密的图像文件（一般为 <b>.rpgmvp</b> & <b>.png_</b> 格式） 转换为 <b>.png</b> 格式，无需密钥<br>
+					（<b>Tips</b>：部分游戏可能需要密钥！<a href="#en-decrypt" class="menu-link">点我前往转换需要密钥的图像</a>）</p>
 				<hr>
 				<div class="wrapper center">
 					<div class="left">
@@ -375,7 +377,7 @@
 					<li>
 						<s>Internet-Explorer<span class="red">（无法使用 - 不受支持）</span></s>
 						<span class="tooltip help">
-							(细节)
+							(?)
 							<span class="tooltipText">
 								<span class="red">下载文件</span><br>
 								<span class="red">查看文件</span><br>
@@ -385,18 +387,18 @@
 						</span>
 					</li>
 					<li>
-						Edge<span class="green">（可用）</span>
+						Edge <span class="green">(可用)</span>
 					</li>
 					<li>
-						Google-Chrome<span class="green">（可用）</span>
+						Google-Chrome <span class="green">(可用)</span>
 					</li>
 					<li>
-						Firefox<span class="green">（可用）</span>
+						Firefox <span class="green">(可用)</span>
 					</li>
 					<li>
-						Safari<span class="green">（几乎完全可用 - 需要测试）</span>
+						Safari <span class="green">(几乎完全可用 - 需要测试)</span>
 						<span class="tooltip help">
-							(细节)
+							(?)
 							<span class="tooltipText longText">
 								<span class="green">下载文件</span><br>
 								<span class="grey">查看文件</span> - <i>未知</i><br>
@@ -407,7 +409,7 @@
 						<a href="https://github.com/Petschko/RPG-Maker-MV-Decrypter/issues/11" target="_blank">点我分享您的测试结果！</a>
 					</li>
 					<li>
-						Opera<span class="green">（可用）</span>
+						Opera <span class="green">(可用)</span>
 					</li>
 				</ul>
 			</div>
@@ -421,7 +423,7 @@
 					</li>
 					<li>
 						获取 加密/解密密钥<br>
-						<span class="red">New:</span> PNG文件 （如 <b>.rpgmvp</b> / <b>.png_</b> 图像文件）无需密钥,  <b>除非</b> 你需要重新加密文件。 <a href="#restore-images" class="menu-link">点我恢复没有密钥的图像</a>
+						<span class="red">New:</span> PNG文件 （如 <b>.rpgmvp</b> / <b>.png_</b> 图像文件）无需密钥,  <b>除非</b> 你需要重新加密文件。 <a href="#restore-images" class="menu-link">点我前往转换(没有密钥的)图像</a>
 						<ul>
 							<li>上传游戏的 System.json 文件后，点击“检测”运行检测代码</li>
 							<li>如果检测不起作用，则会弹出进一步的说明</li>
@@ -430,10 +432,10 @@
 					<li>选择要解密/加密的文件 - <i>可同时选择多个文件！</i></li>
 					<li>点击解密或加密按钮</li>
 					<li>
-						如果您点击文件名旁边的“View”，则可以预览解密的文件。<i>（当然您无法预览加密的文件）</i>
+						如果您点击文件名旁边的“预览”，则可以预览解密的文件。<i>（加密的文件除外）</i>
 					</li>
 					<li>
-						您现在可以通过单击“Save”来保存它们。 (脚本将保留文件名并为您更改扩展名！) =)
+						您现在可以通过点击“保存”来保存它们。 =)
 						<ul>
 							<li>
 								您还可以通过单击“全部另存为.zip文件”将文件列表中的所有文件打包为.zip格式！
@@ -446,7 +448,7 @@
 				<h2>关于汉化</h2>
 				首先感谢<a href="https://github.com/Petschko/" target="_blank"> Petschko </a>的辛苦付出！<br>
 				汉化：<a href="https://blog.dmoe.top" target="_blank">禾守</a><br>
-				版本：v0.1（Beta），内容测试ing...<br>
+				版本：v0.11（Beta），内容测试ing...<br>
 				Tips：<br>
 				1. <span class="red">汉化以谷歌翻译为主，然后进行简单的人工润色</span><br>
 				2. <span class="red">由于对 RPG解包 没有充分的了解，翻译&补充 的内容可能会出现差错...</span><br>
@@ -454,6 +456,15 @@
 				至于汉化原因？<s>闲着没事做(</s><br>
 				<a href="https://github.com/Petschko/" target="_blank"> Petschko </a>的另一个项目：<br>
 				<a href="https://github.com/Petschko/Java-RPG-Maker-MV-Decrypter" title="访问 Github 上的项目" target="_blank">Java-RPG-Maker-MV-Decrypter</a>（具有GUI，可以处理整个目录并自行保存/重命名文件...）
+				<hr>				
+				<h2>更新日志</h2>
+				<h4>测试版：</h4>
+				<li>
+					[2024/06/15] v0.1.1-alpha - 汉化了错误提示，同时完善页面内容
+				</li>
+				<li>
+					[2024/06/14] v0.1.0-alpha - UI汉化
+				</li>
 			</div>
 		</div>
 		<footer>
@@ -475,7 +486,7 @@
 			</div>
 			<br>
 			<div class="center creator">
-				汉化: <a href="https://blog.dmoe.top/" target="_blank">禾守</a> | v0.1(Beta)
+				汉化: <a href="https://blog.dmoe.top/" target="_blank">禾守</a> | <a href="/" target="_blank">v0.1.1-alpha</a>
 				</a>
 			</div>
 		</footer>

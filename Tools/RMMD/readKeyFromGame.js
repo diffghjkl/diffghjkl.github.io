@@ -19,7 +19,7 @@ Decrypter.decryptArrayBuffer = function(arrayBuffer) {
 	}
 	for (i = 0; i < this._headerlength; i++) {
 		if (header[i] !== refBytes[i]) {
-			throw new Error("Header is wrong");
+			throw new Error("Header 错误！");
 		}
 	}
 
@@ -30,7 +30,7 @@ Decrypter.decryptArrayBuffer = function(arrayBuffer) {
 	for(i = 0; i < this._headerlength; i++) {
 		outputKey += Decrypter._encryptionKey[i];
 	}
-	window.prompt("Encryption-Key:\n" + outputKey + "\n\n" + "Remove the function at the very end of  rpg_core.js when you want to play this game again =)!\n\nCopy the code here: (CTRL & C)", outputKey)
+	window.prompt("加密密钥:\n" + outputKey + "\n\n" + "当您想再次游玩时，请删除 rpg_core.js 末尾的函数！ =)\n\n复制代码：CTRL+C", outputKey)
 	Decrypter.decryptArrayBuffer = function() {
 		// Added this to let the game stop forcefully
 	};

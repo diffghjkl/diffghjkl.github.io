@@ -103,24 +103,24 @@ RPGFile.prototype.createOutPut = function(faultMessage) {
 		var saveFunction = document.createElement('a');
 
 		// Set all to view the link
-		viewLink.innerHTML = '预览';
+		viewLink.innerHTML = 'View';
 		if(! this.isEncryptedExt()) {
-			viewLink.title = '在浏览器上预览 ' + this.name + '.' + this.extension;
+			viewLink.title = 'View ' + this.name + '.' + this.extension + ' in your Browser';
 			viewLink.href = this.fileUrl;
 			viewLink.target = '_blank';
 		} else {
 			var toolTipText = document.createElement('div');
 			toolTipText.className = 'tooltipText';
-			toolTipText.innerHTML = '该文件已加密，您无法在浏览器中查看它。 ' +
-				'您可以保存它并将其放入游戏中。（例如翻译的图像）';
+			toolTipText.innerHTML = 'This File is encrypted and you can\'t view it in the Browser. ' +
+				'You can save it and put it in the game (Translated images for example).';
 			viewLink.className = 'grey encryptedFile tooltip';
 			viewLink.appendChild(toolTipText);
 		}
 
 		// Set all to save file
-		saveFunction.innerHTML = '保存';
+		saveFunction.innerHTML = 'Save';
 		saveFunction.className = 'save';
-		saveFunction.title = '将 ' + this.name + '.' + this.extension + ' 保存到你的设备上';
+		saveFunction.title = 'Save ' + this.name + '.' + this.extension + ' on your Computer';
 		saveFunction.href = this.fileUrl;
 		saveFunction.download = this.name + '.' + this.extension;
 		saveFunction.target = '_blank';
