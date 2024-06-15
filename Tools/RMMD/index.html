@@ -108,7 +108,19 @@
 								<legend>1. 文件解密</legend>
 								<div>
 									<label for="systemFile">
-										选择一个 <b>.json</b> / <b>.rpgmvp</b> / <b>.png_</b> 文件， 然后点击检测！<br>
+										选择一个 <b>System(.json)</b>
+										<div class="tooltip help">
+											(?)
+											<div class="tooltipText longText">
+												<p>此文件用于解析密钥</p>
+												<p>点击“检测”后开始解析</p>
+												<hr>
+											<p class="text-left"><strong>Tips</strong>：部分游戏可能不存在 System.json ，遇到这种情况的可尝试选择文件名为 System 的其他文件（如果不是当我没说）<br>
+											By 禾守
+											</p>
+											</div>
+										</div>
+										或者 <b>.rpgmvp</b> / <b>.png_</b> 文件， 然后点击检测！<br>
 									</label>
 									<div class="button-grid-wrapper">
 										<div class="box1">
@@ -411,7 +423,7 @@
 						获取 加密/解密密钥<br>
 						<span class="red">New:</span> PNG文件 （如 <b>.rpgmvp</b> / <b>.png_</b> 图像文件）无需密钥,  <b>除非</b> 你需要重新加密文件。 <a href="#restore-images" class="menu-link">点我恢复没有密钥的图像</a>
 						<ul>
-							<li>上传游戏的 .json 文件后，点击“检测”运行检测代码</li>
+							<li>上传游戏的 System.json 文件后，点击“检测”运行检测代码</li>
 							<li>如果检测不起作用，则会弹出进一步的说明</li>
 						</ul>
 					</li>
@@ -432,12 +444,16 @@
 			</div>
 			<div id="about" class="content-container">
 				<h2>关于汉化</h2>
-				首先感谢<a href="https://github.com/Petschko/" target="_blank"> Petschko </a>大大的辛苦付出！<br>
+				首先感谢<a href="https://github.com/Petschko/" target="_blank"> Petschko </a>的辛苦付出！<br>
 				汉化：<a href="https://blog.dmoe.top" target="_blank">禾守</a><br>
 				版本：v0.1（Beta），内容测试ing...<br>
-				值得一提的是，汉化是以谷歌翻译为主，然后进行简单的人工润色<br>
+				Tips：<br>
+				1. <span class="red">汉化以谷歌翻译为主，然后进行简单的人工润色</span><br>
+				2. <span class="red">由于对 RPG解包 没有充分的了解，翻译&补充 的内容可能会出现差错...</span><br>
 				如有问题，欢迎反馈留言~<br>
-				至于汉化原因？<s>闲着没事做(</s>
+				至于汉化原因？<s>闲着没事做(</s><br>
+				<a href="https://github.com/Petschko/" target="_blank"> Petschko </a>的另一个项目：<br>
+				<a href="https://github.com/Petschko/Java-RPG-Maker-MV-Decrypter" title="访问 Github 上的项目" target="_blank">Java-RPG-Maker-MV-Decrypter</a> ,（具有GUI，可以处理整个目录并自行保存/重命名文件...）
 			</div>
 		</div>
 		<footer>
