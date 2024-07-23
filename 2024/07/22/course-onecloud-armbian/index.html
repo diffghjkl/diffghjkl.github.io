@@ -34,7 +34,7 @@ document.addEventListener("pjax:success", initScrollReveal);
 <meta property="og:image" content="https://sway-cdn.com/s/4aEiTpcBD4PPvwex/images/YFfkrxWVibqol5">
 <meta property="og:image" content="https://sway-cdn.com/s/4aEiTpcBD4PPvwex/images/LZ3MOZmYxh5jRZ">
 <meta property="article:published_time" content="2024-07-22T12:00:00.000Z">
-<meta property="article:modified_time" content="2024-07-23T03:34:57.013Z">
+<meta property="article:modified_time" content="2024-07-23T03:40:14.947Z">
 <meta property="article:author" content="禾守酱">
 <meta property="article:tag" content="玩客云">
 <meta property="article:tag" content="Armbian">
@@ -203,7 +203,7 @@ IconifyProviders = {
 <p>3.挂载硬盘（例如，硬盘为 <code>sda1</code> ）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount -t ntfs-3g /dev/sda1 /mnt/disk</span><br><span class="line"> # 不要忘记把 sda1 &amp; disk 换成你自己的！</span><br></pre></td></tr></table></figure>
 
-<h4 id="永久挂载"><a href="#永久挂载" class="headerlink" title="永久挂载"></a>永久挂载</h4><p>详见 <a href="https://blog.dmoe.top/2024/07/22/course-Onecloud-Armbian/#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E6%B0%B8%E4%B9%85%E6%8C%82%E8%BD%BD">#挂载硬盘-第二步：永久挂载</a></p>
+<h4 id="永久挂载"><a href="#永久挂载" class="headerlink" title="永久挂载"></a>永久挂载</h4><p>详见 <a href="https://blog.dmoe.top/2024/07/22/course-onecloud-armbian/#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E6%B0%B8%E4%B9%85%E6%8C%82%E8%BD%BD">#挂载硬盘-第二步：永久挂载</a></p>
 <h2 id="指示灯常亮红色"><a href="#指示灯常亮红色" class="headerlink" title="指示灯常亮红色"></a>指示灯常亮红色</h2><p>据说是正常现象，镜像的问题，并不影响使用</p>
 <p>可执行以下命令修改为蓝色常亮</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;default-on&quot; &gt;/sys/class/leds/onecloud\:blue\:alive/trigger</span><br><span class="line">echo &quot;none&quot; &gt;/sys/class/leds/onecloud\:green\:alive/trigger</span><br><span class="line">echo &quot;none&quot; &gt;/sys/class/leds/onecloud\:red\:alive/trigger</span><br></pre></td></tr></table></figure>
