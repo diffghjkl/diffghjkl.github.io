@@ -45,7 +45,6 @@ declare module 'vue-router/auto-routes' {
     '/posts/course-Win10-RD': RouteRecordInfo<'/posts/course-Win10-RD', '/posts/course-Win10-RD', Record<never, never>, Record<never, never>>,
     '/posts/course-Win10FAQ': RouteRecordInfo<'/posts/course-Win10FAQ', '/posts/course-Win10FAQ', Record<never, never>, Record<never, never>>,
     '/posts/log-OPPOA83-ROM': RouteRecordInfo<'/posts/log-OPPOA83-ROM', '/posts/log-OPPOA83-ROM', Record<never, never>, Record<never, never>>,
-    '/posts/log-SM-T311': RouteRecordInfo<'/posts/log-SM-T311', '/posts/log-SM-T311', Record<never, never>, Record<never, never>>,
     '/posts/resource-DomainTool': RouteRecordInfo<'/posts/resource-DomainTool', '/posts/resource-DomainTool', Record<never, never>, Record<never, never>>,
     '/posts/resource-Free-Email': RouteRecordInfo<'/posts/resource-Free-Email', '/posts/resource-Free-Email', Record<never, never>, Record<never, never>>,
     '/posts/wiki-Android-Code-Versions': RouteRecordInfo<'/posts/wiki-Android-Code-Versions', '/posts/wiki-Android-Code-Versions', Record<never, never>, Record<never, never>>,
