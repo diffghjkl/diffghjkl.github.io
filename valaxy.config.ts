@@ -59,8 +59,14 @@ export default defineValaxyConfig<UserThemeConfig>({
 
     footer: {
       since: 2022,
+      icon: {
+        enable: true,
+        url: '/',
+        title: '禾守の小站'
+      },
       beian: {
         enable: true,
+        url: '/',
         icp: '萌ICP备20210730号',
       },
     },

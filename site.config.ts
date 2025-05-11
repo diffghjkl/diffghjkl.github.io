@@ -110,6 +110,9 @@ export default defineSiteConfig({
       },
     },
   },
+  comment: {
+    enable: true,
+  },
 
   sponsor: {
     enable: true,
