@@ -1,0 +1,26 @@
+{
+  "name": "blog",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:ssg",
+    "build:spa": "valaxy build",
+    "build:ssg": "valaxy build --ssg",
+    "dev": "valaxy",
+    "rss": "valaxy rss",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "valaxy": "0.22.17",
+    "valaxy-addon-bangumi": "^0.2.2",
+    "valaxy-addon-face": "^0.2.0",
+    "valaxy-addon-hitokoto": "^0.0.1",
+    "valaxy-addon-waline": "^0.2.0",
+    "valaxy-theme-yun": "0.22.17",
+    "vitepress-plugin-group-icons": "^1.5.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
