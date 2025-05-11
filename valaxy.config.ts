@@ -66,7 +66,6 @@ export default defineValaxyConfig<UserThemeConfig>({
       },
       beian: {
         enable: true,
-        url: '/',
         icp: '萌ICP备20210730号',
       },
     },
