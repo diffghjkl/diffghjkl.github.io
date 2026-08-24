@@ -1,6 +1,7 @@
 import type { UserThemeConfig } from 'valaxy-theme-yun'
 import { defineValaxyConfig } from 'valaxy'
 import { addonWaline } from "valaxy-addon-waline"
+import { addonGirls } from 'valaxy-addon-girls'
 import { addonBangumi } from 'valaxy-addon-bangumi'
 import { addonFace } from 'valaxy-addon-face'
 
@@ -121,6 +122,8 @@ export default defineValaxyConfig<UserThemeConfig>({
       bilibiliEnabled: true,
       bgmEnabled: true,
     }),
+    // Girl
+    addonGirls(),
     // 在文章中使用表情
     addonFace({
       // 配置

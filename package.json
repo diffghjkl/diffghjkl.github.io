@@ -15,6 +15,7 @@
     "valaxy": "1.0.0-rc.5",
     "valaxy-addon-bangumi": "^0.4.0",
     "valaxy-addon-face": "^0.2.0",
+    "valaxy-addon-girls": "^0.1.0",
     "valaxy-addon-waline": "^0.2.1",
     "valaxy-theme-yun": "1.0.0-rc.5"
   },

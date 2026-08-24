@@ -9,4 +9,10 @@ nav: false
 ---
 > 下方人物随机排序，不分先后顺序.  
 
-<YunGirls :girls="frontmatter.girls" :random="frontmatter.random" />
+<ValaxyGirls :girls="frontmatter.girls" :random="frontmatter.random" layout="grid" switchable>
+  <template #header="{ count, isLoading }">
+    <header>
+      <p v-if="!isLoading">共计 {{ count }} 位</p>
+    </header>
+  </template>
+</ValaxyGirls>

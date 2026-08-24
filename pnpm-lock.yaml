@@ -17,6 +17,9 @@ importers:
       valaxy-addon-face:
         specifier: ^0.2.0
         version: 0.2.0
+      valaxy-addon-girls:
+        specifier: ^0.1.0
+        version: 0.1.0(valaxy@1.0.0-rc.5(@babel/parser@7.29.8)(@nuxt/kit@3.21.11(magicast@0.5.4))(@types/markdown-it@14.1.2)(@types/node@26.2.0)(@vue/compiler-dom@3.5.41)(axios@1.19.0)(eslint@10.8.1(jiti@2.7.0))(rolldown@1.2.4)(typescript@5.9.3)(vue-router@5.2.0(@vue/compiler-sfc@3.5.41)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.41(typescript@5.9.3)))(rolldown@1.2.4)(vite@8.2.1(@types/node@26.2.0)(jiti@2.7.0)(sass@1.102.0)(yaml@2.9.0))(vue@3.5.41(typescript@5.9.3)))(vue@3.5.41(typescript@5.9.3))(yaml@2.9.0))(vue-i18n@11.4.8(vue@3.5.41(typescript@5.9.3)))(vue@3.5.41(typescript@5.9.3))
       valaxy-addon-waline:
         specifier: ^0.2.1
         version: 0.2.1(typescript@5.9.3)(valaxy@1.0.0-rc.5(@babel/parser@7.29.8)(@nuxt/kit@3.21.11(magicast@0.5.4))(@types/markdown-it@14.1.2)(@types/node@26.2.0)(@vue/compiler-dom@3.5.41)(axios@1.19.0)(eslint@10.8.1(jiti@2.7.0))(rolldown@1.2.4)(typescript@5.9.3)(vue-router@5.2.0(@vue/compiler-sfc@3.5.41)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.41(typescript@5.9.3)))(rolldown@1.2.4)(vite@8.2.1(@types/node@26.2.0)(jiti@2.7.0)(sass@1.102.0)(yaml@2.9.0))(vue@3.5.41(typescript@5.9.3)))(vue@3.5.41(typescript@5.9.3))(yaml@2.9.0))
