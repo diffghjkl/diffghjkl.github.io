@@ -75,7 +75,7 @@ dmesg | grep -iE "mpp|rga|rockchip-drm"
 > 官方镜像 [jellyfin/jellyfin - Docker Image](https://hub.docker.com/r/jellyfin/jellyfin) 目前并不支持调用网心云OECT的GPU，可使用 [nyanmisaka/jellyfin - Docker Image](https://hub.docker.com/r/nyanmisaka/jellyfin) 的 `latest-rockchip` 分支
 
 将 `docker-compose.yml` 文件中的 `devices` & `image` 部分修改为以下内容：
-```docker-compose.yml [Docker ~vscode-icons:file-type-docker2~]
+```docker-compose.yml [Docker]
     devices:
       - /dev/dri:/dev/dri
       - /dev/dma_heap:/dev/dma_heap
